@@ -3,13 +3,13 @@ title: my second blog
 date: 2020-08-07
 updated: 2021-02-01
 categories: 类别 | 可以
-keywords: 关键词
+keywords: "keywords"
 description: 
-top _img: 
+top _img: /img/me.png
 comments: 
-cover: 
+cover: https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1963304009,2816364381&fm=26&gp=0.jpg
 toc: 
-toc_ number: 89
+toc_ number: 
 copyright: 
 copyright _author: 
 copyright_ author _href: 

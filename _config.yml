@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: TsuiWade's blog1
-subtitle: "subtitle"
+title: TsuiWade's blog
+#subtitle:
 description: "记录技术生活的点点滴滴"
 keywords: keywords
 author: tsuiwade
