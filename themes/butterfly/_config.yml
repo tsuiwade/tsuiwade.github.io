@@ -49,7 +49,13 @@ copy:
 social:
   fab fa-github: https://github.com/tsuiwade || Github
   fas fa-envelope: mailto:478451541@gmail.com || Email
-
+  iconfont  icon-bilibili: https://space.bilibili.com/381957255 || bilibili
+  iconfont  icon-zhifubao: https://www.bilibili.com || bilibili
+  iconfont  icon-wechat: https://www.bilibili.com || bilibili
+  iconfont  icon-qq: tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=478451541
+  iconfont  icon-csdn: https://www.bilibili.com || CSDN
+  iconfont  icon-shejiao-yinle: https://www.bilibili.com || bilibili
+  iconfont  icon-shejiaotubiao-55: https://www.bilibili.com || bilibili
 # search (搜索)
 # --------------------------------------
 
@@ -865,9 +871,14 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-  # - <link rel="stylesheet" href="/xxx.css">
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/iconfont.min.css">
+    - <link rel="stylesheet" href="/css/20210205.css">
   bottom:
-    # - <script src="xxxx"></script>
+    - <script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/hideMobileSidebar.js"></script>
+  # head:
+  # - <link rel="stylesheet" href="/xxx.css">
+  # bottom:
+  # - <script src="xxxx"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
