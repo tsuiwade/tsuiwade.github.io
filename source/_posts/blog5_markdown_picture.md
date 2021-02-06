@@ -1,5 +1,5 @@
 ---
-title: 【搭建个人博客】hexo+github上传图片到博客
+title: 【搭建个人博客】hexo+github上传图片到博客文章
 date: 2021-02-05 19:57:00
 tags:
 ---
