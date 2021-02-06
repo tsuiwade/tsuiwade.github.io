@@ -2,20 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/02/06/blog6_hexo_commands/</loc>
-    
-    <lastmod>2021-02-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tsuiwade.github.io/2021/02/06/blog7-MarkdownLearning/</loc>
-    
-    <lastmod>2021-02-06</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tsuiwade.github.io/2021/02/06/hello-world/</loc>
     
     <lastmod>2021-02-06</lastmod>
@@ -37,7 +23,7 @@
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/02/05/blog5_markdown_picture/</loc>
+    <loc>https://tsuiwade.github.io/2021/02/06/blog7-MarkdownLearning/</loc>
     
     <lastmod>2021-02-06</lastmod>
     
@@ -45,6 +31,20 @@
   
   <url>
     <loc>https://tsuiwade.github.io/2021/02/06/blog3_DnsBlogGithubIo/</loc>
+    
+    <lastmod>2021-02-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/2021/02/05/blog5_markdown_picture/</loc>
+    
+    <lastmod>2021-02-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/2021/02/06/blog6_hexo_commands/</loc>
     
     <lastmod>2021-02-06</lastmod>
     
