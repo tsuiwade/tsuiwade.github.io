@@ -50,10 +50,24 @@ git status命令表示：文件，文件夹在工作区，暂存区的状态，�
     (use "git add <file>..." to update what will be committed)
     (use "git restore <file>..." to discard changes in working directory)
             modified:   source/_posts/blog8-BaseGit.md
-            
+
     no changes added to commit (use "git add" and/or "git commit -a")
 `Changes not staged for commit`:表示文件还在工作区修改，没有add到暂存区。可以通过 `git add file` 命令将变更文件添加到暂存区，如此便可取消Changes not staged for commit状态。还可以通过 `git restore  file` 的命令取消在file在工作区的变更，那么暂存区的file内容还是以前的，也取消Changes not staged for commi的状态。
 
+---
+git add . 
+
+    PS C:\Users\tsui\blog> git status
+    On branch myblog
+    Your branch is up to date with 'origin/myblog'.
+
+    Changes to be committed:
+    (use "git restore --staged <file>..." to unstage)
+            modified:   source/_posts/blog8-BaseGit.md
+
+表示已经从工作区add到暂存区的file（文件或文件夹），可以通过 git restore --staged filename 命令将该file从暂存区移出，只有工作区有该文件，该文件就为Untracked files。
+
+---
 
 
 ## 1、四个工作区域
