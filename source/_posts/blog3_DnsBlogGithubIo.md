@@ -1,5 +1,5 @@
 ---
-title: 【第三篇博客】如何在无外网情况下访问自己的github.io博客
+title: 【第3篇博客】如何在无外网情况下访问自己的github.io博客
 cover: 6.png
 description: 无
 ---

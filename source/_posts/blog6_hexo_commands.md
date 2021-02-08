@@ -1,5 +1,5 @@
 ---
-title: 【第六篇博客】hexo的常见指令及简写汇总
+title: 【第6篇博客】hexo的常见指令及简写汇总
 date: 2021-02-06 10:21:44
 cover: 0.png
 tags:
