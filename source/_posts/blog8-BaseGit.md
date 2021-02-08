@@ -69,6 +69,7 @@ git add .
 
 ---
 
+当新建时候
 
 ## 1、四个工作区域
 Git本地有四个工作区域：工作目录（Working Directory）、暂存区(Stage/Index)、资源库(Repository或Git Directory)、git仓库(Remote Directory)。文件在这四个区域之间的转换关系如下：
