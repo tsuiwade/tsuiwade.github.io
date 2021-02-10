@@ -4,9 +4,9 @@
 
 # Site
 title: TsuiWade's blog
-#subtitle:
+subtitle: ""
 description: "记录技术生活的点点滴滴"
-keywords: keywords
+keywords:
 author: tsuiwade
 language: zh-CN
 timezone: ""

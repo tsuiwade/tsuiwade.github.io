@@ -1,5 +1,5 @@
 ---
-title: blog2-BlogTheme
+title: 【第二篇博客】hexo样式修改及文档学习记录
 date: 2021-02-09 10:31:23
 tags:
 ---
