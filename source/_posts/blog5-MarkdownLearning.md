@@ -1,5 +1,5 @@
 ---
-title: 【第7篇博客】hexo下的markdown的语法(GFM)学习记录
+title: 【第5篇博客】hexo下的markdown的语法(GFM)学习记录
 cover: 0.jfif
 date: 2021-02-06 11:31:14
 tags:

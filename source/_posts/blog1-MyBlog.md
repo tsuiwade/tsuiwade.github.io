@@ -1,5 +1,5 @@
 ---
-title: 【第一篇博客】hexo搭建github.io博客学习记录
+title: 【第1篇博客】hexo搭建github.io博客学习记录
 date: 2020-07-05 10:30:44
 tags:
 ---
