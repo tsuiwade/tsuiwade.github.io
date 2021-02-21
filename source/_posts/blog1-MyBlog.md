@@ -137,12 +137,55 @@ theme: landscape | theme: butterfly
 
     hexo deploy
 
-来部署我们的代码，代码提交完成之后，我们打开github项目的首页，就能看到我们打包上传的产物已经提交到了master分支上。
+来部署我们的代码，代码提交完成之后，我们打开github项目的首页，就能看到我们打包上传的产物已经提交到了master分支上。master分支里面的代码其实就是生成的public目录下的文件。然后点击仓库页面的setting，找到github pages一栏，顺利的话将显示我们的站点已成功部署，可以打开该网址检查是否被部署成功。
 
+此时我们已经完成一个博客的基本部署功能。接下来将做一个非常有趣的自动化部署功能。
 
+在自动化部署之前，我们需要把我们的源代码提交到github上，因为master分支已经被占用，所以我们只能把源代码提交到另一个分支上，首先我们需要commit一下本地代码。
+
+    git add .
+    git commit -m "none"
+
+然后我们重建一个分支myblog，然后将该分支push到github上。
+
+    git push --set-upstream origin myblog
+
+接着，myblog分支已经被push到了github上。
 
 # github actions实现自动化部署
-不需要自己在本地进行代码的构建打包
+不需要自己在本地进行代码的构建打包，使仓库的action功能，点击该按钮，可以看到github actions提供的功能：帮助构建、测试、部署你的代码，还能使用github actions来做code review、分支管理和issue的追踪。我们这里将会使用它来实现项目的自动打包和代码的部署。
+
+首先，我们需要在项目根目录下创建.github文件夹和.github目录下的workflows文件夹，然后在里面新建deploy.yml文件，复制粘贴如下代码，该代码的作用就是配置代码部署过程中的一些步骤，例如第一步需要checkout，然后需要安装和打包构建，最后触发一个代码的部署。
+
+    name: Build and Deploy
+    on: [push]
+    jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout 🛎️
+            uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+            with:
+            persist-credentials: false
+        - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+            run: |
+            npm install
+            npm run build
+            env:
+            CI: false
+        - name: Deploy 🚀
+            uses: JamesIves/github-pages-deploy-action@releases/v3
+            with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH: master # The branch the action should deploy to.
+            FOLDER: public # The folder the action should deploy.
+
+接下来，就输入提交代码老三行：
+    git add .
+    git commit -m "message"
+    git push
+
+提交之后，我们回到仓库首页，点击actions标签，可以看到所有的工作流，如果显示绿色打钩则代码部署成功，站点内容就会成功更新。
 
 
 参考： https://www.bilibili.com/video/BV1dt4y1Q7UE?t=354
