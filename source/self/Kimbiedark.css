@@ -1,0 +1,113 @@
+/*
+    Name:     Kimbie (dark)
+    Author:   Jan T. Sott
+    License:  Creative Commons Attribution-ShareAlike 4.0 Unported License
+    URL:      https://github.com/idleberg/Kimbie-highlight.js
+*/
+
+/* 新添加的內容 */
+/* ------------------------------------- */
+/* 代碼框背景色和字體顔色,與hljs一樣就行 */
+/* 必須配置(把下面.hljs的color和background複製到這裏來) */
++#article-container pre, 
++#article-container figure.highlight {
++  background: #221a0f;  
++  color: #d3af86
++}
+
+/* 代碼框工具欄 (如果你關掉了copy、lang和shrink,可不用配置這個 */
++#article-container figure.highlight .highlight-tools {
++  color: #fff;
++  background: #321a0f
++}
+
+/* 代碼框行數(如果已經關掉line_number,可以不用配置這個) */
++#article-container figure.highlight .gutter pre {
++  background-color: #221a0f;
++  color: #fff
++}
+
+/* 代碼塊figcaption配置(hexo自帶標簽https://hexo.io/zh-tw/docs/tag-plugins.html#Code-Block) */
+/* 不需要可以不用配置這個 */
++#article-container figure.highlight figcaption,
++#article-container figure.highlight figcaption a {
++  color: #d3af86 !important
++}
+
+/* 代碼框滾動條 (需要可配置，默認為主題主顔色）*/
+/* 不需要可以不用配置這個 */
++#article-container figure.highlight table::-webkit-scrollbar-thumb {
++  background: #d3af86 !important
++}
+
+/* ------------------------------------- */
+
+/* Kimbie Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #d6baad;
+}
+
+/* Kimbie Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-meta {
+  color: #dc3958;
+}
+
+/* Kimbie Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-deletion,
+.hljs-link {
+  color: #f79a32;
+}
+
+/* Kimbie Yellow */
+.hljs-title,
+.hljs-section,
+.hljs-attribute {
+  color: #f06431;
+}
+
+/* Kimbie Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #889b4a;
+}
+
+/* Kimbie Purple */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-function {
+  color: #98676a;
+}
+
+/* 更改的內容 把.hljs改為 #article-container figure.highlight .hljs *、
+/* ------------------------------------- */
+#article-container figure.highlight .hljs {
+  display: block;
+  overflow-x: auto;
+  background: #221a0f;
+  color: #d3af86;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

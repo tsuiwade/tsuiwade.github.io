@@ -140,5 +140,117 @@ reward:
 門裏站着一個人? {% hideInline 閃 %}
 
 ## 评论
+在主题配置文件中设置
+```
+comments:
+  # Up to two comments system, the first will be shown as default
+  # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo
+  use:
+    - Valine
+  text: true # Display the comment name next to the button
+  # lazyload: The comment system will be load when comment element enters the browser's viewport.
+  # If you set it to true, the comment count will be invalid
+  lazyload: true
+  count: true # Display comment count in top_img
+  card_post_count: false # Display comment count in Home Page
+```
+
+其中，还需要配置Valine，需要用到leancloud。
+
+它是领先的 BaaS 提供商,提供数据存储、文件存储、云引擎、容器、即时通讯、消息推送、短信、游戏云等多项服务,为移动开发提供强有力的后端支持。
+valine: 参考 https://xuqwblog.blog.csdn.net/article/details/107248047
+```
+  appId:  # leancloud application app id
+  appKey:  # leancloud application app key
+  pageSize: 10 # comment list page size
+  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
+  lang: en # i18n: zh-CN/zh-TW/en/ja
+  placeholder: 記得留下你的暱稱和郵箱....可以快速收到回復 # valine comment input placeholder(like: Please leave your footprints )
+  guest_info: nick,mail,link #valine comment header info (nick/mail/link)
+  recordIP: false # Record reviewer IP
+  serverURLs: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
+  bg: /img/comment_bg.png # valine background
+  emojiCDN: # emoji CDN
+  enableQQ: false # enable the Nickname box to automatically get QQ Nickname and QQ Avatar
+  requiredFields: nick,mail # required fields (nick/mail)
+  option:
+```
+由于我们是静态博客，页面和存储是分离开的，动态博客才可以直接删除评论，因此需要用到LeanCloud，按下图进行删评。
+![1jpg](1.jpg)
+
+## 打字效果
+```
+activate_power_mode:
+  enable: true
+  colorful: true # open particle animation (冒光特效)
+  shake: true #  open shake (抖动特效)
+  mobile: false
+```
+
+## 背景特效
+```
+canvas_nest:
+  enable: true
+  color: '0,0,255' #color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  opacity: 0.7 # the opacity of line (0~1), default: 0.5.
+  zIndex: -1 # z-index property of the background, default: -1.
+  count: 99 # the number of lines, default: 99.
+  mobile: false # false 手機端不顯示 true 手機端顯示
+```
+
+## 鼠标点击效果 
+```
+# Mouse click effects: Heart symbol (鼠標點擊效果: 愛心)
+click_heart:
+  enable: true
+  mobile: false
+```
+
+## 网站副标题
+```
+# the subtitle on homepage (主頁subtitle)
+subtitle:
+  enable: true
+  # Typewriter Effect (打字效果)
+  effect: true
+  # loop (循環打字)
+  loop: true
+  # source調用第三方服務
+  # source: false 關閉調用
+  # source: 1  調用搏天api的隨機語錄（簡體）
+  # source: 2  調用一言網的一句話（簡體）
+  # source: 3  調用一句網（簡體）
+  # source: 4  調用今日詩詞（簡體）
+  # subtitle 會先顯示 source , 再顯示 sub 的內容
+  source: false
+  # 如果有英文逗號' , ',請使用轉義字元 &#44;
+  # 如果有英文雙引號' " ',請使用轉義字元 &quot;
+  # 開頭不允許轉義字元，如需要，請把整個句子用雙引號包住
+  # 如果關閉打字效果，subtitle只會顯示sub的第一行文字
+  sub:
+    - 不要以自己的放纵来对抗平庸
+    - Never put off till tomorrow what you can do today
+    - 你要悄悄的努力，然后惊艳所有人
+```
+
+## 字数统计
+先`yarn add hexo-wordcount`
+```
+# wordcount (字數統計)
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+```
+
+## 自定义代码配色
 
 
+修改Hexo根目錄下的_config.yml
+配置hljs為true
+
+修改主题配置文件
+配置highlight_theme為false
+
+具体参考 https://butterfly.js.org/posts/b37b5fe3/
