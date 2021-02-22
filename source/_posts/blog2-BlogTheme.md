@@ -3,6 +3,9 @@ title: 【第2篇博客】butterfly样式修改学习记录
 date: 2021-02-09 10:31:23
 updated: 2021-03-29 10:31:23
 description: butterfly主题样式修改学习记录
+tags: 
+  - hexo
+  - butterfly
 ---
 
 ## 博客首页图
@@ -254,3 +257,8 @@ wordcount:
 配置highlight_theme為false
 
 具体参考 https://butterfly.js.org/posts/b37b5fe3/
+
+## iconfont
+国内最出名的莫过于iconfont,功能很强大且图标內容很丰富的矢量图标库。很多Font Awesome不支持的图标都可以在这里找到。同时，iconfont支持选择需要的图标生成css链接，減少不必要的CSS加载。
+
+具体参考 https://butterfly.js.org/posts/4073eda/#iconfont
