@@ -8,11 +8,25 @@
 
 menu:
   首页: / || fas fa-home
-  时间轴: /archives/ || fas fa-archive
-  标签: /tags/ || fas fa-tags
-  分类: /categories/ || fas fa-folder-open
-  友链: /link/ || fas fa-link
-  关于: /about/ || fas fa-hear
+  文章 || fas fa-book:
+    - 归档 || /archives/ || fas fa-archive
+    - 标签 || /tags/ || fas fa-tags
+    - 分类 || /categories/ || fas fa-folder-open
+  便签 || fas fa-sticky-note:
+    - 留言 || /messages/ || fas fa-comments
+    - 友链 || /blogroll/ || fas fa-user-friends
+    - 圈子 || /moments/ || fas fa-blog
+  列表 || fas fa-list:
+    - 图库 || /gallery/ || fas fa-images
+    - 音乐 || /music/ || fas fa-music
+    - 说说 || /say/ || fas fa-comment
+    - 叨叨 || /talk/ || fas fa-comment-dots
+  关于 || fas fa-desktop:
+    - 本站 || /about/ || fas fa-stream
+    - 统计 || /charts/ || fas fa-chart-bar
+    - 订阅 || /sub/ || fas fa-rss
+    - 背景 || /background/ || fas fa-adjust
+    - 自己 || /me/ || far fa-user
 # Home: / || fas fa-home
 # Archives: /archives/ || fas fa-archive
 # Tags: /tags/ || fas fa-tags
@@ -29,7 +43,7 @@ hide_sidebar_menu_child: false
 # Code Blocks (代碼相關)
 # --------------------------------------
 
-highlight_theme: false #  pale night #  darker / pale night / light / ocean / mac / mac light / false
+highlight_theme: mac light #  pale night #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
@@ -876,9 +890,11 @@ inject:
   head:
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/iconfont.min.css">
     - <link rel="stylesheet" href="/css/20210205.css">
-    - <link rel="stylesheet" href="/self/Kimbiedark.css">
+    - <link rel="stylesheet" href="/css/background.css">
   bottom:
     - <script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/hideMobileSidebar.js"></script>
+    - <script data-pjax src="/js/myjs.js"></script>
+    - <script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/mouse_snow.min.js"></script>
   # head:
   # - <link rel="stylesheet" href="/xxx.css">
   # bottom:
