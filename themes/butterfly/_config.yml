@@ -430,7 +430,7 @@ footer:
   owner:
     enable: true
     since: 2020
-  custom_text: <span id="runtime"></span>
+  custom_text:
   copyright: true # Copyright of theme and framework
 
 # Analysis
@@ -891,15 +891,11 @@ inject:
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/iconfont.min.css">
     - <link rel="stylesheet" href="/css/20210205.css">
     - <link rel="stylesheet" href="/css/background.css">
-    - <link rel="stylesheet" href="/css/flipcountdown.css">
   bottom:
     - <script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/hideMobileSidebar.js"></script>
     - <script data-pjax src="/js/myjs.js"></script>
     - <script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/mouse_snow.min.js"></script>
     - <script defer src="/live2d-widget/autoload.js"></script>
-    - <script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
-    - <script src="/js/flipcountdown.js"></script>
-    - <script data-pjax src="/js/runtime.js"></script>
   # head:
   # - <link rel="stylesheet" href="/xxx.css">
   # bottom:
