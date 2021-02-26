@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/02/09/blog2-BlogTheme/</loc>
+    <loc>https://tsuiwade.github.io/categories/index.html</loc>
     
-    <lastmod>2021-03-29</lastmod>
+    <lastmod>2021-02-26</lastmod>
     
   </url>
   
@@ -16,37 +16,44 @@
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/02/26/blog6-BaseGit/</loc>
-    
-    <lastmod>2021-02-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tsuiwade.github.io/2021/02/06/blog5-MarkdownLearning/</loc>
-    
-    <lastmod>2021-02-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tsuiwade.github.io/2021/02/26/blog3_DnsBlogGithubIo/</loc>
-    
-    <lastmod>2021-02-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tsuiwade.github.io/2021/02/06/blog4_hexo_commands/</loc>
-    
-    <lastmod>2021-02-26</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tsuiwade.github.io/2020/07/05/blog1-MyBlog/</loc>
     
-    <lastmod>2021-02-26</lastmod>
+    <lastmod>2021-02-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/2020/10/09/blog2-BlogTheme/</loc>
+    
+    <lastmod>2021-01-26</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/2020/10/10/blog3_DnsBlogGithubIo/</loc>
+    
+    <lastmod>2021-01-26</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/2021/01/01/blog4_hexo_commands/</loc>
+    
+    <lastmod>2021-01-26</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/</loc>
+    
+    <lastmod>2021-01-26</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/2021/01/09/blog6-BaseGit/</loc>
+    
+    <lastmod>2021-01-26</lastmod>
     
   </url>
   
@@ -73,6 +80,34 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://tsuiwade.github.io/tags/github/</loc>
+    <lastmod>2021-02-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/tags/markdown/</loc>
+    <lastmod>2021-02-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2021-02-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/categories/markdown/</loc>
+    <lastmod>2021-02-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>

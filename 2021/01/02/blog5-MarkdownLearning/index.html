@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【第5篇博客】hexo下的markdown的语法(GFM)学习记录 | TsuiWade's blog</title><meta name="keywords" content="hexo,markdown"><meta name="author" content="tsuiwade"><meta name="copyright" content="tsuiwade"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Hexo下使用的MarkDown为Github的GFM，GFM（Github Flavored Markdown）是 Github 拓展的基于 Markdown 的一种纯文本的书写格式。风格很漂亮，简洁美观大方。但是GFM的MarkDown语法和标准的MarkDown稍有不同，使用过程中需要注意一些。 1、标题 Markdown 中，使用 # 或 &#x3D; 来定义大纲标题，有多少个#或&#x3D;，就表示是几级的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【第5篇博客】hexo下的markdown的语法(GFM)学习记录">
+<meta property="og:url" content="https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/index.html">
+<meta property="og:site_name" content="TsuiWade&#39;s blog">
+<meta property="og:description" content="Hexo下使用的MarkDown为Github的GFM，GFM（Github Flavored Markdown）是 Github 拓展的基于 Markdown 的一种纯文本的书写格式。风格很漂亮，简洁美观大方。但是GFM的MarkDown语法和标准的MarkDown稍有不同，使用过程中需要注意一些。 1、标题 Markdown 中，使用 # 或 &#x3D; 来定义大纲标题，有多少个#或&#x3D;，就表示是几级的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/0.jfif">
+<meta property="article:published_time" content="2021-01-02T11:31:14.000Z">
+<meta property="article:modified_time" content="2021-01-26T10:31:23.000Z">
+<meta property="article:author" content="tsuiwade">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/0.jfif"><link rel="shortcut icon" href="/img/me.png"><link rel="canonical" href="https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-01-26 10:31:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/iconfont.min.css"><link rel="stylesheet" href="/css/20210205.css"><link rel="stylesheet" href="/css/background.css"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="TsuiWade's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/me.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/2021/01/02/blog5-MarkdownLearning/0.jfif')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">TsuiWade's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【第5篇博客】hexo下的markdown的语法(GFM)学习记录</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-02T11:31:14.000Z" title="发表于 2021-01-02 11:31:14">2021-01-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-01-26T10:31:23.000Z" title="更新于 2021-01-26 10:31:23">2021-01-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/markdown/">markdown</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Hexo下使用的MarkDown为Github的GFM，GFM（Github Flavored Markdown）是 Github 拓展的基于 Markdown 的一种纯文本的书写格式。风格很漂亮，简洁美观大方。但是GFM的MarkDown语法和标准的MarkDown稍有不同，使用过程中需要注意一些。</p>
+<h1>1、标题</h1>
+<p>Markdown 中，使用 # 或 = 来定义大纲标题，有多少个#或=，就表示是几级的大纲，相当于&lt;h几&gt;。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"># 一级标题</td>
+<td style="text-align:center"><h1>一级标题</h1></td>
+</tr>
+<tr>
+<td style="text-align:center">## 二级标题</td>
+<td style="text-align:center"><h2>二级标题</h2></td>
+</tr>
+<tr>
+<td style="text-align:center">### 三级标题</td>
+<td style="text-align:center"><h3>三级标题</h3></td>
+</tr>
+<tr>
+<td style="text-align:center">#### 四级标题</td>
+<td style="text-align:center"><h4>四级标题</h4></td>
+</tr>
+<tr>
+<td style="text-align:center">正常文字</td>
+<td style="text-align:center">正常文字</td>
+</tr>
+<tr>
+<td style="text-align:center">##### 五级标题</td>
+<td style="text-align:center"><h5>五级标题</h5></td>
+</tr>
+<tr>
+<td style="text-align:center">###### 六级标题</td>
+<td style="text-align:center"><h6>六级标题</h6></td>
+</tr>
+</tbody>
+</table>
+<h1>2、基本字体样式</h1>
+<p>Markdown 使用一个星号表示斜体，两个星号表示加粗，三个星号表示加粗斜体。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">*斜体*</td>
+<td style="text-align:center"><em>斜体</em></td>
+</tr>
+<tr>
+<td style="text-align:center">**粗体** 或 __粗体__</td>
+<td style="text-align:center"><strong>粗体</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">***加粗斜体***</td>
+<td style="text-align:center"><em><strong>加粗斜体</strong></em></td>
+</tr>
+<tr>
+<td style="text-align:center">~~删除线~~</td>
+<td style="text-align:center"><s>删除线</s></td>
+</tr>
+</tbody>
+</table>
+<h1>3、列表</h1>
+<p>使用星号或者中横线来表示无序列表，注意后面需要加个空格。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* 无序列表1</span><br><span class="line">* 无序列表2</span><br><span class="line">- 无序列表3</span><br><span class="line">- 无序列表4</span><br><span class="line">1. 有序列表1</span><br><span class="line">2. 有序列表2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>无序列表1</li>
+<li>无序列表2</li>
+</ul>
+<ul>
+<li>无序列表3</li>
+<li>无序列表4</li>
+</ul>
+<ol>
+<li>有序列表1</li>
+<li>有序列表2</li>
+</ol>
+<h1>4、引用</h1>
+<p>引用部分的内容只需要在行首加上 &gt; 就可以了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; 沃兹基硕德说过：不要以自己的放纵来对抗平庸</span><br><span class="line"></span><br><span class="line">&gt; 动物</span><br><span class="line">&gt;&gt; 水生动物</span><br><span class="line">&gt;&gt; 陆生动物</span><br><span class="line">&gt;&gt;&gt; 猴子</span><br><span class="line">&gt;&gt;&gt; 人</span><br><span class="line">&gt;&gt;&gt;&gt; 程序猿</span><br><span class="line">&gt;&gt;&gt;&gt; 攻城狮</span><br><span class="line">&gt;&gt;产品狗 &#x2F;&#x2F;这里需要注意，没有空行间隔，忽略降级引用标记</span><br><span class="line">射鸡虱   &#x2F;&#x2F;这里需要注意，没有空行间隔，忽略降级引用标记</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>沃兹基硕德说过：不要以自己的放纵来对抗平庸</p>
+</blockquote>
+<blockquote>
+<p>动物</p>
+<blockquote>
+<p>水生动物<br>
+陆生动物</p>
+<blockquote>
+<p>猴子<br>
+人</p>
+<blockquote>
+<p>程序猿<br>
+攻城狮<br>
+产品狗 //这里需要注意，没有空行间隔，忽略降级引用标记<br>
+射鸡虱   //这里需要注意，没有空行间隔，忽略降级引用标记</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h1>5、超链接</h1>
+<p>Markdown 使用<code>[]()</code>来表示超链接，中括号表示链接文字，小括号表示链接地址。</p>
+<pre><code>[tsuiwade's blog](tsuiwade.github.io)
+</code></pre>
+<p><a href="tsuiwade.github.io">tsuiwade’s blog</a></p>
+<h1>6、图片</h1>
+<p>图片的样式与超链接非常相似，只需在前面加个感叹号就可以了，即用<code>![]()</code>表示图片。其中中括号表示图片未加载时的提示文字，小括号表示图片地址。<br>
+例如使用hexo n blog7_MarkdownLearning时创建了<code>blog7-MarkdownLearning.md</code>和<code>blog7-MarkdownLearning</code>文件夹，此时在文件夹中放入图片。再由小括号中填写文件名就可以在博客中贴图。<br>
+还可以使用HTML的<code>&lt;img&gt;</code>标签，还有许多例如高度、对齐、宽度标签。具体可见 <a target="_blank" rel="noopener" href="https://www.w3school.com.cn/tags/tag_img.asp%E3%80%82">https://www.w3school.com.cn/tags/tag_img.asp。</a><br>
+下面展示四张图，分别是原始图1、gif图2、网页链接图3、改大小图4。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![1png](1.png)</span><br><span class="line">![2gif](2.gif)</span><br><span class="line">![baidu](https:&#x2F;&#x2F;www.baidu.com&#x2F;img&#x2F;PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png)</span><br><span class="line">&lt;img src&#x3D;1.png width&#x3D;&quot;100&quot;&#x2F;&gt;&lt;br&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/01/02/blog5-MarkdownLearning/1.png" alt="1png"></p>
+<div align="center">图1</div>
+<p><img src="/2021/01/02/blog5-MarkdownLearning/2.gif" alt="2gif"></p>
+<div align="center">图2</div>
+<p><img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="baidu"></p>
+<div align="center">图3</div>
+<p><img src="/2021/01/02/blog5-MarkdownLearning/1.png" width="100"><br></p>
+<div align="center">图4</div>
+<h1>7、代码块</h1>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;单行文字&#96;</span><br><span class="line">&#96;&#96;&#96;</span><br><span class="line">多行文字1</span><br><span class="line">多行文字2</span><br><span class="line">多行文字3</span><br><span class="line">&#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
+<p><code>单行文字</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">多行文字1</span><br><span class="line">多行文字2</span><br><span class="line">多行文字3</span><br></pre></td></tr></table></figure>
+<p>还可以采用下面的代码块：在连续几行的文本开头加入1个Tab或者4个空格，代码块没有前面的序号。（代码块前需要换行）</p>
+<pre><code>多行文字1
+多行文字2
+多行文字3
+</code></pre>
+<p>也适合做一篇文章的tag。</p>
+<pre><code>`linux` `网络编程` `socket` `epoll`
+</code></pre>
+<p><code>linux</code> <code>网络编程</code> <code>socket</code> <code>epoll</code></p>
+<h1>8、水平分割线</h1>
+<p>使用—进行水平分割<br>
+水平分割线上方</p>
+<hr>
+<p>水平分割线下方</p>
+<h1>9、表格</h1>
+<p>表格 - 和 | 分割行和列 ， : 控制对其方式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">居左   | 居右 | 居中</span><br><span class="line">:- | -: | :-:</span><br><span class="line">第1行 | 12  | 13  </span><br><span class="line">第2行 | 22  | 23  </span><br><span class="line">第3行 | 32  | 33  </span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">居左</th>
+<th style="text-align:right">居右</th>
+<th style="text-align:center">居中</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">第1行</td>
+<td style="text-align:right">12</td>
+<td style="text-align:center">13</td>
+</tr>
+<tr>
+<td style="text-align:left">第2行</td>
+<td style="text-align:right">22</td>
+<td style="text-align:center">23</td>
+</tr>
+<tr>
+<td style="text-align:left">第3行</td>
+<td style="text-align:right">32</td>
+<td style="text-align:center">33</td>
+</tr>
+</tbody>
+</table>
+<p>表格中的样式可以利用html语言进行修改，还需要配合转义字符<code>\</code><br>
+如第1部分标题的代码如下</p>
+<pre><code>语法   | 效果 
+:-: | :-: 
+\# 一级标题 | &lt;h1&gt;一级标题&lt;/h1&gt;
+\#\# 二级标题 | &lt;h2&gt;二级标题&lt;/h2&gt;
+\#\#\# 三级标题 | &lt;h3&gt;三级标题&lt;/h3&gt;
+\#\#\#\# 四级标题 | &lt;h4&gt;四级标题&lt;/h4&gt;
+正常文字 | 正常文字
+\#\#\#\#\# 五级标题 | &lt;h5&gt;五级标题&lt;/h5&gt;
+\#\#\#\#\#\# 六级标题 | &lt;h6&gt;六级标题&lt;/h6&gt;
+</code></pre>
+<h1>10、提示块标签</h1>
+<div class="note default flat"><p>default 提示块标签</p>
+</div>
+<div class="note primary no-icon flat"><p>可使用语法 no-icon去掉小图标</p>
+</div>
+<div class="note success flat"><p>success 提示块标签</p>
+</div>
+<div class="note info flat"><p>info 提示块标签</p>
+</div>
+<div class="note warning flat"><p>warning 提示块标签</p>
+</div>
+<div class="note danger flat"><p>danger 提示块标签</p>
+</div>
+<h1>11、diff语法</h1>
+<p>版本控制的系统中都少不了diff的功能，即展示一个文件内容的增加与删除。<br>
+GFM中可以显示的展示diff效果。使用蓝色表示新增，红色表示删除。<br>
+其语法与代码高亮类似，只是在三个反引号后面写diff，<br>
+并且其内容中，以 +开头表示新增，-开头表示删除。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;&#96;&#96;diff</span><br><span class="line">+ 鸟宿池边树，僧敲月下门</span><br><span class="line">- 鸟宿池边树，僧推月下门</span><br><span class="line">&#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="addition">+ 鸟宿池边树，僧敲月下门</span></span><br><span class="line"><span class="deletion">- 鸟宿池边树，僧推月下门</span></span><br></pre></td></tr></table></figure>
+<h1>12、锚点</h1>
+<p>其中，字母要统统小写，空格统统要替换成 ‘-’</p>
+<pre><code>[回到1、标题](#1、标题)
+[回到2、基本字体样式](#2、基本字体样式)
+</code></pre>
+<p><a href="#1%E3%80%81%E6%A0%87%E9%A2%98">回到1、标题</a><br>
+<a href="#2%E3%80%81%E5%9F%BA%E6%9C%AC%E5%AD%97%E4%BD%93%E6%A0%B7%E5%BC%8F">回到2、基本字体样式</a></p>
+<h1>13、表情</h1>
+<p>Github的Markdown语法支持添加emoji表情，输入不同的符号码（两个冒号包围的字符）可以显示出不同的表情。<br>
+比如<code>:blush:</code>，可以显示😊。<code>:smile:</code>，可以显示😄。<code>:grinning:</code>，可以显示😀。<code>:elephant:</code>，可以显示🐘。<code>:v:</code>，可以显示✌️。<code>:balloon:</code>，可以显示🎈。<code>:triangular_flag_on_post:</code>，可以显示🚩。<code>:fast_forward:</code>，可以显示⏩。<code>:100:</code>，可以显示💯。<br>
+通过以下代码进行命令行安装配置，还需要配置hexo站点配置文件_config.yml</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked --save</span><br><span class="line">npm i hexo-renderer-markdown-it --save</span><br><span class="line">npm install markdown-it-emoji --save</span><br></pre></td></tr></table></figure>
+<p>其他有关表情的符号码和问题可查 <a target="_blank" rel="noopener" href="https://hasaik.com/posts/9b280ea3.html">https://hasaik.com/posts/9b280ea3.html</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">tsuiwade</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/">https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://tsuiwade.github.io" target="_blank">TsuiWade's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo</a><a class="post-meta__tags" href="/tags/markdown/">markdown</a></div><div class="post_share"><div class="social-share" data-image="/2021/01/02/blog5-MarkdownLearning/0.jfif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><link rel="stylesheet" href="/css/coin.css" media="defer" onload="this.media='all'"/><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">不给糖就捣蛋</span><div class="coin-wrapper"><div class="coin"><div class="coin__middle"></div><div class="coin__back"></div><div class="coin__front"></div></div></div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></button></div><script defer="defer" src="/js/coin.js"></script><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/01/09/blog6-BaseGit/"><img class="prev-cover" src="/2021/01/09/blog6-BaseGit/0.gif" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">【第6篇博客】写博客的git概念和指令学习记录</div></div></a></div><div class="next-post pull-right"><a href="/2021/01/01/blog4_hexo_commands/"><img class="next-cover" src="/2021/01/01/blog4_hexo_commands/0.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【第4篇博客】hexo的常见指令及简写汇总</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/07/05/blog1-MyBlog/" title="【第1篇博客】hexo搭建github.io博客学习记录"><img class="cover" src="/2020/07/05/blog1-MyBlog/6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-05</div><div class="title">【第1篇博客】hexo搭建github.io博客学习记录</div></div></a></div><div><a href="/2020/10/09/blog2-BlogTheme/" title="【第2篇博客】butterfly样式修改学习记录"><img class="cover" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-diy-cover.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-09</div><div class="title">【第2篇博客】butterfly样式修改学习记录</div></div></a></div><div><a href="/2020/10/10/blog3_DnsBlogGithubIo/" title="【第3篇博客】如何在无外网情况下访问自己的github.io博客"><img class="cover" src="/2020/10/10/blog3_DnsBlogGithubIo/6.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-10</div><div class="title">【第3篇博客】如何在无外网情况下访问自己的github.io博客</div></div></a></div><div><a href="/2021/01/01/blog4_hexo_commands/" title="【第4篇博客】hexo的常见指令及简写汇总"><img class="cover" src="/2021/01/01/blog4_hexo_commands/0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-01</div><div class="title">【第4篇博客】hexo的常见指令及简写汇总</div></div></a></div><div><a href="/2021/01/09/blog6-BaseGit/" title="【第6篇博客】写博客的git概念和指令学习记录"><img class="cover" src="/2021/01/09/blog6-BaseGit/0.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-09</div><div class="title">【第6篇博客】写博客的git概念和指令学习记录</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/me.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">tsuiwade</div><div class="author-info__description">记录技术生活的点点滴滴</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/tsuiwade"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tsuiwade" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:478451541@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/381957255" target="_blank" title="bilibili"><i class="iconfont  icon-bilibili"></i></a><a class="social-icon" href="https://www.bilibili.com" target="_blank" title="alipay"><i class="iconfont  icon-zhifubao"></i></a><a class="social-icon" href="https://www.bilibili.com" target="_blank" title="wechat"><i class="iconfont  icon-wechat"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=478451541" target="_blank" title="qq"><i class="iconfont  icon-qq"></i></a><a class="social-icon" href="https://www.bilibili.com" target="_blank" title="CSDN"><i class="iconfont  icon-csdn"></i></a><a class="social-icon" href="https://www.bilibili.com" target="_blank" title="music"><i class="iconfont  icon-shejiao-yinle"></i></a><a class="social-icon" href="https://www.bilibili.com" target="_blank" title="facebook"><i class="iconfont  icon-shejiaotubiao-55"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">1、标题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.1.</span> <span class="toc-text">二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.1.1.</span> <span class="toc-text">三级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">2.1.1.1.</span> <span class="toc-text">四级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">2.1.1.1.1.</span> <span class="toc-text">五级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link"><span class="toc-number">2.1.1.1.1.1.</span> <span class="toc-text">六级标题</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">2、基本字体样式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">3、列表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">5.</span> <span class="toc-text">4、引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">6.</span> <span class="toc-text">5、超链接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text">6、图片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">7、代码块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text">8、水平分割线</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">10.</span> <span class="toc-text">9、表格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">11.</span> <span class="toc-text">10、提示块标签</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">12.</span> <span class="toc-text">11、diff语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">13.</span> <span class="toc-text">12、锚点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">14.</span> <span class="toc-text">13、表情</span></a></li></ol></div></div><div class="card-widget card-clock"><div id="clock"><img v-if="clockshow == &quot;false&quot;" alt="" src="/assets/weather/loading.gif" height="120px" width="100%"/><table class="clock" v-if="clockshow"><tbody><tr><td class="clockdate">{{date}}</td><td class="weatherimg"><img id="weatherimg" :src="weatherimg" alt=""/></td><td class="temperature">{{temperature}}</td><td class="humidityimg"><img id="humidityimg" :src="humidityimg" alt=""/></td><td class="humidity">{{humidity}}</td></tr><tr class="time"><td colspan="5">{{time}}</td></tr><tr><td class="usaqi" colspan="1"><span>{{ip}}</span></td><td class="city" colspan="2">{{city}}</td><td class="daylight" colspan="2">{{daylight}}</td></tr></tbody></table></div></div><script defer="defer" data-pjax="data-pjax" src="/js/card_clock.js"></script><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/01/09/blog6-BaseGit/" title="【第6篇博客】写博客的git概念和指令学习记录"><img src="/2021/01/09/blog6-BaseGit/0.gif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【第6篇博客】写博客的git概念和指令学习记录"/></a><div class="content"><a class="title" href="/2021/01/09/blog6-BaseGit/" title="【第6篇博客】写博客的git概念和指令学习记录">【第6篇博客】写博客的git概念和指令学习记录</a><time datetime="2021-01-09T10:55:12.000Z" title="发表于 2021-01-09 10:55:12">2021-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/02/blog5-MarkdownLearning/" title="【第5篇博客】hexo下的markdown的语法(GFM)学习记录"><img src="/2021/01/02/blog5-MarkdownLearning/0.jfif" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【第5篇博客】hexo下的markdown的语法(GFM)学习记录"/></a><div class="content"><a class="title" href="/2021/01/02/blog5-MarkdownLearning/" title="【第5篇博客】hexo下的markdown的语法(GFM)学习记录">【第5篇博客】hexo下的markdown的语法(GFM)学习记录</a><time datetime="2021-01-02T11:31:14.000Z" title="发表于 2021-01-02 11:31:14">2021-01-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/01/blog4_hexo_commands/" title="【第4篇博客】hexo的常见指令及简写汇总"><img src="/2021/01/01/blog4_hexo_commands/0.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【第4篇博客】hexo的常见指令及简写汇总"/></a><div class="content"><a class="title" href="/2021/01/01/blog4_hexo_commands/" title="【第4篇博客】hexo的常见指令及简写汇总">【第4篇博客】hexo的常见指令及简写汇总</a><time datetime="2021-01-01T10:21:44.000Z" title="发表于 2021-01-01 10:21:44">2021-01-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/10/blog3_DnsBlogGithubIo/" title="【第3篇博客】如何在无外网情况下访问自己的github.io博客"><img src="/2020/10/10/blog3_DnsBlogGithubIo/6.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【第3篇博客】如何在无外网情况下访问自己的github.io博客"/></a><div class="content"><a class="title" href="/2020/10/10/blog3_DnsBlogGithubIo/" title="【第3篇博客】如何在无外网情况下访问自己的github.io博客">【第3篇博客】如何在无外网情况下访问自己的github.io博客</a><time datetime="2020-10-10T10:55:12.000Z" title="发表于 2020-10-10 10:55:12">2020-10-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/10/09/blog2-BlogTheme/" title="【第2篇博客】butterfly样式修改学习记录"><img src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-diy-cover.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【第2篇博客】butterfly样式修改学习记录"/></a><div class="content"><a class="title" href="/2020/10/09/blog2-BlogTheme/" title="【第2篇博客】butterfly样式修改学习记录">【第2篇博客】butterfly样式修改学习记录</a><time datetime="2020-10-09T08:41:21.000Z" title="发表于 2020-10-09 08:41:21">2020-10-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/2021/01/02/blog5-MarkdownLearning/0.jfif')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By tsuiwade</div><div class="framework-info"><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div><div id="workboard"><script async="async" src="/js/runtime.js"></script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'mjS6lvGtY7MvAlxolqz8OdMn-gzGzoHsz',
+      appKey: 'QakpY3QuhiOscnuh50tI450M',
+      placeholder: '留下你的足迹吧~~',
+      avatar: 'monsterid',
+      meta: 'nick'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/hideMobileSidebar.js"></script><script data-pjax src="/js/myjs.js"></script><script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/mouse_snow.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
