@@ -8,25 +8,9 @@
 
 menu:
   首页: / || fas fa-home
-  文章 || fas fa-book:
-    - 归档 || /archives/ || fas fa-archive
-    - 标签 || /tags/ || fas fa-tags
-    - 分类 || /categories/ || fas fa-folder-open
-  便签 || fas fa-sticky-note:
-    - 留言 || /messages/ || fas fa-comments
-    - 友链 || /blogroll/ || fas fa-user-friends
-    - 圈子 || /moments/ || fas fa-blog
-  列表 || fas fa-list:
-    - 图库 || /gallery/ || fas fa-images
-    - 音乐 || /music/ || fas fa-music
-    - 说说 || /say/ || fas fa-comment
-    - 叨叨 || /talk/ || fas fa-comment-dots
-  关于 || fas fa-desktop:
-    - 本站 || /about/ || fas fa-stream
-    - 统计 || /charts/ || fas fa-chart-bar
-    - 订阅 || /sub/ || fas fa-rss
-    - 背景 || /background/ || fas fa-adjust
-    - 自己 || /me/ || far fa-user
+  归档: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
 # Home: / || fas fa-home
 # Archives: /archives/ || fas fa-archive
 # Tags: /tags/ || fas fa-tags
@@ -122,11 +106,11 @@ index_img: /img/me.png
 default_top_img:
 
 # The banner image of archive page
-archive_img:
+archive_img: "https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/archive.jpg"
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img:
+tag_img: "https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/tags.jpg"
 
 # The banner image of tag page
 # format:
@@ -135,7 +119,7 @@ tag_per_img:
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img:
+category_img: "https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/categories.jpg"
 
 # The banner image of category page
 # format:

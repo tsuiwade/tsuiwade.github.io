@@ -1,7 +1,14 @@
 ---
 title: 【第3篇博客】如何在无外网情况下访问自己的github.io博客
 cover: 6.png
-description: 无
+date: 2020-10-10 10:55:12
+updated: 2021-01-26 10:31:23
+description: 在无外网情况下访问自己的博客
+tags: 
+  - hexo
+  - github
+categories: 
+  - 博客搭建记录
 ---
 
 在没有科学上网的环境下，访问不了github.io个人博客，导致自己欣赏不了自己的博客。

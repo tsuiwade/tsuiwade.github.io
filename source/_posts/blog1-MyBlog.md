@@ -1,8 +1,20 @@
 ---
 title: 【第1篇博客】hexo搭建github.io博客学习记录
 date: 2020-07-05 10:30:44
-tags:
+updated: 2021-02-11 10:31:23
+description: hexo搭建博客记录
+cover: 6.png
+tags: 
+  - hexo
+categories: 
+  - 博客搭建记录
 ---
+
+
+
+
+
+
 
 github Pages可以被认为是用户编写的、托管在github上的静态网页。
 

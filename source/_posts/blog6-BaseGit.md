@@ -1,8 +1,13 @@
 ---
 title: 【第6篇博客】写博客的git概念和指令学习记录
-date: 2021-02-08 09：51：27
+date: 2021-01-09 10:55:12
+updated: 2021-01-26 10:31:23
 cover: 0.gif
 tags:
+  - hexo
+  - github
+categories: 
+  - 博客搭建记录
 ---
 
 在写完博客之后，一般都是通过`git add .`、`git commit -m "message"`、`git push`进行提交，至于这些代码的含义及相关概念是什么？本文就带着这些问题进行学习并记录。

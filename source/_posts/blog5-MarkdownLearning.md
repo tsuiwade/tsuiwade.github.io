@@ -1,8 +1,13 @@
 ---
 title: 【第5篇博客】hexo下的markdown的语法(GFM)学习记录
 cover: 0.jfif
-date: 2021-02-06 11:31:14
-tags:
+date: 2021-01-02 11:31:14
+updated: 2021-01-26 10:31:23
+tags: 
+  - hexo
+  - markdown
+categories: 
+  - markdown
 ---
 Hexo下使用的MarkDown为Github的GFM，GFM（Github Flavored Markdown）是 Github 拓展的基于 Markdown 的一种纯文本的书写格式。风格很漂亮，简洁美观大方。但是GFM的MarkDown语法和标准的MarkDown稍有不同，使用过程中需要注意一些。
 

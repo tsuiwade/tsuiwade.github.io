@@ -1,30 +1,95 @@
 ---
 title: 【第2篇博客】butterfly样式修改学习记录
-date: 2021-02-09 10:31:23
-updated: 2021-03-29 10:31:23
+date: 2020-10-09 08:41:21
+updated: 2021-01-26 10:31:23
 description: butterfly主题样式修改学习记录
+cover: "https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-diy-cover.png"
 tags: 
   - hexo
   - butterfly
+categories: 
+  - 博客搭建记录
 ---
 
+
+
 ## 博客首页图
-default_top_img: /img/me.png # 进入博客首页显示的图
+
+    default_top_img: /img/me.png # 进入博客首页显示的图
 图片资源放进\themes\butterfly\source\img
 
+## 博客头部模板
+在此记录一下博客的头部模板。包括名称、创建日期、更新日期、首页缩略图描述、封面（首页和博客顶部）、标签（多选）、分类的模板。
+```md
+---
+title: 【第2篇博客】butterfly样式修改学习记录
+date: 2021-02-09 10:31:23
+updated: 2021-02-26 10:31:23
+description: butterfly主题样式修改学习记录
+cover: "https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-diy-cover.png"
+tags: 
+  - hexo
+  - butterfly
+categories: 
+  - 博客搭建记录
+---
+```
 ## 导航菜单
-在_config.yml
+![2jpg](2.jpg)
+在_config.yml修改，还有子菜单的设计。
 ```yml
 menu:
   首页: / || fas fa-home
-  时间轴: /archives/ || fas fa-archive
-  标签: /tags/ || fas fa-tags
-  分类: /categories/ || fas fa-folder-open
-  友链: /link/ || fas fa-link
-  关于: /about/ || fas fa-hear
+  文章 || fas fa-book:
+    - 归档 || /archives/ || fas fa-archive
+    - 标签 || /tags/ || fas fa-tags
+    - 分类 || /categories/ || fas fa-folder-open
+  便签 || fas fa-sticky-note:
+    - 留言 || /messages/ || fas fa-comments
+    - 友链 || /blogroll/ || fas fa-user-friends
+    - 圈子 || /moments/ || fas fa-blog
+  列表 || fas fa-list:
+    - 图库 || /gallery/ || fas fa-images
+    - 音乐 || /music/ || fas fa-music
+    - 说说 || /say/ || fas fa-comment
+    - 叨叨 || /talk/ || fas fa-comment-dots
+  关于 || fas fa-desktop:
+    - 本站 || /about/ || fas fa-stream
+    - 统计 || /charts/ || fas fa-chart-bar
+    - 订阅 || /sub/ || fas fa-rss
+    - 背景 || /background/ || fas fa-adjust
+    - 自己 || /me/ || far fa-user
+```
+必须是 /xxx/，后面||分开，然后写图标名。导航的文字可以自行修改。
+
+
+首先介绍文章内的归档archive、标签tag、分类category的修改顶部图方法。
+
+1、 在主题样式配置文件内修改各属性的img图。
+```yml
+# archive_img修改了归档页archives的顶部图
+archive_img: "https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/archive.jpg" 
+
+#category_img修改了分类categories下的每个分类category的顶部图
+category_img: "https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/categories.jpg"
+
+#tag_img修改了标签tags下的每个标签tag的顶部图
+tag_img: "https://cdn.jsdelivr.net/gh/jerryc127/CDN@latest/Photo/tags.jpg"
+```
+2、 分类页categories和便签页tags的顶部图需要新建index页设置属性，具体参考 https://butterfly.js.org/posts/dc584b87/
+
+例如设置分类页，需要先hexo new page link，接着找到source/link/index.md修改文件：
+```MD
+---
+title: 分类
+date: 2021-02-26 21:33:40
+type: "categories"
+comments: false
+top_img: "https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/archive.jpg"
+---
 ```
 
-必须是 /xxx/，后面||分开，然后写图标名。导航的文字可以自行修改。
+
 
 ## 社交图标
 效果如下：
@@ -83,6 +148,7 @@ index_post_content:
 
 ## 文章打赏
 文章打赏设置二维码。
+![3jpg](3.jpg)
 ```yml
 reward:
   enable: true

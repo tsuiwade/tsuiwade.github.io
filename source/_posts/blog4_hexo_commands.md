@@ -1,8 +1,13 @@
 ---
 title: 【第4篇博客】hexo的常见指令及简写汇总
-date: 2021-02-06 10:21:44
+date: 2021-01-01 10:21:44
+updated: 2021-01-26 10:31:23
 cover: 0.png
-tags:
+tags: 
+  - hexo
+categories: 
+  - 博客搭建记录
+description: hexo的常见指令及简写汇总
 ---
 
 本文借鉴自https://hexo.io/zh-cn/docs/commands.html
