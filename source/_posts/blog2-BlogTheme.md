@@ -310,13 +310,9 @@ document.addEventListener('visibilitychange', function() {
 ## 鼠标魔改
 具体参考 https://blog.csdn.net/u012208219/article/details/106883001/
 
-## 看板娘
-
-这是一个挺有趣的功能，看板娘可以说话，能换装。主要用到live2d-widget
-
-安装教程可以具体参考 https://akilar.top/posts/5b8f515f/
-
-遇到问题 可以参考 https://blog.csdn.net/qq_44721831/article/details/110913090
 
 ## 页脚翻页时钟计时
-具体参考 https://akilar.top/posts/192af77f/
+具体参考 https://akilar.top/posts/b941af/
+
+## 打赏按钮投币彩蛋效果
+具体参考 https://akilar.top/posts/23fdf850/
