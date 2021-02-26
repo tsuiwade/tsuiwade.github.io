@@ -27,6 +27,8 @@ menu:
 必须是 /xxx/，后面||分开，然后写图标名。导航的文字可以自行修改。
 
 ## 社交图标
+效果如下：
+![4png](4.png)
 butterfly支持`font-awesome v5`图标。
 书写格式 `图标名: url || 描述性文字`
 
@@ -80,6 +82,7 @@ index_post_content:
 
 
 ## 文章打赏
+文章打赏设置二维码。
 ```yml
 reward:
   enable: true
@@ -184,6 +187,8 @@ valine: 参考 https://xuqwblog.blog.csdn.net/article/details/107248047
 ![1jpg](1.jpg)
 
 ## 打字效果
+评论区打字震动效果如下：
+![1gif](1.gif)
 ```yml
 activate_power_mode:
   enable: true
@@ -193,6 +198,7 @@ activate_power_mode:
 ```
 
 ## 背景特效
+本文设置的特效名称为canvas_nest，样式见本博客背景空白处的鼠标跟随连接网，很漂亮。
 ```yml
 canvas_nest:
   enable: true
@@ -204,6 +210,7 @@ canvas_nest:
 ```
 
 ## 鼠标点击效果 
+效果可见本博客的鼠标样式。
 ```yml
 # Mouse click effects: Heart symbol (鼠標點擊效果: 愛心)
 click_heart:
@@ -212,6 +219,7 @@ click_heart:
 ```
 
 ## 网站副标题
+效果见首页背景图上的打字效果，sub中替换要展示的文字。
 ```yml
 # the subtitle on homepage (主頁subtitle)
 subtitle:
@@ -239,12 +247,14 @@ subtitle:
 ```
 
 ## 字数统计
+效果见博客上方的介绍。
+![5png](5.png)
 先`yarn add hexo-wordcount`
 ```yml
 # wordcount (字數統計)
 wordcount:
-  enable: true
-  post_wordcount: true
+  enable: true # 主页侧边栏的文字统计
+  post_wordcount: true # 博客上方的文字统计
   min2read: true
   total_wordcount: true
 ```
@@ -255,6 +265,9 @@ wordcount:
 具体参考 https://butterfly.js.org/posts/4073eda/#iconfont
 
 ## 滚动条 
+
+这里设置的滚动条样式如本文的滚动条一样。
+
 这里需要介绍一下JS/CSS 如何引用
 1. 定位搜索 inject
 2. 其中 head 是用来引入 css 的。bottom 是用来引入 js 的。
@@ -262,10 +275,9 @@ wordcount:
 
 滚动条参考 https://www.antmoe.com/posts/a811d614/#%E6%BB%9A%E5%8A%A8%E6%9D%A1
 
-## MAC 代码框美化
-将 butterfly.yml 的 highlight_theme 配置项改为 mac 后任意引入 https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/macblack.css
 
 ## 引入css/js文件
+这里介绍常用的主题样式魔改方法，大多需要修改或新建css和js文件。
 具体参考 https://butterfly.lete114.top/article/Butterfly-config.html
 ```yml
 inject:
@@ -281,6 +293,8 @@ inject:
 ```
 
 ## 卖萌标题
+当离开至其他页面标签后，再回到本博客页面，和过一小会时间后，标题显示的文字不同，效果如下：
+![3png](3.png)
 ```JS
 // 可爱的Title
 var OriginTitle = document.title;
@@ -306,13 +320,28 @@ document.addEventListener('visibilitychange', function() {
     color: #ff7242;
 }
 ```
+效果见主页的侧边栏博主信息卡片。
 
 ## 鼠标魔改
+效果可见本博客的鼠标样式。
 具体参考 https://blog.csdn.net/u012208219/article/details/106883001/
 
 
 ## 页脚翻页时钟计时
+样式在页脚可见，效果如下：
+![2png](2.png)
+可设置开始计时的时间。
 具体参考 https://akilar.top/posts/b941af/
 
 ## 打赏按钮投币彩蛋效果
+效果可见我的博客下方的打赏，点击后有硬币弹出的效果，并且点击后文本改变。
 具体参考 https://akilar.top/posts/23fdf850/
+
+## 侧边栏的时钟卡片
+效果如下：
+![1png](1.png)
+1. 需要访问 [OpenWeather](https://openweathermap.org/), 按照网站指示完成注册。
+2. 注册完成后，访问 [API Keys](https://home.openweathermap.org/api_keys) 获取相应的 API 密钥。留待之后备用。
+3. 还需完成邮箱验证，最后通过邮箱发放API，如果还未生效，需要hexo clean。
+
+具体参考 https://akilar.top/posts/4e39cf4a/
