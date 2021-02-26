@@ -3103,6 +3103,103 @@ blockquote footer cite:before {
     transform: scale(0.7);
   }
 }
+@font-face {
+  font-family: 'UnidreamLED';
+  src: url("/assets/fonts/UnidreamLED.ttf");
+  font-display: swap;
+}
+#clock {
+  height: 153px;
+  padding: 20px 10px;
+  border-radius: 8px;
+  background-color: #ececec;
+  -webkit-box-shadow: inset 3px 3px 18px 0px rgba(50,50,50,0.4);
+  box-shadow: inset 3px 3px 18px 0px rgba(50,50,50,0.4);
+  z-index: 2;
+  font-family: 'UnidreamLED';
+  color: #000;
+}
+#clock th {
+  padding: 0;
+  border: 0;
+}
+#clock td {
+  padding: 0;
+  border: 0;
+}
+#clock .clockdate {
+  font-size: 14px;
+  font-weight: normal;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  line-height: 1;
+  min-width: 20px;
+}
+#clock .time {
+  font-size: 38px;
+  font-weight: normal;
+  margin-block-start: 0em;
+  margin-block-end: -0.2em;
+  line-height: 1.5;
+  text-align: center;
+}
+#clock .daylight {
+  text-align: right;
+  min-width: 20px;
+}
+#clock #weatherimg {
+  -webkit-filter: brightness(0%);
+  filter: brightness(0%);
+  width: 14px !important;
+  height: 14px !important;
+}
+#clock #humidityimg {
+  -webkit-filter: brightness(0%);
+  filter: brightness(0%);
+  width: 14px !important;
+  height: 14px !important;
+}
+#clock .humidityimg {
+  min-width: 20px;
+  text-align: right;
+  padding-right: 3px;
+}
+#clock .weatherimg {
+  min-width: 20px;
+  padding-right: 3px;
+}
+#clock .temperature {
+  min-width: 20px;
+  padding-right: 3px;
+}
+#clock .humidity {
+  text-align: right;
+  min-width: 20px;
+  padding-right: 3px;
+}
+#clock .usaqi {
+  height: 30px;
+  min-width: 20px;
+}
+#clock .city {
+  text-align: center;
+  min-width: 20px;
+  padding-right: 3px;
+}
+[data-theme="dark"] #clock {
+  background-color: #212121;
+}
+[data-theme="dark"] #clock td {
+  color: rgba(255,255,255,0.8) !important;
+}
+[data-theme="dark"] #clock #weatherimg {
+  -webkit-filter: brightness(1000%);
+  filter: brightness(1000%);
+}
+[data-theme="dark"] #clock #humidityimg {
+  -webkit-filter: brightness(1000%);
+  filter: brightness(1000%);
+}
 #post-comment .comment-head {
   margin-bottom: 1rem;
 }
@@ -3187,7 +3284,7 @@ blockquote footer cite:before {
 }
 #footer-wrap {
   position: relative;
-  padding: 2rem 1rem;
+  padding: 0.8rem 1rem 0.3rem 1rem;
   color: var(--light-grey);
   text-align: center;
 }
@@ -4193,26 +4290,30 @@ _:future,
   -ms-transition: all 0.4s;
   transition: all 0.4s;
 }
-.post-reward:hover > .reward-main {
+.post-reward .reward-button:hover {
+  -webkit-box-shadow: inset 20em 0 0 0 var(--btn-hover-color);
+  box-shadow: inset 20em 0 0 0 var(--btn-hover-color);
+}
+.post-reward .reward-button:hover .reward-main {
   display: block;
 }
-.post-reward .reward-main {
+.post-reward .reward-button .reward-main {
   position: absolute;
   bottom: 40px;
-  left: 0;
+  left: -75%;
   z-index: 100;
   display: none;
   padding: 0 0 15px;
-  width: 100%;
+  width: 250%;
 }
-.post-reward .reward-main .reward-all {
+.post-reward .reward-button .reward-main .reward-all {
   display: inline-block;
   margin: 0;
   padding: 1rem 0.5rem;
   border-radius: 4px;
   background: var(--reward-pop);
 }
-.post-reward .reward-main .reward-all:before {
+.post-reward .reward-button .reward-main .reward-all:before {
   position: absolute;
   bottom: -10px;
   left: 0;
@@ -4220,7 +4321,7 @@ _:future,
   height: 20px;
   content: '';
 }
-.post-reward .reward-main .reward-all:after {
+.post-reward .reward-button .reward-main .reward-all:after {
   position: absolute;
   right: 0;
   bottom: 2px;
@@ -4233,17 +4334,17 @@ _:future,
   border-left: 13px solid transparent;
   content: '';
 }
-.post-reward .reward-main .reward-all .reward-item {
+.post-reward .reward-button .reward-main .reward-all .reward-item {
   display: inline-block;
   padding: 0 8px;
   list-style-type: none;
   vertical-align: top;
 }
-.post-reward .reward-main .reward-all .reward-item img {
+.post-reward .reward-button .reward-main .reward-all .reward-item img {
   width: 130px;
   height: 130px;
 }
-.post-reward .reward-main .reward-all .reward-item .post-qr-code-desc {
+.post-reward .reward-button .reward-main .reward-all .reward-item .post-qr-code-desc {
   padding-top: 0.4rem;
   width: 130px;
   color: #858585;
@@ -4307,6 +4408,71 @@ _:future,
 @media screen and (max-width: 900px) {
   #rightside #hide-aside-btn {
     display: none;
+  }
+}
+@font-face {
+  font-family: 'UnidreamLED';
+  src: url("https://cdn.jsdelivr.net/gh/Akilarlxh/Akilarlxh.github.io@v3.3.3_3/clock/fonts/UnidreamLED.ttf");
+  font-display: swap;
+}
+div#runtime {
+  width: 180px;
+  text-align: center;
+  margin: auto;
+  color: #fff;
+  padding-inline: 5px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.7);
+  font-family: 'UnidreamLED';
+}
+[data-theme="dark"] div#runtime {
+  color: #28b4c8;
+  -webkit-box-shadow: 0 0 5px rgba(28,69,218,0.71);
+  box-shadow: 0 0 5px rgba(28,69,218,0.71);
+  -webkit-animation: flashlight 1s linear infinite alternate;
+  -moz-animation: flashlight 1s linear infinite alternate;
+  -o-animation: flashlight 1s linear infinite alternate;
+  -ms-animation: flashlight 1s linear infinite alternate;
+  animation: flashlight 1s linear infinite alternate;
+}
+@-moz-keyframes flashlight {
+  from {
+    -webkit-box-shadow: 0 0 5px #1478d2;
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    -webkit-box-shadow: 0 0 2px #1478d2;
+    box-shadow: 0 0 2px #1478d2;
+  }
+}
+@-webkit-keyframes flashlight {
+  from {
+    -webkit-box-shadow: 0 0 5px #1478d2;
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    -webkit-box-shadow: 0 0 2px #1478d2;
+    box-shadow: 0 0 2px #1478d2;
+  }
+}
+@-o-keyframes flashlight {
+  from {
+    -webkit-box-shadow: 0 0 5px #1478d2;
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    -webkit-box-shadow: 0 0 2px #1478d2;
+    box-shadow: 0 0 2px #1478d2;
+  }
+}
+@keyframes flashlight {
+  from {
+    -webkit-box-shadow: 0 0 5px #1478d2;
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    -webkit-box-shadow: 0 0 2px #1478d2;
+    box-shadow: 0 0 2px #1478d2;
   }
 }
 #sidebar #menu-mask {
