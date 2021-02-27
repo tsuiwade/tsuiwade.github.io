@@ -11,6 +11,7 @@ menu:
   归档: /archives/ || fas fa-archive
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
+  统计: /charts/ || fas fa-chart-bar
 # Home: / || fas fa-home
 # Archives: /archives/ || fas fa-archive
 # Tags: /tags/ || fas fa-tags
