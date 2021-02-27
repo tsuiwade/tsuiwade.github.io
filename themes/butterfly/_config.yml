@@ -32,7 +32,7 @@ highlight_theme: mac light #  pale night #  darker / pale night / light / ocean 
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
-code_word_wrap: false
+code_word_wrap: true
 
 # copy settings
 # copyright: Add the copyright information after copied content (複製的內容後面加上版權信息)
@@ -45,16 +45,15 @@ copy:
 # social settings (社交圖標設置)
 # formal:
 #   icon: link || the description
+
 social:
   fab fa-github: https://github.com/tsuiwade || Github
   fas fa-envelope: mailto:478451541@gmail.com || Email
   iconfont  icon-bilibili: https://space.bilibili.com/381957255 || bilibili
-  iconfont  icon-zhifubao: https://www.bilibili.com || alipay
-  iconfont  icon-wechat: https://www.bilibili.com || wechat
-  iconfont  icon-qq: tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=478451541 || qq
-  iconfont  icon-csdn: https://www.bilibili.com || CSDN
-  iconfont  icon-shejiao-yinle: https://www.bilibili.com || music
-  iconfont  icon-shejiaotubiao-55: https://www.bilibili.com || facebook
+  fab  fa-alipay: /img/alipay.jpg || alipay
+  fab  fa-weixin: /img/wechat.jpg || wechat
+  fab  fa-qq: tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=478451541 || qq
+  iconfont  icon-csdn3: https://blog.csdn.net/ || CSDN
 # search (搜索)
 # --------------------------------------
 
@@ -66,7 +65,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
 
 # Math (數學)
 # --------------------------------------
@@ -155,7 +154,7 @@ post_meta:
     date_type: created # created or updated or both 主頁文章日期是創建日或者更新日或都顯示
     date_format: date # date/relative 顯示日期還是相對日期
     categories: true # true or false 主頁是否顯示分類
-    tags: false # true or false 主頁是否顯示標籤
+    tags: true # true or false 主頁是否顯示標籤
     label: true # true or false 顯示描述性文字
   post:
     date_type: both # created or updated or both 文章頁日期是創建日或者更新日或都顯示
@@ -877,7 +876,7 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/iconfont.min.css">
-    - <link rel="stylesheet" href="/css/20210205.css">
+    - <link rel="stylesheet" href="//at.alicdn.com/t/font_2390943_7xlck6eiagq.css">
     - <link rel="stylesheet" href="/css/background.css">
   bottom:
     - <script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/hideMobileSidebar.js"></script>

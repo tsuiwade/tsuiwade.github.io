@@ -128,3 +128,8 @@ markdown:
     permalink: true
     permalinkClass: header-anchor
     permalinkSymbol: ¶
+
+search:
+  path: search.xml
+  field: post
+  content: true

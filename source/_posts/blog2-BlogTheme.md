@@ -411,3 +411,12 @@ document.addEventListener('visibilitychange', function() {
 3. 还需完成邮箱验证，最后通过邮箱发放API，如果还未生效，需要hexo clean。
 
 具体参考 https://akilar.top/posts/4e39cf4a/
+
+## 搜索系统
+建议使用本地搜寻方法，需要安装[hexo-generator-search](https://github.com/wzpan/hexo-generator-search) ，按提示安装即可。
+
+最后还需配置主题文件
+```yml
+local_search:
+  enable: true
+```
