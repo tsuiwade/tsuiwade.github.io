@@ -420,3 +420,26 @@ document.addEventListener('visibilitychange', function() {
 local_search:
   enable: true
 ```
+
+## 首页字体修改
+效果见本人主页的字体。
+在inject引入的css文件（或自己新建）中加入下面几行代码。
+```yml
+@font-face {
+    font-family:'arzhu';
+    src:url('https://cdn.jsdelivr.net/gh/zjwo/CDN@master/font/arzhu.ttf');
+    font-display:swap
+}
+h1#site-title {
+    font-family:arzhu!important
+}
+span#subtitle {
+    font-family:arzhu!important
+}
+a#site-name {
+    font-family:arzhu!important
+}
+```
+也可以换其他字体，具体参考 https://blog.imzjw.cn/posts/b74f504f/
+
+## 页脚徽标
