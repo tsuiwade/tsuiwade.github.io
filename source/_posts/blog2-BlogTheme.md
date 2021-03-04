@@ -172,6 +172,7 @@ reward:
 {% btn 'https://butterfly.js.org/',Butterfly,far fa-hand-point-right,block right outline larger %}
 
 ## tabs
+具体参考 https://butterfly.js.org/posts/4aa8abbe/#Tabs
 ```md
 {% tabs test1 %}
 <!-- tab -->
