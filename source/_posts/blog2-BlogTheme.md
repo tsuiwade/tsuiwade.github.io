@@ -1,7 +1,7 @@
 ---
 title: 【第2篇博客】butterfly样式修改学习记录
 date: 2020-10-09 08:41:21
-updated: 2021-01-26 10:31:23
+updated: 2021-03-04 10:31:23
 description: butterfly主题样式修改学习记录
 cover: "https://cdn.jsdelivr.net/gh/jerryc127/CDN/img/butterfly-diy-cover.png"
 tags: 
@@ -455,4 +455,3 @@ a#site-name {
 也可以换其他字体，具体参考 https://blog.imzjw.cn/posts/b74f504f/
 这里面语法—— `CSS3 @font-face规则` 可参考 https://www.runoob.com/cssref/css3-pr-font-face-rule.html
 
-## 页脚徽标
