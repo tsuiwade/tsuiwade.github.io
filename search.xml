@@ -4,13 +4,54 @@
   
     
     <entry>
-      <title>blog8_ShieldIoBadge</title>
-      <link href="2021/03/04/blog8-ShieldIoBadge/"/>
-      <url>2021/03/04/blog8-ShieldIoBadge/</url>
+      <title>【第9篇博客】标签外挂的配置学习记录</title>
+      <link href="2021/02/07/blog9-TagPlugins/"/>
+      <url>2021/02/07/blog9-TagPlugins/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://akilar.top/posts/615e2dec/">https://akilar.top/posts/615e2dec/</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> github </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+            <tag> 标签外挂 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【第8篇博客】GitHub Badge的配置学习记录</title>
+      <link href="2021/02/04/blog8-ShieldIoBadge/"/>
+      <url>2021/02/04/blog8-ShieldIoBadge/</url>
       
         <content type="html"><![CDATA[<p>效果如下：<br><img src="https://cdn.imzjw.cn/img/62" alt="p62"><br>大家平时在逛GitHub，Gitee，各大论坛博客的时候，都有类似很好看很漂亮的徽章，主要通过 <a href="https://shields.io/">shields.io</a> 在线生成。</p><p><img src="https://cdn.imzjw.cn/img/63" alt="p63"></p><p>其中，找到Your BADGE 专属定制徽章</p><ul><li>label：标签，徽标左侧内容</li><li>message：信息，徽标右侧内容</li><li>color：色值，支持支持十六进制、rgb、rgba、hsl、hsla 和 css 命名颜色。十六进制记得删除前面的 # 号</li></ul><p>输入相关信息后，点击 make badge 即可得到徽标的 URL。可以用 img 标签引用</p><p>在主题配置文件中的<code>footer</code>:  <code>copyright: </code>设置为false、<code>footer</code>:  <code>custom_text: </code>中填写</p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://hexo.io/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo&quot;</span> <span class="attr">title</span>=<span class="string">&quot;博客框架为 Hexo&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;HEXO&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://butterfly.js.org/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender&quot;</span> <span class="attr">title</span>=<span class="string">&quot;主题采用 Butterfly&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Butterfly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://www.jsdelivr.com/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr&quot;</span> <span class="attr">title</span>=<span class="string">&quot;本站使用 Jsdelivr 为静态资源提供CDN加速&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Jsdelivr&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://github.com/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub&quot;</span> <span class="attr">title</span>=<span class="string">&quot;本站项目由 GitHub 托管&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;GitHub&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span><span class="attr">href</span>=<span class="string">&quot;http://creativecommons.org/licenses/by-nc-sa/4.0/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;img&quot;</span> <span class="attr">title</span>=<span class="string">&quot;本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure><p>可以发现，简单定制小牌子非常方便，最最基础的语法规则就是：<br><code>https://img.shields.io/badge/&#123;左半部分标签&#125;-&#123;右半部分标签&#125;-&#123;右半部分颜色&#125;</code><br>还可以贴在markdown文档中。</p>]]></content>
       
       
+      <categories>
+          
+          <category> github </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> shield.io </tag>
+            
+            <tag> GitHub Badge </tag>
+            
+        </tags>
       
     </entry>
     
@@ -18,8 +59,8 @@
     
     <entry>
       <title>【第7篇博客】配置jsDelivr提供静态资源CDN加速学习记录</title>
-      <link href="2021/02/01/blog7JdDelivrUse/"/>
-      <url>2021/02/01/blog7JdDelivrUse/</url>
+      <link href="2021/02/01/blog7-JdDelivrUse/"/>
+      <url>2021/02/01/blog7-JdDelivrUse/</url>
       
         <content type="html"><![CDATA[<p>在之前第二篇主题样式修改的学习记录里，就出现过很多引用jsdelivr的链接，一直不知道这是做什么用的，今天就来<code>学习</code>、<code>记录</code>、<code>配置</code>一下jsdelivr。</p><blockquote><p><code>CDN</code>的全称是Content Delivery Network，即内容分发网络。CDN是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。——百度百科</p></blockquote><p>放在Github的资源在国内加载速度比较慢，因此需要使用CDN加速来优化网站打开速度，jsDelivr + Github便是免费且好用的CDN，非常适合博客网站使用。</p><p><code>jsDelivr</code> <a href="https://www.jsdelivr.com/">https://www.jsdelivr.com/</a> 是一个CDN服务提供商，优点在于全球通用。专门提供js相关的CDN，对npm,github做了加速镜像。针对npm, github提供了CDN镜像。<br><img src="https://cdn.imzjw.cn/img/45" alt="p1"></p><p>接下来，将介绍如何将自己的字体文件上传jsDelivr。</p><h2 id="新建github仓库"><a class="header-anchor" href="#新建github仓库">¶</a>新建github仓库</h2><p>在此，仓库名设置为CDN。<br><img src="https://cdn.imzjw.cn/img/46" alt="p2"></p><h2 id="克隆github仓库到本地"><a class="header-anchor" href="#克隆github仓库到本地">¶</a>克隆github仓库到本地</h2><pre><code>git clone git@github.com:tsuiwade/CDN.git</code></pre><p><img src="https://cdn.imzjw.cn/img/47" alt="p3"><br>在vscode的cmd中输入代码，倘若出现如下的报错，是因为客户端与服务端未生成 ssh key，为解决以上问题，我们需要重新生成一次ssh key ，并重新配置一下GitHub账户即可。具体参考 <a href="https://blog.csdn.net/weixin_40922744/article/details/107576748">https://blog.csdn.net/weixin_40922744/article/details/107576748</a><br>（其中，解决方法里面的cmd窗口是Git bash。）<br><img src="https://cdn.imzjw.cn/img/48" alt="p4"><br>如果出现ssh无效问题 参考 <a href="https://blog.csdn.net/weixin_45604257/article/details/106649576">https://blog.csdn.net/weixin_45604257/article/details/106649576</a></p><h2 id="上传资源"><a class="header-anchor" href="#上传资源">¶</a>上传资源</h2><p>将需要上传的资源放进本地CDN仓库中。<br><img src="https://cdn.imzjw.cn/img/49" alt="p5"><br>（注：jsDelivr不支持加载超过20M的资源），在本地git仓库目录下右键 Git Bash Here，执行以下命令：</p><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git status                    &#x2F;&#x2F;查看状态</span><br><span class="line">git add .                     &#x2F;&#x2F;添加所有文件到暂存区</span><br><span class="line">git commit -m &#39;第一次提交&#39;      &#x2F;&#x2F;把文件提交到仓库</span><br><span class="line">git push                      &#x2F;&#x2F;推送至远程仓库</span><br></pre></td></tr></table></figure><h2 id="发布仓库"><a class="header-anchor" href="#发布仓库">¶</a>发布仓库</h2><p>回到github上，点击release发布，填写必要信息如下图所示。<br><img src="https://cdn.imzjw.cn/img/50" alt="p6"></p><p>这就设置完成了，接下来可以引用资源了。</p><h2 id="通过jsDelivr引用资源"><a class="header-anchor" href="#通过jsDelivr引用资源">¶</a>通过jsDelivr引用资源</h2><p><code>使用方法：https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</code><br>例如：<br><a href="https://cdn.jsdelivr.net/gh/tsuiwade/CDN@4.0/font/yenianti.otf">https://cdn.jsdelivr.net/gh/tsuiwade/CDN@4.0/font/yenianti.otf</a></p><p>这里就大功告成了，这里引用的字体，可以参考第二篇博客的首页字体修改。</p><p>本文主要参考 <a href="https://blog.csdn.net/qq_36759224/article/details/86936453">https://blog.csdn.net/qq_36759224/article/details/86936453</a></p>]]></content>
       
@@ -53,7 +94,7 @@
       
       <categories>
           
-          <category> 博客搭建记录 </category>
+          <category> github </category>
           
       </categories>
       
@@ -80,7 +121,7 @@
       
       <categories>
           
-          <category> GFM </category>
+          <category> github </category>
           
       </categories>
       
@@ -127,12 +168,12 @@
       <link href="2020/10/10/blog3_DnsBlogGithubIo/"/>
       <url>2020/10/10/blog3_DnsBlogGithubIo/</url>
       
-        <content type="html"><![CDATA[<p>在没有科学上网的环境下，访问不了github.io个人博客，导致自己欣赏不了自己的博客。<br>于是，记录了配置dns来解决该问题的步骤。</p><p>本文借鉴自https://blog.csdn.net/qq_32627137/article/details/108046461</p><h2 id="问题分析"><a class="header-anchor" href="#问题分析">¶</a>问题分析</h2><p>在网络上访问网站，要首先通过DNS服务器把网络域名<code>www.XXXX.com</code> 解析成XXX.XXX.XXX.XXX的IP地址后，我们的计算机才能访问。要是对于每个域名请求我们都要等待域名服务器解析后返回IP信息，这样访问网络的效率就会降低，而Hosts文件就能提高解析效率。根据Windows系统规定，在进行DNS请求以前，Windows系统会先检查自己的Hosts文件中是否有这个地址映射关系，如果有则调用这个IP地址映射，如果没有再向已知的DNS服务器提出域名解析。也就是说Hosts的请求级别比DNS高。</p><p>github的CDN被某墙屏了，由于网络代理商的原因，所以访问下载很慢。ping <a href="http://github.com">github.com</a> 时，速度只有300多ms。<br>于是解决方案就是绕过dns解析，在本地直接绑定host，该方法也可加速其他因为CDN被屏蔽导致访问慢的网站。</p><h2 id="根据环境情况选择跳转ip"><a class="header-anchor" href="#根据环境情况选择跳转ip">¶</a>根据环境情况选择跳转ip</h2><p>由该网站进行查询https://tools.ipip.net/dns.php<br>如下图查看访问github.com域名时，延迟最低的ip，复制该ip</p><h4 id="该步骤的作用是选择可以访问到github-io的ip"><a class="header-anchor" href="#该步骤的作用是选择可以访问到github-io的ip">¶</a>该步骤的作用是选择可以访问到github.io的ip</h4><p><img src="/2020/10/10/blog3_DnsBlogGithubIo/1.png" alt="picture1"><br>然后管理员权限打开记事本<br><img src="/2020/10/10/blog3_DnsBlogGithubIo/2.png" alt="picture1"><br>在记事本中打开C:\Windows\System32\drivers\etc路径下的hosts文件<br>该文件是域名解析文件。可以直接用记事本打开。将IP地址重定向。<br>格式为：ip地址-空格-域名<br>可以将一个域名重新定向到一个IP<br>通过它可以达到以下目的：1、加快域名解析；2、方便局域网用户；3、屏蔽网站</p><p><img src="/2020/10/10/blog3_DnsBlogGithubIo/3.png" alt="picture1"><br>在记事本的最后补上<br>219.141.136.10 <a href="http://github.com">github.com</a> <br>这时候可以打开cmd，输入ping <a href="http://github.com">github.com</a>，可以看出ping通该网址了。<br><img src="/2020/10/10/blog3_DnsBlogGithubIo/4.png" alt="picture1"><br>上一段是来自选中的跳转ip，下一段是来自己自己家原来的ip，可以看出用了跳转ip，速度会更快。</p><p>接下来同理，设置自己博客的tsuiwade.github.io的ip,接着补在记事本的最后。<br><img src="/2020/10/10/blog3_DnsBlogGithubIo/5.png" alt="picture1"><br>最后就可以访问了。</p>]]></content>
+        <content type="html"><![CDATA[<p>在没有科学上网的环境下，访问不了github.io个人博客，导致自己欣赏不了自己的博客。<br>于是，记录了配置dns来解决该问题的步骤。</p><p>本文借鉴自https://blog.csdn.net/qq_32627137/article/details/108046461</p><h2 id="问题分析"><a class="header-anchor" href="#问题分析">¶</a>问题分析</h2><p>在网络上访问网站，要首先通过DNS服务器把网络域名<code>www.XXXX.com</code> 解析成XXX.XXX.XXX.XXX的IP地址后，我们的计算机才能访问。要是对于每个域名请求我们都要等待域名服务器解析后返回IP信息，这样访问网络的效率就会降低，而Hosts文件就能提高解析效率。根据Windows系统规定，在进行DNS请求以前，Windows系统会先检查自己的Hosts文件中是否有这个地址映射关系，如果有则调用这个IP地址映射，如果没有再向已知的DNS服务器提出域名解析。也就是说Hosts的请求级别比DNS高。</p><p>github的CDN被某墙屏了，由于网络代理商的原因，所以访问下载很慢。ping <a href="http://github.com">github.com</a> 时，速度只有300多ms。<br>于是解决方案就是绕过dns解析，在本地直接绑定host，该方法也可加速其他因为CDN被屏蔽导致访问慢的网站。</p><h2 id="根据环境情况选择跳转ip"><a class="header-anchor" href="#根据环境情况选择跳转ip">¶</a>根据环境情况选择跳转ip</h2><p>由该网站进行查询https://tools.ipip.net/dns.php<br>如下图查看访问github.com域名时，延迟最低的ip，复制该ip</p><h4 id="该步骤的作用是选择可以访问到github-io的ip"><a class="header-anchor" href="#该步骤的作用是选择可以访问到github-io的ip">¶</a>该步骤的作用是选择可以访问到github.io的ip</h4><p><img src="/2020/10/10/blog3_DnsBlogGithubIo/1.png" alt="picture1"><br>然后管理员权限打开记事本<br><img src="/2020/10/10/blog3_DnsBlogGithubIo/2.png" alt="picture1"><br>在记事本中打开C:\Windows\System32\drivers\etc路径下的hosts文件<br>该文件是域名解析文件。可以直接用记事本打开。将IP地址重定向。<br>格式为：ip地址-空格-域名<br>可以将一个域名重新定向到一个IP<br>通过它可以达到以下目的：1、加快域名解析；2、方便局域网用户；3、屏蔽网站</p><p><img src="/2020/10/10/blog3_DnsBlogGithubIo/3.png" alt="picture1"><br>在记事本的最后补上<br><code>219.141.136.10 github.com</code> <br>这时候可以打开cmd，输入<code>ping github.com</code>，可以看出ping通该网址了。<br><img src="/2020/10/10/blog3_DnsBlogGithubIo/4.png" alt="picture1"><br>上一段是来自选中的跳转ip，下一段是来自己自己家原来的ip，可以看出用了跳转ip，速度会更快。</p><p>接下来同理，设置自己博客的tsuiwade.github.io的ip,接着补在记事本的最后。<br><img src="/2020/10/10/blog3_DnsBlogGithubIo/5.png" alt="picture1"><br>最后就可以访问了。</p>]]></content>
       
       
       <categories>
           
-          <category> 博客搭建记录 </category>
+          <category> github </category>
           
       </categories>
       
