@@ -3295,7 +3295,7 @@ blockquote footer cite:before {
 }
 #footer-wrap {
   position: relative;
-  padding: 0.8rem 1rem 0.3rem 1rem;
+  padding: 0.4rem 0rem 0rem 1rem;
   color: var(--light-grey);
   text-align: center;
 }
@@ -3305,8 +3305,11 @@ blockquote footer cite:before {
 #footer-wrap a:hover {
   text-decoration: underline;
 }
+#footer-wrap p {
+  margin: 0rem 0rem;
+}
 #footer-wrap .footer-separator {
-  margin: 0 0.2rem;
+  margin: 0 0.8rem;
 }
 #footer-wrap .icp-icon {
   padding: 0 4px;
