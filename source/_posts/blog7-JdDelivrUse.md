@@ -59,3 +59,12 @@ https://cdn.jsdelivr.net/gh/tsuiwade/CDN@4.0/font/yenianti.otf
 这里就大功告成了，这里引用的字体，可以参考第二篇博客的首页字体修改。
 
 本文主要参考 https://blog.csdn.net/qq_36759224/article/details/86936453
+
+
+
+https://github.com/badges/shields
+https://github.com/spencerwooo/Substats
+https://sspai.com/post/59593
+https://www.cnblogs.com/sddai/p/13779316.html
+https://shields.io/
+https://www.baidu.com/s?wd=https%3A%2F%2Fshields.io%2F&pn=10&oq=https%3A%2F%2Fshields.io%2F&ie=utf-8&rsv_pq=bf92913f0003488b&rsv_t=d46aUVHAFQ77ZmEGMpHpwQ5ncdiMRCwA4exwuw8jxTdXvT1%2BpwCVWcKKgec&rsv_jmp=slow
