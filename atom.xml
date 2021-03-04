@@ -23,13 +23,17 @@
     <published>2021-02-07T22:04:18.000Z</published>
     <updated>2021-03-04T15:40:49.000Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://akilar.top/posts/615e2dec/">https://akilar.top/posts/615e2dec/</a><br><a href="https://www.baidu.com/s?wd=butterfly+%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82&amp;ie=UTF-8">https://www.baidu.com/s?wd=butterfly+标签外挂&amp;ie=UTF-8</a></p>]]></content>
+    <content type="html"><![CDATA[<p>##行内文本样式</p><ul><li>彩色文字<br>在一段话中方便插入各种颜色的标签，包括：<span class="p red">红色</span></li></ul><p>如果遇到问题，请hexo <span class="p red">clean、</span> <span class="p green">g、</span> <span class="p blue">s。</span></p><p>本文参考：<br><a href="https://akilar.top/posts/615e2dec/">https://akilar.top/posts/615e2dec/</a><br><a href="https://github.com/Akilarlxh/Tag_Plugins">https://github.com/Akilarlxh/Tag_Plugins</a></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://akilar.top/posts/615e2dec/&quot;&gt;https://akilar.top/posts/615e2dec/&lt;/a&gt;&lt;br&gt;
-&lt;a href=&quot;https://www.baidu.com/s?wd=butterfly+%E6</summary>
+    <summary type="html">&lt;p&gt;##行内文本样式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;彩色文字&lt;br&gt;
+在一段话中方便插入各种颜色的标签，包括：&lt;span class=&quot;p red&quot;&gt;红色&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果遇到问题，请hexo &lt;span class=&quot;p red&quot;&gt;clean、&lt;/s</summary>
       
     
     
