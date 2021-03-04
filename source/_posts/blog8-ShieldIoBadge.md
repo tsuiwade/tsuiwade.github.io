@@ -1,8 +1,20 @@
 ---
-title: blog8_ShieldIoBadge
-date: 2021-03-04 22:04:18
-tags:
+title: 【第8篇博客】GitHub Badge的配置学习记录
+date: 2021-02-04 22:04:18
+updated: 2021-03-04 15:40:49
+description: 
+cover: 
+tags: 
+  - shield.io
+  - GitHub Badge
+categories: 
+  - github
 ---
+
+
+
+
+
 效果如下：
 ![p62](https://cdn.imzjw.cn/img/62)
 大家平时在逛GitHub，Gitee，各大论坛博客的时候，都有类似很好看很漂亮的徽章，主要通过 [shields.io](https://shields.io/) 在线生成。

@@ -7,7 +7,7 @@ tags:
   - hexo
   - github
 categories: 
-  - 博客搭建记录
+  - github
 ---
 
 在写完博客之后，一般都是通过`git add .`、`git commit -m "message"`、`git push`进行提交，至于这些代码的含义及相关概念是什么？本文就带着这些问题进行学习并记录。

@@ -7,7 +7,7 @@ tags:
   - GFM
   - markdown
 categories: 
-  - GFM
+  - github
 ---
 Hexo下使用的MarkDown为Github的GFM，GFM（Github Flavored Markdown）是 Github 拓展的基于 Markdown 的一种纯文本的书写格式。风格很漂亮，简洁美观大方。但是GFM的MarkDown语法和标准的MarkDown稍有不同，使用过程中需要注意一些。
 

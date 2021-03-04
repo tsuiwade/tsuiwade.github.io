@@ -8,7 +8,7 @@ tags:
   - hexo
   - github
 categories: 
-  - 博客搭建记录
+  - github
 ---
 
 在没有科学上网的环境下，访问不了github.io个人博客，导致自己欣赏不了自己的博客。
@@ -38,8 +38,8 @@ github的CDN被某墙屏了，由于网络代理商的原因，所以访问下�
 
 ![picture1](3.png)
 在记事本的最后补上	
-219.141.136.10 github.com 	
-这时候可以打开cmd，输入ping github.com，可以看出ping通该网址了。
+`219.141.136.10 github.com` 	
+这时候可以打开cmd，输入`ping github.com`，可以看出ping通该网址了。
 ![picture1](4.png)
 上一段是来自选中的跳转ip，下一段是来自己自己家原来的ip，可以看出用了跳转ip，速度会更快。
 
