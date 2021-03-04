@@ -11,5 +11,14 @@ categories:
   - github
 ---
 
+##行内文本样式
+
+
+- 彩色文字
+在一段话中方便插入各种颜色的标签，包括：{% span red, 红色 %}
+
+如果遇到问题，请hexo {% span red, clean、 %} {% span green, g、 %} {% span blue, s。 %}
+
+本文参考：
 https://akilar.top/posts/615e2dec/
-https://www.baidu.com/s?wd=butterfly+%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82&ie=UTF-8
+https://github.com/Akilarlxh/Tag_Plugins
