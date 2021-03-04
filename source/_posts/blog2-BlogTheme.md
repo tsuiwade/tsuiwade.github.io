@@ -422,24 +422,37 @@ local_search:
 ```
 
 ## 首页字体修改
-效果见本人主页的字体。
+效果见本人主页的字体，不同位置的字体不同，例如h1和a使用的某Italic字体，span使用的新叶恋体
+。这里推荐一个免费字体网站——[100font](https://www.100font.com/) 。
 在inject引入的css文件（或自己新建）中加入下面几行代码。
 ```yml
 @font-face {
-    font-family:'arzhu';
-    src:url('https://cdn.jsdelivr.net/gh/zjwo/CDN@master/font/arzhu.ttf');
-    font-display:swap
+  font-family:'zhongwen';
+  src:url('https://cdn.jsdelivr.net/gh/tsuiwade/CDN@4.0/font/yenianti.otf');
+  font-display:swap
 }
+@font-face {
+  font-family:'yingwen';
+  src:url('https://cdn.jsdelivr.net/gh/tsuiwade/CDN@4.0/font/1Italic.ttf');
+  font-display:swap
+}
+
 h1#site-title {
-    font-family:arzhu!important
+  font-family:yingwen!important
 }
 span#subtitle {
-    font-family:arzhu!important
+  font-family:zhongwen!important
 }
 a#site-name {
-    font-family:arzhu!important
+  font-family:yingwen!important
 }
+
 ```
+挑选您心爱的字体，并把它下载下来，可以存在本地，也可以利用 jsdelivr 的方式加速，最后替换 css 文件中的 url 即可，zhongwen/yingwen 只是别名，可以任意修改，不过引用的时候，要确保名字相同。
+
+有关jsdelivr加速的概念和使用，可见我的第七篇博客。
+
 也可以换其他字体，具体参考 https://blog.imzjw.cn/posts/b74f504f/
+这里面语法—— `CSS3 @font-face规则` 可参考 https://www.runoob.com/cssref/css3-pr-font-face-rule.html
 
 ## 页脚徽标

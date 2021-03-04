@@ -53,18 +53,24 @@ img {
 
 
 @font-face {
-  font-family:'arzhu';
-  src:url('https://cdn.jsdelivr.net/gh/zjwo/CDN@master/font/arzhu.ttf');
+  font-family:'zhongwen';
+  src:url('https://cdn.jsdelivr.net/gh/tsuiwade/CDN@4.0/font/yenianti.otf');
   font-display:swap
 }
+@font-face {
+  font-family:'yingwen';
+  src:url('https://cdn.jsdelivr.net/gh/tsuiwade/CDN@4.0/font/1Italic.ttf');
+  font-display:swap
+}
+
 h1#site-title {
-  font-family:arzhu!important
+  font-family:yingwen!important
 }
 span#subtitle {
-  font-family:arzhu!important
+  font-family:zhongwen!important
 }
 a#site-name {
-  font-family:arzhu!important
+  font-family:yingwen!important
 }
 
 
