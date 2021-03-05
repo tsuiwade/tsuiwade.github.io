@@ -456,3 +456,11 @@ a#site-name {
 也可以换其他字体，具体参考 https://blog.imzjw.cn/posts/b74f504f/
 这里面语法—— `CSS3 @font-face规则` 可参考 https://www.runoob.com/cssref/css3-pr-font-face-rule.html
 
+
+## WOW.js – 让页面滚动更有趣
+本博客在向下滚动的时候，有些元素会产生细小的动画效果。如果你希望你的页面也更加有趣，那么你可以试试 WOW.js。
+
+主要参考 
+https://www.delac.io/wow/
+https://akilar.top/posts/abab51cf/ 。 
+还可修改相关配置。

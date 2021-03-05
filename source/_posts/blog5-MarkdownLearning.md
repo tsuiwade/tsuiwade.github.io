@@ -233,3 +233,4 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 ```
 其他有关表情的符号码和问题可查 https://hasaik.com/posts/9b280ea3.html
 
+后续跟踪：安装了markdown-it-emoji可能会造成markdown渲染问题，如果出错请注意是这里的问题。
