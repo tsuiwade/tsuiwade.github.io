@@ -94,7 +94,7 @@ favicon: /img/me.png
 
 # Avatar (頭像)
 avatar:
-  img: /img/me.png
+  img: https://cdn.imzjw.cn/img/71 # /img/me.png
   effect: false
 
 # Disable all banner image
