@@ -72,13 +72,6 @@
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2020/07/05/blog1-MyBlog/</loc>
-    
-    <lastmod>2021-02-11</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://tsuiwade.github.io/2020/10/10/blog3_DnsBlogGithubIo/</loc>
     
     <lastmod>2021-01-26</lastmod>
@@ -116,13 +109,6 @@
 
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/hexo/</loc>
-    <lastmod>2021-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tsuiwade.github.io/tags/Typora/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
@@ -151,7 +137,14 @@
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/butterfly/</loc>
+    <loc>https://tsuiwade.github.io/tags/PicGo/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/tags/hexo/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -201,6 +194,13 @@
   
   <url>
     <loc>https://tsuiwade.github.io/tags/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/tags/butterfly/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
