@@ -1,5 +1,11 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+updated: {{ date }}
+description:  
+cover: 
+tags: 
+  - 
+categories: 
+  - 
 ---
