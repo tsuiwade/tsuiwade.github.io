@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tsuiwade.github.io/2021/03/06/blog12-PicGo/</loc>
+    
+    <lastmod>2021-03-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://tsuiwade.github.io/categories/index.html</loc>
     
     <lastmod>2021-03-06</lastmod>
@@ -17,6 +24,20 @@
   
   <url>
     <loc>https://tsuiwade.github.io/tags/index.html</loc>
+    
+    <lastmod>2021-03-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/2021/03/06/blog11-BatLearning/</loc>
+    
+    <lastmod>2021-03-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/2021/03/06/blog10-Typora/</loc>
     
     <lastmod>2021-03-06</lastmod>
     
@@ -102,6 +123,34 @@
   </url>
   
   <url>
+    <loc>https://tsuiwade.github.io/tags/Typora/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/tags/markdown/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/tags/bat/</loc>
+    <lastmod>2021-03-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tsuiwade.github.io/tags/butterfly/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
@@ -117,13 +166,6 @@
   
   <url>
     <loc>https://tsuiwade.github.io/tags/GFM/</loc>
-    <lastmod>2021-03-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tsuiwade.github.io/tags/markdown/</loc>
     <lastmod>2021-03-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
