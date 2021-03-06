@@ -8,7 +8,7 @@ categories:
   - 博客搭建记录
 date: 2021-03-06 12:06:31
 updated: 2021-03-06 12:06:31
-description: 时至今日，可以优化一下博客的操作，本文将介绍使用Typora来写markdown语言，最为方便的在于图片的粘贴。以及自己的优化操作中的Typora偏好设置。
+description: 本文将介绍使用Typora来写markdown语言，方便图片粘贴，以及自己的优化博客操作中的Typora偏好设置。
 cover: "https://cdn.imzjw.cn/img/73"
 ---
 
@@ -120,8 +120,46 @@ Typora还提供了如同**word**快捷键的操作包括加粗、斜体等。
 
 ![image-20210306211350709](https://gitee.com/tsuiwade/images/raw/master/image-20210306211350709.png)
 
+## hexo new post 更换模板
 
+除了上述介绍来的Typora使用之外，本文还将介绍如何优化 每次新建博客之后填写博客文章摘要信息的操作。
 
+每当我们hexo n blog的时候，在未设置模板的情况下，如何才能出现以下完整的信息呢？
 
+```md
+title: 【第10篇博客】博客操作优化1——使用Typora编写markdown博客
+tags:
+  - Typora
+  - markdown
+  - 博客优化
+categories:
+  - 博客搭建记录
+date: 2021-03-06 12:06:31
+updated: 2021-03-06 12:06:31
+description: 时至今日，可以优化一下博客的操作，本文将介绍使用Typora来写markdown语言，最为方便的在于图片的粘贴。以及自己的优化操作中的Typora偏好设置。
+cover: "https://cdn.imzjw.cn/img/73"
+```
+
+通过查看文档，找到模板文件的路径：
+
+![image-20210306214807156](https://gitee.com/tsuiwade/images/raw/master/image-20210306214807156.png)
+
+打开post填写以下信息，保存即可。
+
+```md
+title: {{ title }}
+date: {{ date }}
+updated: {{ date }}
+description:  
+cover: 
+tags: 
+  - 
+categories: 
+  - 
+```
+
+将来hexo n blog的时候，将会自动存在这些基础信息。
+
+---
 
 本文参考：https://sspai.com/post/54912

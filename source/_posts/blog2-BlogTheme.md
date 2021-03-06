@@ -35,8 +35,11 @@ categories:
 ---
 ```
 ## 导航菜单
-![2jpg](2.jpg)
+
+![image-20210306222532700](https://gitee.com/tsuiwade/images/raw/master/image-20210306222532700.png)
+
 在_config.yml修改，还有子菜单的设计。
+
 ```yml
 menu:
   首页: / || fas fa-home
@@ -93,7 +96,9 @@ top_img: "https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/arch
 
 ## 社交图标
 效果如下：
-![4png](4.png)
+
+![](https://gitee.com/tsuiwade/images/raw/master/4.png)
+
 butterfly支持`font-awesome v5`图标。
 书写格式 `图标名: url || 描述性文字`
 
@@ -148,7 +153,9 @@ index_post_content:
 
 ## 文章打赏
 文章打赏设置二维码。
-![3jpg](3.jpg)
+
+![image-20210306222725296](https://gitee.com/tsuiwade/images/raw/master/image-20210306222725296.png)
+
 ```yml
 reward:
   enable: true
@@ -251,11 +258,14 @@ valine: 参考 https://xuqwblog.blog.csdn.net/article/details/107248047
 ```
 
 由于我们是静态博客，页面和存储是分离开的，动态博客才可以直接删除评论，因此需要用到LeanCloud，按下图进行删评。
-![1jpg](1.jpg)
+
+![image-20210306221852309](https://gitee.com/tsuiwade/images/raw/master/image-20210306221852309.png)
 
 ## 打字效果
 评论区打字震动效果如下：
-![1gif](1.gif)
+
+![](https://gitee.com/tsuiwade/images/raw/master/1.gif)
+
 ```yml
 activate_power_mode:
   enable: true
@@ -315,8 +325,11 @@ subtitle:
 
 ## 字数统计
 效果见博客上方的介绍。
-![5png](5.png)
+
+![image-20210306222901875](https://gitee.com/tsuiwade/images/raw/master/image-20210306222901875.png)
+
 先`yarn add hexo-wordcount`
+
 ```yml
 # wordcount (字數統計)
 wordcount:
@@ -361,7 +374,9 @@ inject:
 
 ## 卖萌标题
 当离开至其他页面标签后，再回到本博客页面，和过一小会时间后，标题显示的文字不同，效果如下：
-![3png](3.png)
+
+![3](C:\Users\tsui\blog\source\_posts\blog2-BlogTheme\3.png)
+
 ```JS
 // 可爱的Title
 var OriginTitle = document.title;
@@ -396,7 +411,9 @@ document.addEventListener('visibilitychange', function() {
 
 ## 页脚翻页时钟计时
 样式在页脚可见，效果如下：
-![2png](2.png)
+
+![](https://gitee.com/tsuiwade/images/raw/master/2.png)
+
 可设置开始计时的时间。
 具体参考 https://akilar.top/posts/b941af/
 
@@ -406,7 +423,9 @@ document.addEventListener('visibilitychange', function() {
 
 ## 侧边栏的时钟卡片
 效果如下：
-![1png](1.png)
+
+![image-20210306222217407](https://gitee.com/tsuiwade/images/raw/master/image-20210306222217407.png)
+
 1. 需要访问 [OpenWeather](https://openweathermap.org/), 按照网站指示完成注册。
 2. 注册完成后，访问 [API Keys](https://home.openweathermap.org/api_keys) 获取相应的 API 密钥。留待之后备用。
 3. 还需完成邮箱验证，最后通过邮箱发放API，如果还未生效，需要hexo clean。
