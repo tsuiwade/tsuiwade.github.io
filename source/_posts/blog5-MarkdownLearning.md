@@ -1,6 +1,6 @@
 ---
 title: 【第5篇博客】hexo下的markdown的语法(GFM)学习记录
-cover: 0.jfif
+cover: https://gitee.com/tsuiwade/images/raw/master/0.jpg
 date: 2021-01-02 11:31:14
 updated: 2021-01-26 10:31:23
 tags: 
@@ -93,21 +93,19 @@ Markdown 使用`[]()`来表示超链接，中括号表示链接文字，小括�
 下面展示四张图，分别是原始图1、gif图2、网页链接图3、改大小图4。
 ```
 ![1png](1.png)
-![2gif](2.gif)
 ![baidu](https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png)
 <img src=1.png width="100"/><br/>
 ```
-![1png](1.png)
+![image-20210306232840871](https://gitee.com/tsuiwade/images/raw/master/image-20210306232840871.png)
 <div align="center">图1</div>
 
-![2gif](2.gif)
+![baidu](https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png)
+
 <div align="center">图2</div>
 
-![baidu](https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png)
-<div align="center">图3</div>
+<img src=https://gitee.com/tsuiwade/images/raw/master/image-20210306232840871.png width="100"/>
 
-<img src=1.png width="100"/><br/>
-<div align="center">图4</div>
+<div align="center">图3</div>
 
 # 代码块
 ````
@@ -117,6 +115,7 @@ Markdown 使用`[]()`来表示超链接，中括号表示链接文字，小括�
 多行文字2
 多行文字3
 ```
+
 ````
 
 `单行文字`
@@ -204,13 +203,13 @@ GFM中可以显示的展示diff效果。使用蓝色表示新增，红色表示�
 其语法与代码高亮类似，只是在三个反引号后面写diff，
 并且其内容中，以 +开头表示新增，-开头表示删除。
 ````
-```diff
+​```diff
 + 鸟宿池边树，僧敲月下门
 - 鸟宿池边树，僧推月下门
 ```
 ````
 
-```diff
+​```diff
 + 鸟宿池边树，僧敲月下门
 - 鸟宿池边树，僧推月下门
 ```

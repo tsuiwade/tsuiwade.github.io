@@ -2,7 +2,7 @@
 title: 【第6篇博客】写博客的git概念和指令学习记录
 date: 2021-01-09 10:55:12
 updated: 2021-01-26 10:31:23
-cover: 0.gif
+cover: https://gitee.com/tsuiwade/images/raw/master/image-20210306232331764.png
 tags:
   - hexo
   - github
@@ -15,7 +15,8 @@ categories:
 ## 四个工作区域
 
 git本地有四个工作区域，文件在这四个区域之间的转换关系如下：
-![1png](1.jpg)
+
+![image-20210306232549737](https://gitee.com/tsuiwade/images/raw/master/image-20210306232549737.png)
 
 - `workspace`：工作区，就是你平时存放项目代码的地方。
 - `staging area`：又叫`Index / Stage`，暂存区/缓冲区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息。
@@ -33,7 +34,7 @@ git不关心文件两个版本之间的具体差别，而是关心文件的整�
 
 版本控制的文件状态有四种，如下图所示。
 
-![2png](2.png)
+![image-20210306232649281](https://gitee.com/tsuiwade/images/raw/master/image-20210306232649281.png)
 
 
 `Untracked`： 未跟踪，此文件在文件夹中，但并没有加入到git库，不参与版本控制。 通过git add可将状态变为Staged。
@@ -51,7 +52,7 @@ git不关心文件两个版本之间的具体差别，而是关心文件的整�
     PS C：\Users\tsui\blog> git status
     On branch myblog
     Your branch is up to date with 'origin/myblog'.
-
+    
     Changes to be committed：
     (use "git restore --staged <file>..." to unstage)
             modified：   source/_posts/blog3_DnsBlogGithubIo.md
@@ -59,12 +60,12 @@ git不关心文件两个版本之间的具体差别，而是关心文件的整�
             modified：   source/_posts/blog7-MarkdownLearning.md
             new file：   source/_posts/blog8-BaseGit.md
             new file：   source/_posts/blog8-BaseGit/0.gif
-
+    
     Changes not staged for commit：
     (use "git add <file>..." to update what will be committed)
     (use "git restore <file>..." to discard changes in working directory)
             modified：   source/_posts/blog8-BaseGit.md
-
+    
     Untracked files：
     (use "git add <file>..." to include in what will be committed)
             source/_posts/te.md
@@ -143,7 +144,7 @@ Footer 部分只用于两种情况。
 1. 不兼容变动
 如果当前代码与上一个版本不兼容，则 Footer 部分以BREAKING CHANGE
 开头，后面是对变动的描述、以及变动理由和迁移方法。
-    
+   
         BREAKING CHANGE: isolate scope bindings definition has changed. To migrate the code follow the example below: Before: scope: { myAttr: 'attribute', } After: scope: { myAttr: '@', } The removed inject wasn't generaly useful for directives so there should be no code using it.
 2. 关闭Issure
 如果当前 commit 针对某个issue, 那么可以在 Footer 部分关闭这个 issue。

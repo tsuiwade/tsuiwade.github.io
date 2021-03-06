@@ -2,7 +2,7 @@
 title: 【第4篇博客】hexo的常见指令及简写汇总
 date: 2021-01-01 10:21:44
 updated: 2021-01-26 10:31:23
-cover: 0.png
+cover: https://gitee.com/tsuiwade/images/raw/master/0.png
 tags: 
   - hexo
 categories: 
