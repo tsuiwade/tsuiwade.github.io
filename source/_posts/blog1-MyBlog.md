@@ -3,7 +3,7 @@ title: 【第1篇博客】hexo搭建github.io博客学习记录
 date: 2020-07-05 10:30:44
 updated: 2021-02-11 10:31:23
 description: hexo搭建博客记录
-cover: ![](https://gitee.com/tsuiwade/images/raw/master/6.png)
+cover: https://gitee.com/tsuiwade/images/raw/master/6.png
 tags: 
   - hexo
 categories: 
