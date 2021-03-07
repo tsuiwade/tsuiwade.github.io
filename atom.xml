@@ -6,7 +6,7 @@
   <link href="https://tsuiwade.github.io/atom.xml" rel="self"/>
   
   <link href="https://tsuiwade.github.io/"/>
-  <updated>2021-03-06T16:57:32.000Z</updated>
+  <updated>2021-03-07T22:36:44.000Z</updated>
   <id>https://tsuiwade.github.io/</id>
   
   <author>
@@ -17,19 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>【第12篇博客】PicGo配合Typora的便捷贴图</title>
+    <title>【第13篇博客】</title>
+    <link href="https://tsuiwade.github.io/2021/03/07/blog13-githubpaint/"/>
+    <id>https://tsuiwade.github.io/2021/03/07/blog13-githubpaint/</id>
+    <published>2021-03-07T22:36:44.000Z</published>
+    <updated>2021-03-07T22:36:44.000Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【第12篇博客】PicGo图床工具配合Typora的便捷贴图配置</title>
     <link href="https://tsuiwade.github.io/2021/03/06/blog12-PicGo/"/>
     <id>https://tsuiwade.github.io/2021/03/06/blog12-PicGo/</id>
     <published>2021-03-06T16:57:32.000Z</published>
     <updated>2021-03-06T16:57:32.000Z</updated>
     
+    <content type="html"><![CDATA[<p>PicGo官网地址 <a href="https://link.zhihu.com/?target=https%3A//molunerfinn.com/PicGo/">https://molunerfinn.com/PicGo/</a></p><p>在GitHub项目地址 <a href="https://link.zhihu.com/?target=https%3A//github.com/Molunerfinn/PicGo">https://github.com/Molunerfinn/PicGo</a></p><p>PicGo文档地址 <a href="https://link.zhihu.com/?target=https%3A//picgo.github.io/PicGo-Doc/zh/guide/%23%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0">https://picgo.github.io/PicGo-Doc/zh/guide/#应用概述</a></p><hr><p>在前文介绍了Tpora写markdown博客的操作，然而在贴图方面还是不够便捷，这里介绍一种PicGo配合的方法来便捷贴图。</p><blockquote><p>所谓图床工具，就是专门用来存放图片，同时允许你把图片对外连接的网上空间，不少图床都是免费的。设置图床后，在博客中插入的图片链接就可以随时随地在线预览。网络上有很多图床工具，就目前使用种类而言，PicGo 算得上一款比较优秀的图床工具。它是一款用 <code>Electron-vue</code> 开发的软件，可以支持微博，七牛云，腾讯云COS，又拍云，GitHub，阿里云OSS，SM.MS，imgur 等8种常用图床，功能强大，简单易用。</p></blockquote><h2 id="下载Picgo"><a href="#下载Picgo" class="headerlink" title="下载Picgo"></a>下载Picgo</h2><p>首先进入github下载，<a href="https://github.com/Molunerfinn/PicGo/releases">https://github.com/Molunerfinn/PicGo/releases</a></p><p>注意：<em>mac</em> 系统选择 <em>dmg</em> 下载，<em>windwos</em> 选择 <em>.exe</em>系统，如果不是下载安装包，想看源码的话，可以选择 <code>git clone https://github.com/Molunerfinn/PicGo.git</code> 克隆到本地</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307130020168.png" alt="image-20210307130020168"></p><p>安装成功界面：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307130215796.png" alt="image-20210307130215796"></p><h2 id="安装gitee插件"><a href="#安装gitee插件" class="headerlink" title="安装gitee插件"></a>安装gitee插件</h2><p>找到底下插件设置，使用码云需要另外安装插件，搜索gitee安装插件，下载第一个：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307130739301.png" alt="image-20210307130739301"></p><p>注意：安装<code>gitee-uploader 1.1.2</code>插件，必须要先安装<code>node.js</code>才能安装插件。</p><p>也可以采用手动安装：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307161112397.png" alt="image-20210307161112397"></p><h2 id="创建gitee仓库"><a href="#创建gitee仓库" class="headerlink" title="创建gitee仓库"></a>创建gitee仓库</h2><p>新建gitee账号这里就不赘述了。</p><p>建立gitee码云图床库，就是在码云新建一个仓库，步骤：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307131125647.png" alt="image-20210307131125647"></p><h2 id="Gitee生成私人令牌token"><a href="#Gitee生成私人令牌token" class="headerlink" title="Gitee生成私人令牌token"></a>Gitee生成私人令牌token</h2><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307160818893.png" alt="image-20210307160818893"></p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307161009440.png" alt="image-20210307161009440"></p><h2 id="PicGo的gitee图床设置"><a href="#PicGo的gitee图床设置" class="headerlink" title="PicGo的gitee图床设置"></a>PicGo的gitee图床设置</h2><p>点击左侧图床设置——gitee图床，设置如下：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307162023734.png" alt="image-20210307162023734"></p><p>注意，这里的owner和repo名字，如果设置不对，后期出现问题记得查这里的问题。下图即是我第一次设置错的配置，请看我的仓库地址，此时的owner应该是xxxxxxxxxxw，repo名应该是blog-img。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307162148857.png" alt="image-20210307162148857"></p><p>而且还需要注意名称对应的问题，如下图，即使我在repo位置填写的是BlogImg，但被解析成blog-img，此处需要注意。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307162543953.png" alt="image-20210307162543953"></p><h2 id="PicGo设置"><a href="#PicGo设置" class="headerlink" title="PicGo设置"></a>PicGo设置</h2><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307163418777.png" alt="image-20210307163418777"></p><p>请注意此处的Server监听地址和监听端口。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307163526827.png" alt="image-20210307163526827"></p><h2 id="Typora配置"><a href="#Typora配置" class="headerlink" title="Typora配置"></a>Typora配置</h2><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20200323201738802.png" alt="img"></p><h2 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h2><p>可在码云仓库内查看上传的图片。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210307175745968.png" alt="image-20210307175745968"></p><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol><li>直接复制图片，粘贴至Typora，便会自动生成链接，非常方便。</li><li>将图片文件拖进PicGo上传区，也会自动生成markdown链接。</li><li>PicGo上传区剪贴板图片，直接复制图片，点击<code>剪贴板图片</code>，即可获取markdown链接。</li></ol>]]></content>
+    
+    
+    <summary type="html">本文将介绍如何配置PicGo图床工具+gitee码云，配合Typora来便捷贴图。</summary>
     
     
     
     <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
+    <category term="Typora" scheme="https://tsuiwade.github.io/tags/Typora/"/>
+    
     <category term="PicGo" scheme="https://tsuiwade.github.io/tags/PicGo/"/>
+    
+    <category term="Gitee" scheme="https://tsuiwade.github.io/tags/Gitee/"/>
     
   </entry>
   
@@ -41,7 +62,7 @@
     <updated>2021-03-06T12:14:04.000Z</updated>
     
     
-    <summary type="html">本文将介绍</summary>
+    <summary type="html">本文将介绍使用bat优化我们在博客准备、启动、提交时候的环境操作，还将介绍一些bat语法。</summary>
     
     
     
@@ -271,6 +292,27 @@
     <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
     
     <category term="butterfly" scheme="https://tsuiwade.github.io/tags/butterfly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【第1篇博客】hexo搭建github.io博客学习记录</title>
+    <link href="https://tsuiwade.github.io/2020/07/05/blog1-MyBlog/"/>
+    <id>https://tsuiwade.github.io/2020/07/05/blog1-MyBlog/</id>
+    <published>2020-07-05T10:30:44.000Z</published>
+    <updated>2021-02-11T10:31:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>github Pages可以被认为是用户编写的、托管在github上的静态网页。</p><p>本文将记录如下步骤：</p><ol><li>环境准备</li><li>hexo博客搭建</li><li>github静态网站部署</li><li>通过github的Action自动部署项目</li></ol><hr><h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><h2 id="github账号申请及repository仓库新建"><a href="#github账号申请及repository仓库新建" class="headerlink" title="github账号申请及repository仓库新建"></a>github账号申请及repository仓库新建</h2><p>首先需要进入官网 <a href="https://github.com">https://github.com</a> 申请一个github账号。</p><p>然后在右上角New一个repository，注意Repository name 必须为自己的<code>用户名.github.io</code>，例如 tsuiwade.github.io。（因为这样最后生成的博客网址才会足够的短，直接为<code>username.github.io</code>，否则生成的网址还有前面的用户名，网址过长而不美观。） </p><p><img src="https://gitee.com/tsuiwade/images/raw/master/1.jpg" alt=""></p><p>其他默认，最后<code>creat repository</code></p><h1 id="hexo博客搭建"><a href="#hexo博客搭建" class="headerlink" title="hexo博客搭建"></a>hexo博客搭建</h1><h2 id="搭建静态博客的框架-hexo"><a href="#搭建静态博客的框架-hexo" class="headerlink" title="搭建静态博客的框架-hexo"></a>搭建静态博客的框架-hexo</h2><p>hexo是一个快速、简洁且高效的博客框架，具有超快速度、支持markdown、一键部署、插件和可扩展性的特性。官网为 <a href="https://hexo.io/">https://hexo.io/</a> 。</p><p>hexo框架的主题样式比较丰富，可用插件也较多，虽然功能不够强大，但仍然能满足现阶段我们写博客的需求，比较适合新手。</p><p>在搭建博客之前，最好有HTML/JS/CSS、Node/Npm、git/github的技能，不过没有也没关系，跟着我的这篇博客走，能完成自己博客的搭建，我的其他文章可以帮助你补全知识框架。</p><h2 id="开始搭建hexo博客"><a href="#开始搭建hexo博客" class="headerlink" title="开始搭建hexo博客"></a>开始搭建hexo博客</h2><p>初始化hexo将使用以下命令。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g # 全局安装hexo提供的脚手架工具hexo-cli</span><br><span class="line">hexo init blog # 使用脚手架工具提供的hexo init来初始化一个hexo项目，后面填写项目名称</span><br><span class="line">cd blog # 项目初始化之后，进入项目文件夹，并且用vscode打开该文件夹</span><br><span class="line">npm install</span><br><span class="line">hexo server # 可简写为hexo s来运行项目，便可以在本地服务4000端口来访问</span><br></pre></td></tr></table></figure><br>在浏览器中访问 <a href="http://localhost:4000">http://localhost:4000</a> ，便可看到博客页面如下图所示，当前博客使用了hexo所提供的一个默认主题<code>landscape</code>，后续可以更换一个更好看的主题。<br><img src="https://gitee.com/tsuiwade/images/raw/master/2.jpg" alt=""></p><p>我们回到项目文件夹中，主要文件的含义如下图所示。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/3.png" alt=""></p><p>其中，根目录下的<code>_config.yml</code>文件是我们经常会修改的，可修改博客的一些默认配置。yml是一种用来表达数据序列化的格式，类似于json。</p><p>打开该文件，修改如下博客配置属性。</p><div class="table-container"><table><thead><tr><th style="text-align:left">修改前</th><th style="text-align:left">修改后 </th></tr></thead><tbody><tr><td style="text-align:left">title: Hexo&lt;/br&gt;description: ‘’&lt;/br&gt;author: John Doe&lt;/br&gt;language: en&lt;/br&gt;url: <a href="http://example.com">http://example.com</a> &lt;/br&gt;</td><td style="text-align:left">title: TsuiWade’s blog&lt;/br&gt;description: “记录技术生活的点点滴滴”&lt;/br&gt;author: tsuiwade&lt;/br&gt;language: zh-CN&lt;/br&gt;url:<a href="https://tsuiwade.github.io/">https://tsuiwade.github.io/</a></td></tr></tbody></table></div><p>修改后可以看到浏览器上的博客页面也做了相应的变化。</p><p>此时，一个基本的博客已经搭建完成。</p><h2 id="修改主题样式"><a href="#修改主题样式" class="headerlink" title="修改主题样式"></a>修改主题样式</h2><p>hexo官网 <a href="https://hexo.io/">https://hexo.io/</a> 里提供了300多种主题样式，可以在跟随我使用同样的主题，学会设置主题样式后可自行选择任意一款你喜欢的样式来使用。<br><img src="https://gitee.com/tsuiwade/images/raw/master/5.png" alt=""></p><p>这里我们选择<code>Butterfly</code>样式，同我的博客样式一样。</p><p>官网 <a href="https://butterfly.js.org/">https://butterfly.js.org/</a> 。 官网也做成了该主题的博客样式，使用的butterfly样式，其中有许多hexo博客优化教程，后续我也会学习整理。</p><p>还有github项目地址 <a href="https://github.com/jerryc127/hexo-theme-butterfly">https://github.com/jerryc127/hexo-theme-butterfly</a> 。其中有配置主题的教程，我们先打开来走一遍该流程。</p><p>1、回到vscode，将该主题克隆到themes目录下。</p><p>输入</p><pre><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</code></pre><p>可以看到在themes文件夹下多了一个butterfly文件夹，即为主题样式文件。</p><p>2、在根目录的<code>_config.yml</code>中修改主题属性：<br>修改前   | 修改后<br>:- | :-<br>theme: landscape | theme: butterfly</p><p>3、在文件夹中显示butterfly，删除<code>.git</code>文件夹，删除该主题的默认的git配置文件，是为了把该主题和我们的博客项目合并为一个项目，统一由一个git来管理。</p><p>4、更换主题后，如果输入hexo s，则会看到Hexo启动服务器页面显示报错extends includes/layout.pug block content include includes/recent-posts.pug include</p><p>此时我们在cmd中输入</p><pre><code>npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive</code></pre><p>此时<code>hexo s</code>即可看到主题样式应用成功。</p><p>倘若还不能解决，则进行清除缓存<br><code>hexo clean</code><br>生成静态文件，查看效果<br><code>hexo g</code><br><code>hexo s</code><br>可看到主题样式配置生效。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/3.jpg" alt=""></p><h1 id="github静态网站部署"><a href="#github静态网站部署" class="headerlink" title="github静态网站部署"></a>github静态网站部署</h1><p>此时，我们的博客只能在本地访问。接下来我们需要把博客部署到github上的一个仓库上，然后使用github pages功能，获取到一个站点来访问我们的博客。</p><p>由前面的github账号创建的仓库。打开该github页面，正如页面提示的一样。<br><img src="https://gitee.com/tsuiwade/images/raw/master/4.jpg" alt=""></p><p>首先进行·git初始化：</p><pre><code>git init</code></pre><p>然后给当前仓库添加一个远程的git地址：</p><pre><code>git remote add origin https://github.com/miemietou/miemietou.github.io.git</code></pre><p>在使用hexo部署博客之前，我们需要先安装一个叫<code>hexo-deployer-git</code>的依赖，这个库会帮助我们将生成好的代码部署到一个具体的分支。</p><pre><code>yarn add hexo-deployer-git</code></pre><p>安装完之后，我们打开<code>_config.yml</code>文件，拉到最下面，修改deploy属性。部署类型为git，仓库地址填项目地址，分支填写master，注意我们的打包产物需要提交到master分支。<br>将</p><pre><code>deploy:  type: &#39;&#39;</code></pre><p>修改为</p><pre><code>deploy:  type: git  repo: https://github.com/miemietou/miemietou.github.io  branch: master</code></pre><p>接着输入</p><pre><code>hexo deploy</code></pre><p>来部署我们的代码，代码提交完成之后，我们打开github项目的首页，就能看到我们打包上传的产物已经提交到了master分支上。master分支里面的代码其实就是生成的public目录下的文件。然后点击仓库页面的setting，找到github pages一栏，顺利的话将显示我们的站点已成功部署，可以打开该网址检查是否被部署成功。</p><p>此时我们已经完成一个博客的基本部署功能。接下来将做一个非常有趣的自动化部署功能。</p><p>在自动化部署之前，我们需要把我们的源代码提交到github上，因为master分支已经被占用，所以我们只能把源代码提交到另一个分支上，首先我们需要commit一下本地代码。</p><pre><code>git add .git commit -m &quot;none&quot;</code></pre><p>然后我们重建一个分支myblog，然后将该分支push到github上。</p><pre><code>git push --set-upstream origin myblog</code></pre><p>接着，myblog分支已经被push到了github上。</p><h1 id="github-actions实现自动化部署"><a href="#github-actions实现自动化部署" class="headerlink" title="github actions实现自动化部署"></a>github actions实现自动化部署</h1><p>不需要自己在本地进行代码的构建打包，使仓库的action功能，点击该按钮，可以看到github actions提供的功能：帮助构建、测试、部署你的代码，还能使用github actions来做code review、分支管理和issue的追踪。我们这里将会使用它来实现项目的自动打包和代码的部署。</p><p>首先，我们需要在项目根目录下创建.github文件夹和.github目录下的workflows文件夹，然后在里面新建deploy.yml文件，复制粘贴如下代码，该代码的作用就是配置代码部署过程中的一些步骤，例如第一步需要checkout，然后需要安装和打包构建，最后触发一个代码的部署。</p><pre><code>name: Build and Deployon: [push]jobs:build-and-deploy:    runs-on: ubuntu-latest    steps:    - name: Checkout 🛎️        uses: actions/checkout@v2 # If you&#39;re using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.        with:        persist-credentials: false    - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the &#39;build&#39; folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.        run: |        npm install        npm run build        env:        CI: false    - name: Deploy 🚀        uses: JamesIves/github-pages-deploy-action@releases/v3        with:        GITHUB_TOKEN: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;        BRANCH: master # The branch the action should deploy to.        FOLDER: public # The folder the action should deploy.</code></pre><p>接下来，就输入提交代码老三行：<br>    git add .<br>    git commit -m “message”<br>    git push</p><p>提交之后，我们回到仓库首页，点击actions标签，可以看到所有的工作流，如果显示绿色打钩则代码部署成功，站点内容就会成功更新。</p><p>参考： <a href="https://www.bilibili.com/video/BV1dt4y1Q7UE?t=354">https://www.bilibili.com/video/BV1dt4y1Q7UE?t=354</a></p><p><a href="https://www.antmoe.com/posts/4b1b8c9f/">https://www.antmoe.com/posts/4b1b8c9f/</a></p>]]></content>
+    
+    
+    <summary type="html">hexo搭建博客记录</summary>
+    
+    
+    
+    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
     
   </entry>
   
