@@ -3,8 +3,5 @@ extends includes/layout.pug
 block content
   include ./includes/mixins/post-ui.pug
   #recent-posts.recent-posts
-    if theme.gitcalendar.enable
-     .recent-post-item(style='width:100%;overflow:hidden;')
-       !=partial('includes/gitcalendar', {}, {cache:theme.fragment_cache})
     +postUI
     include includes/pagination.pug
