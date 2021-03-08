@@ -11,6 +11,7 @@ description: 本文将介绍如何修改github首页的贡献日历上的图案�
 cover: https://gitee.com/tsuiwade/images/raw/master/20210308010643.png
 ---
 
+
 ## gitcalendar魔改效果
 
 由于我是新人，号是新号，github贡献日历基本都挤在右边，看上去确实囊中羞涩、乏善可陈，于是想为加上一些图案，正好看到前人有过类似魔改记录，于是重新走了一遍，首先先来看一下效果。
