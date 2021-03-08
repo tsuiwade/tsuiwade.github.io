@@ -83,6 +83,8 @@ git clone git@github.com:tsuiwade/githubpaint.git
 
 ## hexo-github-calendar使用
 
+hexo api 文档可参考https://zfe.space/post/hexo-githubcalendar.html 。
+
 一键部署：
 
 ```
@@ -116,7 +118,98 @@ githubcalendar:
   plus_style: ""
 ```
 
-执行：
+接下来来简单说明一下配置项的含义：
+
+1. **enable**
+
+   **参数：**true/false
+   **含义：**是否开启插件
+
+2. **enable_page**
+
+   **参数：**/
+   **含义：**路由地址，如 / 代表主页。/me/代表自我介绍页等等
+
+3. **user**
+
+   **参数：**zfour
+   **含义：**你的 github 或者 gitee 用户名
+
+   
+
+   
+
+   
+
+4. **layout**
+
+   **参数：**type; （class&id）
+   **参数：**name;
+   **参数：**index；（数字）
+   **含义：**如果说 gihubcalendar 是一幅画，那么这个 layout 就是指定了哪面墙来挂画
+   而在 HTML 的是世界里有两种墙分别 type 为 id 和 class。
+   其中在定义 class 的时候会出现多个 class 的情况，这时就需要使用 index，确定是哪一个。
+   最后墙的名字即是 name;
+
+   ```html
+   <div name="我是墙" id="recent-posts">
+     <!-- id=>type  recent-posts=>name    -->
+     <div name="我是画框">
+       <div name="我是纸">
+         <!--这里通过js挂载githubcalendar，也就是画画-->
+       </div>
+     </div>
+   </div>
+   ```
+
+5. ### **githubcalendar_html**
+
+   **参数：**html 模板字段
+   **含义：**包含 loading，和挂载容器
+
+   ```html
+   HTML
+   <div class="recent-post-item" style="width:100%;height:auto;padding:10px;">
+     <!--这个是画框，顾名思义就是借用文章样式给加个框-->
+   
+     <!--这个是loading的样式，可自行调整-->
+     <div
+       id="github_loading"
+       style="width:10%;height:100%;margin:0 auto;display: block"
+     >
+       <svg
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         viewBox="0 0 50 50"
+         style="enable-background:new 0 0 50 50"
+         xml:space="preserve"
+       >
+         <path
+           fill="#d0d0d0"
+           d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z"
+           transform="rotate(275.098 25 25)"
+         >
+           <animateTransform
+             attributeType="xml"
+             attributeName="transform"
+             type="rotate"
+             from="0 25 25"
+             to="360 25 25"
+             dur="0.6s"
+             repeatCount="indefinite"
+           ></animateTransform>
+         </path>
+       </svg>
+     </div>
+   
+     <!--这个是github_containner容器，也就是纸-->
+     <div id="github_container"></div>
+   </div>
+   ```
+
+
+
+最后执行：
 
 ```cmd
 hexo clean & hexo g & hexo s

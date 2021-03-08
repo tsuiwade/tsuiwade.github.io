@@ -90,7 +90,7 @@ Markdown 使用`[]()`来表示超链接，中括号表示链接文字，小括�
 图片的样式与超链接非常相似，只需在前面加个感叹号就可以了，即用`![]()`表示图片。其中中括号表示图片未加载时的提示文字，小括号表示图片地址。
 例如使用hexo n blog7_MarkdownLearning时创建了`blog7-MarkdownLearning.md`和`blog7-MarkdownLearning`文件夹，此时在文件夹中放入图片。再由小括号中填写文件名就可以在博客中贴图。
 还可以使用HTML的`<img>`标签，还有许多例如高度、对齐、宽度标签。具体可见 https://www.w3school.com.cn/tags/tag_img.asp。
-下面展示四张图，分别是原始图1、gif图2、网页链接图3、改大小图4。
+下面展示四张图，分别是原始图1、网页链接图2、改大小图3。
 ```
 ![1png](1.png)
 ![baidu](https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png)

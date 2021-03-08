@@ -11,6 +11,13 @@ aside: false
 
 
 
+
+
+
+
+<div align="center"><h2>github贡献图</h2></div>
+<div id="github_container"></div>
+
 <div id="posts-chart"></div>
 
 <div id="tags-chart" data-length="5"></div>
