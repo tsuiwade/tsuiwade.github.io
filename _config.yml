@@ -104,7 +104,7 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/tsuiwade/tsuiwade.github.io
+  repo: https://gitee.com/tsuiwade/tsuiwade
   branch: master
 
 search:
