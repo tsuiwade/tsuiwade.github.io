@@ -3,11 +3,11 @@
   <title>TsuiWade&#39;s blog</title>
   
   
-  <link href="https://tsuiwade.github.io/atom.xml" rel="self"/>
+  <link href="https://tsuiwade.gitee.io/atom.xml" rel="self"/>
   
-  <link href="https://tsuiwade.github.io/"/>
+  <link href="https://tsuiwade.gitee.io/"/>
   <updated>2021-03-09T20:43:52.000Z</updated>
-  <id>https://tsuiwade.github.io/</id>
+  <id>https://tsuiwade.gitee.io/</id>
   
   <author>
     <name>tsuiwade</name>
@@ -17,29 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>blog14-gitee</title>
-    <link href="https://tsuiwade.github.io/2021/03/09/blog14-gitee/"/>
-    <id>https://tsuiwade.github.io/2021/03/09/blog14-gitee/</id>
+    <title>【第14篇博客】gitee博客的尝试</title>
+    <link href="https://tsuiwade.gitee.io/2021/03/09/blog14-gitee/"/>
+    <id>https://tsuiwade.gitee.io/2021/03/09/blog14-gitee/</id>
     <published>2021-03-09T20:43:52.000Z</published>
     <updated>2021-03-09T20:43:52.000Z</updated>
     
-    <content type="html"><![CDATA[<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line"><span class="addition">+  repo: https://gitee.com/tsuiwade/tsuiwade</span></span><br><span class="line"><span class="deletion">-  repo: https://github.com/tsuiwade/tsuiwade.github.io</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>本文将介绍如何单一使用gitee博客，后面会考虑介绍多线部署多个博客。</p><h2 id="新建gitee仓库"><a href="#新建gitee仓库" class="headerlink" title="新建gitee仓库"></a>新建gitee仓库</h2><p>尽量仓库名称与用户名保持一致。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210310095306299.png" alt="image-20210310095306299"></p><h2 id="hexo配置文件修改"><a href="#hexo配置文件修改" class="headerlink" title="hexo配置文件修改"></a>hexo配置文件修改</h2><p>复制URL，到hexo的配置文件<code>_config.yml</code></p><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">https://tsuiwade.gitee.io/</span></span><br></pre></td></tr></table></figure><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://gitee.com/tsuiwade/tsuiwade</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure><h2 id="gitee部署"><a href="#gitee部署" class="headerlink" title="gitee部署"></a>gitee部署</h2><p>接下来在根目录输入<code>hexo d</code>进行部署，然后如图，输入自己的信息。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210310100652160.png" alt="image-20210310100652160"></p><h2 id="gitee设置"><a href="#gitee设置" class="headerlink" title="gitee设置"></a>gitee设置</h2><p>部署完可以回到gitee仓库上看看：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210310100849780.png" alt="image-20210310100849780"></p><p>此时gitee仓库上已经有了内容，再点击服务——pages：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210310100930745.png" alt="image-20210310100930745"></p><p>在master分支下，点击更新，等待部署完即可访问自己的网址。<a href="https://tsuiwade.gitee.io/">https://tsuiwade.gitee.io</a></p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210310101015487.png" alt="image-20210310101015487"></p><h2 id="如何更新部署"><a href="#如何更新部署" class="headerlink" title="如何更新部署"></a>如何更新部署</h2><p>gitee并不像github可以自动化部署，不可通过git add . &amp;&amp; git commit .. &amp;&amp; git push三连提交代码。。</p><p>而是必须hexo cl &amp;&amp; hexo g &amp;&amp; hexo d来提交代码。</p><p>请注意，必须先hexo cl 。</p><p>此时网站已经搭建好了，访问速度也快许多。</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;figure class=&quot;highlight diff&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git&lt;/span&gt;&lt;b</summary>
-      
+    <summary type="html">我们一直在用github pages，想尝试一下gitee码云博客。</summary>
     
     
     
+    <category term="博客搭建记录" scheme="https://tsuiwade.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="gitee" scheme="https://tsuiwade.gitee.io/tags/gitee/"/>
     
   </entry>
   
   <entry>
     <title>【第131篇博客】github贡献日历上画画及博客首页显示gitcalendar</title>
-    <link href="https://tsuiwade.github.io/2021/03/07/blog13-githubpaint/"/>
-    <id>https://tsuiwade.github.io/2021/03/07/blog13-githubpaint/</id>
+    <link href="https://tsuiwade.gitee.io/2021/03/07/blog13-githubpaint/"/>
+    <id>https://tsuiwade.gitee.io/2021/03/07/blog13-githubpaint/</id>
     <published>2021-03-07T22:36:44.000Z</published>
     <updated>2021-03-07T22:36:44.000Z</updated>
     
@@ -50,19 +51,19 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/tags/github/"/>
+    <category term="github" scheme="https://tsuiwade.gitee.io/tags/github/"/>
     
-    <category term="gitcalendar" scheme="https://tsuiwade.github.io/tags/gitcalendar/"/>
+    <category term="gitcalendar" scheme="https://tsuiwade.gitee.io/tags/gitcalendar/"/>
     
   </entry>
   
   <entry>
     <title>【第12篇博客】PicGo图床工具配合Typora的便捷贴图配置</title>
-    <link href="https://tsuiwade.github.io/2021/03/06/blog12-PicGo/"/>
-    <id>https://tsuiwade.github.io/2021/03/06/blog12-PicGo/</id>
+    <link href="https://tsuiwade.gitee.io/2021/03/06/blog12-PicGo/"/>
+    <id>https://tsuiwade.gitee.io/2021/03/06/blog12-PicGo/</id>
     <published>2021-03-06T16:57:32.000Z</published>
     <updated>2021-03-06T16:57:32.000Z</updated>
     
@@ -73,21 +74,21 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="Typora" scheme="https://tsuiwade.github.io/tags/Typora/"/>
+    <category term="Typora" scheme="https://tsuiwade.gitee.io/tags/Typora/"/>
     
-    <category term="PicGo" scheme="https://tsuiwade.github.io/tags/PicGo/"/>
+    <category term="PicGo" scheme="https://tsuiwade.gitee.io/tags/PicGo/"/>
     
-    <category term="Gitee" scheme="https://tsuiwade.github.io/tags/Gitee/"/>
+    <category term="Gitee" scheme="https://tsuiwade.gitee.io/tags/Gitee/"/>
     
   </entry>
   
   <entry>
     <title>【第11篇博客】博客操作优化2——使用bat优化操作及bat语法学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/03/06/blog11-BatLearning/"/>
-    <id>https://tsuiwade.github.io/2021/03/06/blog11-BatLearning/</id>
+    <link href="https://tsuiwade.gitee.io/2021/03/06/blog11-BatLearning/"/>
+    <id>https://tsuiwade.gitee.io/2021/03/06/blog11-BatLearning/</id>
     <published>2021-03-06T12:14:04.000Z</published>
     <updated>2021-03-06T12:14:04.000Z</updated>
     
@@ -98,44 +99,44 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="博客优化" scheme="https://tsuiwade.github.io/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/"/>
+    <category term="博客优化" scheme="https://tsuiwade.gitee.io/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/"/>
     
-    <category term="bat" scheme="https://tsuiwade.github.io/tags/bat/"/>
+    <category term="bat" scheme="https://tsuiwade.gitee.io/tags/bat/"/>
     
   </entry>
   
   <entry>
     <title>【第10篇博客】博客操作优化1——使用Typora编写markdown博客</title>
-    <link href="https://tsuiwade.github.io/2021/03/06/blog10-Typora/"/>
-    <id>https://tsuiwade.github.io/2021/03/06/blog10-Typora/</id>
+    <link href="https://tsuiwade.gitee.io/2021/03/06/blog10-Typora/"/>
+    <id>https://tsuiwade.gitee.io/2021/03/06/blog10-Typora/</id>
     <published>2021-03-06T12:06:31.000Z</published>
     <updated>2021-03-06T12:06:31.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="一个markdown文本编辑器"><a href="#一个markdown文本编辑器" class="headerlink" title="一个markdown文本编辑器"></a>一个markdown文本编辑器</h2><p>「它的<strong>功能之强大、设计之冷静、体验之美妙、理念之先进</strong>，我认为值得所有笔记应用厂商学习。」</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/beta.gif" alt="beta"></p><p><a href="https://www.typora.io/">Typora</a> 是一款<strong>支持实时预览的 Markdown 文本编辑器</strong>。它有 OS X、Windows、Linux 三个平台的版本，并且由于仍在测试中，是<strong>完全免费</strong>的。</p><p>由于目前还没有一个权威机构对 Markdown 的语法进行规范，各应用厂商制作时遵循的 Markdown 语法也是不尽相同的。其中比较受到认可的是 <a href="https://github.github.com/gfm/">GFM 标准</a>，它是由著名代码托管网站 <a href="https://github.com/">GitHub</a> 所制定的。Typora 主要使用的也是 GFM 标准。同时，你还可以在 <code>文件 - 偏好设置 - Markdown 语法偏好 - 严格模式</code> 中将标准设置为「更严格地遵循 GFM 标准」。具体内容你可以在官方的 <a href="http://support.typora.io/Strict-Mode/">这篇文档</a> 中查看。</p><h2 id="适用于自己的Typora配置"><a href="#适用于自己的Typora配置" class="headerlink" title="适用于自己的Typora配置"></a>适用于自己的Typora配置</h2><ol><li><p><strong>快捷键</strong></p><p>打开自己电脑根目录下的<code>C:\Users\tsui\AppData\Roaming\Typora\conf</code>文件夹（读者自行修改该目录），如下图所示：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306195316546.png" alt="image-20210306195316546"></p><p>打开<code>conf.user.json</code>文件，主要修改画框处的代码即可，如下图所示：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306195441753.png" alt="image-20210306195441753"></p><p>至于代码中的<code>Always on Top</code>和我代码中的<code>Delete Line/Sentence</code>这些参数，该如何找呢？打开偏好设置，语言设置为英文，再从工具栏中找到对应的操作，例如我要设置删除改行（vscode中的Ctrl+D，很是方便），如下图所示：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/8EFBAA12EABA3092AE1EB1CE061298DD.png" alt="img"></p><p>找到对应的参数名<code>Delete Line/Sentence</code>，然后再设置具体的快捷键即可。</p><p>还可以参考官网的快捷键帮助<a href="https://support.typora.io/Shortcut-Keys/">https://support.typora.io/Shortcut-Keys/</a> 。</p></li><li><p><strong>侧边栏</strong></p><p><code>侧边栏</code>保持显示侧边栏，主要显示文件数和大纲，可以帮助开发。快捷键为Ctrl+Shift+L。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306194555367.png" alt=""></p></li><li><p><strong>启动选项</strong></p><p><code>启动选项</code>选择重新打开选择重新打开上次使用的文件和目录，这样直接打开Typora软件即可找到上次编写的位置，同vscode一样，无需一步步打开文件，很是方便。</p><p>在偏好设置里设置：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306194138225.png" alt="image-20210306194138225"></p></li></ol><h2 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h2><p>Typora 的图片插入功能是广受好评的。要知道，Markdown 原生不太注重图片插入的功能，但你可以在 Typora 中：</p><ul><li>直接使用 <code>右键 - 复制 Ctrl + V</code> 将网络图片、剪贴板图片复制到文档中</li><li>拖动本地图片到文档中</li></ul><p>Typora 会自动帮你插入符合 Markdown 语法的图片语句，并给它加上标题。如：</p><p><code>![img](https://cdn.imzjw.cn/img/72)</code></p><p>现在已经支持粘贴图片自动上传至图床了，使用PicGo，具体参见我的另一篇博客。</p><h2 id="打字机模式和专注模式"><a href="#打字机模式和专注模式" class="headerlink" title="打字机模式和专注模式"></a>打字机模式和专注模式</h2><p><strong>「打字机模式」</strong>使得你所编辑的那一行永远处于屏幕正中。</p><p><strong>「专注模式」</strong>使你正在编辑的那一行保留颜色，而其他行的字体呈灰色。</p><p>你可以在 <code>视图 - 专注模式 / 打字机模式</code> 中勾选使用这两个模式。</p><h2 id="实时预览"><a href="#实时预览" class="headerlink" title="实时预览"></a>实时预览</h2><p>我想很果断地下这个结论：到现在还不支持编辑界面实时预览的 Markdown 编辑器基本可以退出市场了。Typora 在这一方面显然已经领先了一大步——他们连 Markdown 语法的标记都在实时预览中消去了。当你离开正在编辑的有格式的文本段后，Typora 会自动隐藏 Markdown 标记，只留下<strong>「所见即所得」</strong>的美妙。他们把这称为 <em>Hybrid View。</em></p><p>为了防止一些程序 bug 的发生（虽然在我使用下来感到是很少的）导致格式问题无法修改，Typora 保留了一个<strong>「源代码模式」</strong>。你可以通过 <code>视图 - 源代码模式</code> 或左下角的 <code>&lt;/&gt;</code> 按钮进入。</p><h2 id="大纲-文件侧边栏配置"><a href="#大纲-文件侧边栏配置" class="headerlink" title="大纲 / 文件侧边栏配置"></a>大纲 / 文件侧边栏配置</h2><p>Typora 会根据你 Markdown 标记的 H1、H2、H3…… 各级标题为你呈现一个大纲。</p><p>你也可以选择查看文件夹中的文件，但由于目前 Typora 只支持查看 md 文件。     </p><h2 id="空格与换行"><a href="#空格与换行" class="headerlink" title="空格与换行"></a>空格与换行</h2><p>Typora 在空格与换行部分主要是使用 <a href="http://www.commonmark.cn/w/">CommonMark</a> 作为标注规范。与前文提到的 GFM 一样，CommonMark 也是比较流行的 Markdown 语言规范（解析器）之一。 </p><ul><li><strong>空格：</strong>在输入连续的空格后，Typora 会在编辑器视图里为你保留这些空格，但当你打印或导出时，这些空格会被省略成一个。<br>你可以在源代码模式下，为每个空格前加一个 <code>\</code> 转义符，或者直接使用 HTML 风格的 <code>&amp;nbps;</code> 来保持连续的空格。</li><li><strong>软换行：</strong>需要说明的是，在 Markdown 语法中，换行（line break）与换段是不同的。且换行分为软换行和硬换行。在 Typora 中，你可以通过 <code>Shift + Enter</code> 完成一次软换行。软换行只在编辑界面可见，当文档被导出时换行会被省略。</li><li><strong>硬换行：</strong>你可以通过 <code>空格 + 空格 + Shift + Enter</code> 完成一次硬换行，而这也是许多 Markdown 编辑器所原生支持的。硬换行在文档被导出时将被保留，且没有换段的段后距。</li><li><strong>换段：</strong>你可以通过 <code>Enter</code> 完成一次换段。Typora 会自动帮你完成两次 <code>Shift + Enter</code> 的软换行，从而完成一次换段。这也意味着在 Markdown 语法下，换段是通过在段与段之间加入空行来实现的。 </li></ul><h2 id="emoji表情"><a href="#emoji表情" class="headerlink" title="emoji表情"></a>emoji表情</h2><p>在 Typora 中，你可以用 <code>:emoji:</code> 的形式来打出 emoji，软件会自动给出图形的提示，还是比较好用的。:sunny:、:cow:、:grey_question:。</p><p>emoji编码合集可参考<a href="https://blog.csdn.net/weixin_42395140/article/details/111642339">https://blog.csdn.net/weixin_42395140/article/details/111642339</a> 。</p><h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><p>Typora还提供了如同<strong>word</strong>快捷键的操作包括加粗、斜体等。</p><p>在vscode中写markdown的表格一直是一件比较头疼的事情。好在 Typora 为我们提供了图形界面的插入表格的功能，你只需要在行内 <code>鼠标右键 - 插入 - 表格</code> ，并输入行数和列数，Typora 就会自动生成一张样式不错的空表格。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306211350709.png" alt="image-20210306211350709"></p><h2 id="hexo-new-post-更换模板"><a href="#hexo-new-post-更换模板" class="headerlink" title="hexo new post 更换模板"></a>hexo new post 更换模板</h2><p>除了上述介绍来的Typora使用之外，本文还将介绍如何优化 每次新建博客之后填写博客文章摘要信息的操作。</p><p>每当我们hexo n blog的时候，在未设置模板的情况下，如何才能出现以下完整的信息呢？</p><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">title: 【第10篇博客】博客操作优化1——使用Typora编写markdown博客</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> Typora</span><br><span class="line"><span class="bullet">  -</span> markdown</span><br><span class="line"><span class="bullet">  -</span> 博客优化</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> 博客搭建记录</span><br><span class="line">date: 2021-03-06 12:06:31</span><br><span class="line">updated: 2021-03-06 12:06:31</span><br><span class="line">description: 时至今日，可以优化一下博客的操作，本文将介绍使用Typora来写markdown语言，最为方便的在于图片的粘贴。以及自己的优化操作中的Typora偏好设置。</span><br><span class="line">cover: &quot;https://cdn.imzjw.cn/img/73&quot;</span><br></pre></td></tr></table></figure><p>通过查看文档，找到模板文件的路径：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306214807156.png" alt="image-20210306214807156"></p><p>打开post填写以下信息，保存即可。</p><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">updated: &#123;&#123; date &#125;&#125;</span><br><span class="line">description:  </span><br><span class="line">cover: </span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">  -</span> </span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">  -</span> </span><br></pre></td></tr></table></figure><p>将来hexo n blog的时候，将会自动存在这些基础信息。</p><hr><p>本文参考：<a href="https://sspai.com/post/54912">https://sspai.com/post/54912</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="一个markdown文本编辑器"><a href="#一个markdown文本编辑器" class="headerlink" title="一个markdown文本编辑器"></a>一个markdown文本编辑器</h2><p>「它的<strong>功能之强大、设计之冷静、体验之美妙、理念之先进</strong>，我认为值得所有笔记应用厂商学习。」</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/beta.gif" alt="beta"></p><p><a href="https://www.typora.io/">Typora</a> 是一款<strong>支持实时预览的 Markdown 文本编辑器</strong>。它有 OS X、Windows、Linux 三个平台的版本，并且由于仍在测试中，是<strong>完全免费</strong>的。</p><p>由于目前还没有一个权威机构对 Markdown 的语法进行规范，各应用厂商制作时遵循的 Markdown 语法也是不尽相同的。其中比较受到认可的是 <a href="https://github.github.com/gfm/">GFM 标准</a>，它是由著名代码托管网站 <a href="https://github.com/">GitHub</a> 所制定的。Typora 主要使用的也是 GFM 标准。同时，你还可以在 <code>文件 - 偏好设置 - Markdown 语法偏好 - 严格模式</code> 中将标准设置为「更严格地遵循 GFM 标准」。具体内容你可以在官方的 <a href="http://support.typora.io/Strict-Mode/">这篇文档</a> 中查看。</p><h2 id="适用于自己的Typora配置"><a href="#适用于自己的Typora配置" class="headerlink" title="适用于自己的Typora配置"></a>适用于自己的Typora配置</h2><ol><li><p><strong>快捷键</strong></p><p>打开自己电脑根目录下的<code>C:\Users\tsui\AppData\Roaming\Typora\conf</code>文件夹（读者自行修改该目录），如下图所示：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306195316546.png" alt="image-20210306195316546"></p><p>打开<code>conf.user.json</code>文件，主要修改画框处的代码即可，如下图所示：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306195441753.png" alt="image-20210306195441753"></p><p>至于代码中的<code>Always on Top</code>和我代码中的<code>Delete Line/Sentence</code>这些参数，该如何找呢？打开偏好设置，语言设置为英文，再从工具栏中找到对应的操作，例如我要设置删除改行（vscode中的Ctrl+D，很是方便），如下图所示：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/8EFBAA12EABA3092AE1EB1CE061298DD.png" alt="img"></p><p>找到对应的参数名<code>Delete Line/Sentence</code>，然后再设置具体的快捷键即可。</p><p>还可以参考官网的快捷键帮助<a href="https://support.typora.io/Shortcut-Keys/">https://support.typora.io/Shortcut-Keys/</a> 。</p></li><li><p><strong>侧边栏</strong></p><p><code>侧边栏</code>保持显示侧边栏，主要显示文件数和大纲，可以帮助开发。快捷键为Ctrl+Shift+L。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306194555367.png" alt=""></p></li><li><p><strong>启动选项</strong></p><p><code>启动选项</code>选择重新打开选择重新打开上次使用的文件和目录，这样直接打开Typora软件即可找到上次编写的位置，同vscode一样，无需一步步打开文件，很是方便。</p><p>在偏好设置里设置：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306194138225.png" alt="image-20210306194138225"></p></li></ol><h2 id="图片插入"><a href="#图片插入" class="headerlink" title="图片插入"></a>图片插入</h2><p>Typora 的图片插入功能是广受好评的。要知道，Markdown 原生不太注重图片插入的功能，但你可以在 Typora 中：</p><ul><li>直接使用 <code>右键 - 复制 Ctrl + V</code> 将网络图片、剪贴板图片复制到文档中</li><li>拖动本地图片到文档中</li></ul><p>Typora 会自动帮你插入符合 Markdown 语法的图片语句，并给它加上标题。如：</p><p><code>![](https://gitee.com/tsuiwade/images/raw/master/20210310123322.png)</code></p><p>现在已经支持粘贴图片自动上传至图床了，使用PicGo，具体参见我的另一篇博客。</p><h2 id="打字机模式和专注模式"><a href="#打字机模式和专注模式" class="headerlink" title="打字机模式和专注模式"></a>打字机模式和专注模式</h2><p><strong>「打字机模式」</strong>使得你所编辑的那一行永远处于屏幕正中。</p><p><strong>「专注模式」</strong>使你正在编辑的那一行保留颜色，而其他行的字体呈灰色。</p><p>你可以在 <code>视图 - 专注模式 / 打字机模式</code> 中勾选使用这两个模式。</p><h2 id="实时预览"><a href="#实时预览" class="headerlink" title="实时预览"></a>实时预览</h2><p>我想很果断地下这个结论：到现在还不支持编辑界面实时预览的 Markdown 编辑器基本可以退出市场了。Typora 在这一方面显然已经领先了一大步——他们连 Markdown 语法的标记都在实时预览中消去了。当你离开正在编辑的有格式的文本段后，Typora 会自动隐藏 Markdown 标记，只留下<strong>「所见即所得」</strong>的美妙。他们把这称为 <em>Hybrid View。</em></p><p>为了防止一些程序 bug 的发生（虽然在我使用下来感到是很少的）导致格式问题无法修改，Typora 保留了一个<strong>「源代码模式」</strong>。你可以通过 <code>视图 - 源代码模式</code> 或左下角的 <code>&lt;/&gt;</code> 按钮进入。</p><h2 id="大纲-文件侧边栏配置"><a href="#大纲-文件侧边栏配置" class="headerlink" title="大纲 / 文件侧边栏配置"></a>大纲 / 文件侧边栏配置</h2><p>Typora 会根据你 Markdown 标记的 H1、H2、H3…… 各级标题为你呈现一个大纲。</p><p>你也可以选择查看文件夹中的文件，但由于目前 Typora 只支持查看 md 文件。     </p><h2 id="空格与换行"><a href="#空格与换行" class="headerlink" title="空格与换行"></a>空格与换行</h2><p>Typora 在空格与换行部分主要是使用 <a href="http://www.commonmark.cn/w/">CommonMark</a> 作为标注规范。与前文提到的 GFM 一样，CommonMark 也是比较流行的 Markdown 语言规范（解析器）之一。 </p><ul><li><strong>空格：</strong>在输入连续的空格后，Typora 会在编辑器视图里为你保留这些空格，但当你打印或导出时，这些空格会被省略成一个。<br>你可以在源代码模式下，为每个空格前加一个 <code>\</code> 转义符，或者直接使用 HTML 风格的 <code>&amp;nbps;</code> 来保持连续的空格。</li><li><strong>软换行：</strong>需要说明的是，在 Markdown 语法中，换行（line break）与换段是不同的。且换行分为软换行和硬换行。在 Typora 中，你可以通过 <code>Shift + Enter</code> 完成一次软换行。软换行只在编辑界面可见，当文档被导出时换行会被省略。</li><li><strong>硬换行：</strong>你可以通过 <code>空格 + 空格 + Shift + Enter</code> 完成一次硬换行，而这也是许多 Markdown 编辑器所原生支持的。硬换行在文档被导出时将被保留，且没有换段的段后距。</li><li><strong>换段：</strong>你可以通过 <code>Enter</code> 完成一次换段。Typora 会自动帮你完成两次 <code>Shift + Enter</code> 的软换行，从而完成一次换段。这也意味着在 Markdown 语法下，换段是通过在段与段之间加入空行来实现的。 </li></ul><h2 id="emoji表情"><a href="#emoji表情" class="headerlink" title="emoji表情"></a>emoji表情</h2><p>在 Typora 中，你可以用 <code>:emoji:</code> 的形式来打出 emoji，软件会自动给出图形的提示，还是比较好用的。:sunny:、:cow:、:grey_question:。</p><p>emoji编码合集可参考<a href="https://blog.csdn.net/weixin_42395140/article/details/111642339">https://blog.csdn.net/weixin_42395140/article/details/111642339</a> 。</p><h2 id="其他功能"><a href="#其他功能" class="headerlink" title="其他功能"></a>其他功能</h2><p>Typora还提供了如同<strong>word</strong>快捷键的操作包括加粗、斜体等。</p><p>在vscode中写markdown的表格一直是一件比较头疼的事情。好在 Typora 为我们提供了图形界面的插入表格的功能，你只需要在行内 <code>鼠标右键 - 插入 - 表格</code> ，并输入行数和列数，Typora 就会自动生成一张样式不错的空表格。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306211350709.png" alt="image-20210306211350709"></p><h2 id="hexo-new-post-更换模板"><a href="#hexo-new-post-更换模板" class="headerlink" title="hexo new post 更换模板"></a>hexo new post 更换模板</h2><p>除了上述介绍来的Typora使用之外，本文还将介绍如何优化 每次新建博客之后填写博客文章摘要信息的操作。</p><p>每当我们hexo n blog的时候，在未设置模板的情况下，如何才能出现以下完整的信息呢？</p><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">title: 【第10篇博客】博客操作优化1——使用Typora编写markdown博客</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> Typora</span><br><span class="line"><span class="bullet">  -</span> markdown</span><br><span class="line"><span class="bullet">  -</span> 博客优化</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> 博客搭建记录</span><br><span class="line">date: 2021-03-06 12:06:31</span><br><span class="line">updated: 2021-03-06 12:06:31</span><br><span class="line">description: 时至今日，可以优化一下博客的操作，本文将介绍使用Typora来写markdown语言，最为方便的在于图片的粘贴。以及自己的优化操作中的Typora偏好设置。</span><br><span class="line">cover: &quot;https://gitee.com/tsuiwade/images/raw/master/20210310123446.png&quot;</span><br></pre></td></tr></table></figure><p>通过查看文档，找到模板文件的路径：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210306214807156.png" alt="image-20210306214807156"></p><p>打开post填写以下信息，保存即可。</p><figure class="highlight md"><table><tr><td class="code"><pre><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">updated: &#123;&#123; date &#125;&#125;</span><br><span class="line">description:  </span><br><span class="line">cover: </span><br><span class="line">tags: </span><br><span class="line"><span class="bullet">  -</span> </span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">  -</span> </span><br></pre></td></tr></table></figure><p>将来hexo n blog的时候，将会自动存在这些基础信息。</p><hr><p>本文参考：<a href="https://sspai.com/post/54912">https://sspai.com/post/54912</a></p>]]></content>
     
     
     <summary type="html">本文将介绍使用Typora来写markdown语言，方便图片粘贴，以及自己的优化博客操作中的Typora偏好设置。</summary>
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="Typora" scheme="https://tsuiwade.github.io/tags/Typora/"/>
+    <category term="Typora" scheme="https://tsuiwade.gitee.io/tags/Typora/"/>
     
-    <category term="markdown" scheme="https://tsuiwade.github.io/tags/markdown/"/>
+    <category term="markdown" scheme="https://tsuiwade.gitee.io/tags/markdown/"/>
     
-    <category term="博客优化" scheme="https://tsuiwade.github.io/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/"/>
+    <category term="博客优化" scheme="https://tsuiwade.gitee.io/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>【第9篇博客】标签外挂的配置学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/02/07/blog9-TagPlugins/"/>
-    <id>https://tsuiwade.github.io/2021/02/07/blog9-TagPlugins/</id>
+    <link href="https://tsuiwade.gitee.io/2021/02/07/blog9-TagPlugins/"/>
+    <id>https://tsuiwade.gitee.io/2021/02/07/blog9-TagPlugins/</id>
     <published>2021-02-07T22:04:18.000Z</published>
     <updated>2021-03-04T15:40:49.000Z</updated>
     
@@ -150,68 +151,68 @@
     
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/categories/github/"/>
+    <category term="github" scheme="https://tsuiwade.gitee.io/categories/github/"/>
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/tags/github/"/>
+    <category term="github" scheme="https://tsuiwade.gitee.io/tags/github/"/>
     
-    <category term="标签外挂" scheme="https://tsuiwade.github.io/tags/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/"/>
+    <category term="标签外挂" scheme="https://tsuiwade.gitee.io/tags/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/"/>
     
   </entry>
   
   <entry>
     <title>【第8篇博客】GitHub Badge的配置学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/02/04/blog8-ShieldIoBadge/"/>
-    <id>https://tsuiwade.github.io/2021/02/04/blog8-ShieldIoBadge/</id>
+    <link href="https://tsuiwade.gitee.io/2021/02/04/blog8-ShieldIoBadge/"/>
+    <id>https://tsuiwade.gitee.io/2021/02/04/blog8-ShieldIoBadge/</id>
     <published>2021-02-04T22:04:18.000Z</published>
     <updated>2021-03-04T15:40:49.000Z</updated>
     
-    <content type="html"><![CDATA[<p>效果如下：<br><img src="https://cdn.imzjw.cn/img/62" alt="p62"><br>大家平时在逛GitHub，Gitee，各大论坛博客的时候，都有类似很好看很漂亮的徽章，主要通过 <a href="https://shields.io/">shields.io</a> 在线生成。</p><p><img src="https://cdn.imzjw.cn/img/63" alt="p63"></p><p>其中，找到Your BADGE 专属定制徽章</p><ul><li>label：标签，徽标左侧内容</li><li>message：信息，徽标右侧内容</li><li>color：色值，支持支持十六进制、rgb、rgba、hsl、hsla 和 css 命名颜色。十六进制记得删除前面的 # 号</li></ul><p>输入相关信息后，点击 make badge 即可得到徽标的 URL。可以用 img 标签引用</p><p>在主题配置文件中的<code>footer</code>:  <code>copyright:</code>设置为false、<code>footer</code>:  <code>custom_text:</code>中填写<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://hexo.io/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo&quot;</span> <span class="attr">title</span>=<span class="string">&quot;博客框架为 Hexo&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;HEXO&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://butterfly.js.org/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender&quot;</span> <span class="attr">title</span>=<span class="string">&quot;主题采用 Butterfly&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Butterfly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://www.jsdelivr.com/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr&quot;</span> <span class="attr">title</span>=<span class="string">&quot;本站使用 Jsdelivr 为静态资源提供CDN加速&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Jsdelivr&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://github.com/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub&quot;</span> <span class="attr">title</span>=<span class="string">&quot;本站项目由 GitHub 托管&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;GitHub&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span><span class="attr">href</span>=<span class="string">&quot;http://creativecommons.org/licenses/by-nc-sa/4.0/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;img&quot;</span> <span class="attr">title</span>=<span class="string">&quot;本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure><br>可以发现，简单定制小牌子非常方便，最最基础的语法规则就是：<br><code>https://img.shields.io/badge/&#123;左半部分标签&#125;-&#123;右半部分标签&#125;-&#123;右半部分颜色&#125;</code><br>还可以贴在markdown文档中。</p>]]></content>
+    <content type="html"><![CDATA[<p>效果如下：<br><img src="https://gitee.com/tsuiwade/images/raw/master/20210310123146.png" alt=""><br>大家平时在逛GitHub，Gitee，各大论坛博客的时候，都有类似很好看很漂亮的徽章，主要通过 <a href="https://shields.io/">shields.io</a> 在线生成。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/20210310123227.png" alt=""></p><p>其中，找到Your BADGE 专属定制徽章</p><ul><li>label：标签，徽标左侧内容</li><li>message：信息，徽标右侧内容</li><li>color：色值，支持支持十六进制、rgb、rgba、hsl、hsla 和 css 命名颜色。十六进制记得删除前面的 # 号</li></ul><p>输入相关信息后，点击 make badge 即可得到徽标的 URL。可以用 img 标签引用</p><p>在主题配置文件中的<code>footer</code>:  <code>copyright:</code>设置为false、<code>footer</code>:  <code>custom_text:</code>中填写<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://hexo.io/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo&quot;</span> <span class="attr">title</span>=<span class="string">&quot;博客框架为 Hexo&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;HEXO&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://butterfly.js.org/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender&quot;</span> <span class="attr">title</span>=<span class="string">&quot;主题采用 Butterfly&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Butterfly&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://www.jsdelivr.com/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr&quot;</span> <span class="attr">title</span>=<span class="string">&quot;本站使用 Jsdelivr 为静态资源提供CDN加速&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Jsdelivr&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://github.com/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub&quot;</span> <span class="attr">title</span>=<span class="string">&quot;本站项目由 GitHub 托管&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;GitHub&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">style</span>=<span class="string">&quot;margin-inline:5px&quot;</span><span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span><span class="attr">href</span>=<span class="string">&quot;http://creativecommons.org/licenses/by-nc-sa/4.0/&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;img&quot;</span> <span class="attr">title</span>=<span class="string">&quot;本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure><br>可以发现，简单定制小牌子非常方便，最最基础的语法规则就是：<br><code>https://img.shields.io/badge/&#123;左半部分标签&#125;-&#123;右半部分标签&#125;-&#123;右半部分颜色&#125;</code><br>还可以贴在markdown文档中。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;效果如下：&lt;br&gt;&lt;img src=&quot;https://cdn.imzjw.cn/img/62&quot; alt=&quot;p62&quot;&gt;&lt;br&gt;大家平时在逛GitHub，Gitee，各大论坛博客的时候，都有类似很好看很漂亮的徽章，主要通过 &lt;a href=&quot;https://shields.io</summary>
+    <summary type="html">&lt;p&gt;效果如下：&lt;br&gt;&lt;img src=&quot;https://gitee.com/tsuiwade/images/raw/master/20210310123146.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;大家平时在逛GitHub，Gitee，各大论坛博客的时候，都有类似很好看很漂亮的徽章</summary>
       
     
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/categories/github/"/>
+    <category term="github" scheme="https://tsuiwade.gitee.io/categories/github/"/>
     
     
-    <category term="shield.io" scheme="https://tsuiwade.github.io/tags/shield-io/"/>
+    <category term="shield.io" scheme="https://tsuiwade.gitee.io/tags/shield-io/"/>
     
-    <category term="GitHub Badge" scheme="https://tsuiwade.github.io/tags/GitHub-Badge/"/>
+    <category term="GitHub Badge" scheme="https://tsuiwade.gitee.io/tags/GitHub-Badge/"/>
     
   </entry>
   
   <entry>
     <title>【第7篇博客】配置jsDelivr提供静态资源CDN加速学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/02/01/blog7-JdDelivrUse/"/>
-    <id>https://tsuiwade.github.io/2021/02/01/blog7-JdDelivrUse/</id>
+    <link href="https://tsuiwade.gitee.io/2021/02/01/blog7-JdDelivrUse/"/>
+    <id>https://tsuiwade.gitee.io/2021/02/01/blog7-JdDelivrUse/</id>
     <published>2021-02-01T15:40:49.000Z</published>
     <updated>2021-03-04T15:40:49.000Z</updated>
     
-    <content type="html"><![CDATA[<p>在之前第二篇主题样式修改的学习记录里，就出现过很多引用jsdelivr的链接，一直不知道这是做什么用的，今天就来<code>学习</code>、<code>记录</code>、<code>配置</code>一下jsdelivr。</p><blockquote><p><code>CDN</code>的全称是Content Delivery Network，即内容分发网络。CDN是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。——百度百科</p></blockquote><p>放在Github的资源在国内加载速度比较慢，因此需要使用CDN加速来优化网站打开速度，jsDelivr + Github便是免费且好用的CDN，非常适合博客网站使用。</p><p><code>jsDelivr</code> <a href="https://www.jsdelivr.com/">https://www.jsdelivr.com/</a> 是一个CDN服务提供商，优点在于全球通用。专门提供js相关的CDN，对npm,github做了加速镜像。针对npm, github提供了CDN镜像。<br><img src="https://cdn.imzjw.cn/img/45" alt="p1"></p><p>接下来，将介绍如何将自己的字体文件上传jsDelivr。</p><h2 id="新建github仓库"><a href="#新建github仓库" class="headerlink" title="新建github仓库"></a>新建github仓库</h2><p>在此，仓库名设置为CDN。<br><img src="https://cdn.imzjw.cn/img/46" alt="p2"></p><h2 id="克隆github仓库到本地"><a href="#克隆github仓库到本地" class="headerlink" title="克隆github仓库到本地"></a>克隆github仓库到本地</h2><pre><code>git clone git@github.com:tsuiwade/CDN.git</code></pre><p><img src="https://cdn.imzjw.cn/img/47" alt="p3"><br>在vscode的cmd中输入代码，倘若出现如下的报错，是因为客户端与服务端未生成 ssh key，为解决以上问题，我们需要重新生成一次ssh key ，并重新配置一下GitHub账户即可。具体参考 <a href="https://blog.csdn.net/weixin_40922744/article/details/107576748">https://blog.csdn.net/weixin_40922744/article/details/107576748</a><br>（其中，解决方法里面的cmd窗口是Git bash。）<br><img src="https://cdn.imzjw.cn/img/48" alt="p4"><br>如果出现ssh无效问题 参考 <a href="https://blog.csdn.net/weixin_45604257/article/details/106649576">https://blog.csdn.net/weixin_45604257/article/details/106649576</a></p><h2 id="上传资源"><a href="#上传资源" class="headerlink" title="上传资源"></a>上传资源</h2><p>将需要上传的资源放进本地CDN仓库中。<br><img src="https://cdn.imzjw.cn/img/49" alt="p5"><br>（注：jsDelivr不支持加载超过20M的资源），在本地git仓库目录下右键 Git Bash Here，执行以下命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git status                    &#x2F;&#x2F;查看状态</span><br><span class="line">git add .                     &#x2F;&#x2F;添加所有文件到暂存区</span><br><span class="line">git commit -m &#39;第一次提交&#39;      &#x2F;&#x2F;把文件提交到仓库</span><br><span class="line">git push                      &#x2F;&#x2F;推送至远程仓库</span><br></pre></td></tr></table></figure></p><h2 id="发布仓库"><a href="#发布仓库" class="headerlink" title="发布仓库"></a>发布仓库</h2><p>回到github上，点击release发布，填写必要信息如下图所示。<br><img src="https://cdn.imzjw.cn/img/50" alt="p6"></p><p>这就设置完成了，接下来可以引用资源了。</p><h2 id="通过jsDelivr引用资源"><a href="#通过jsDelivr引用资源" class="headerlink" title="通过jsDelivr引用资源"></a>通过jsDelivr引用资源</h2><p><code>使用方法：https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</code><br>例如：<br><a href="https://cdn.jsdelivr.net/gh/tsuiwade/CDN@4.0/font/yenianti.otf">https://cdn.jsdelivr.net/gh/tsuiwade/CDN@4.0/font/yenianti.otf</a></p><p>这里就大功告成了，这里引用的字体，可以参考第二篇博客的首页字体修改。</p><p>本文主要参考 <a href="https://blog.csdn.net/qq_36759224/article/details/86936453">https://blog.csdn.net/qq_36759224/article/details/86936453</a></p><p><a href="https://github.com/badges/shields">https://github.com/badges/shields</a><br><a href="https://github.com/spencerwooo/Substats">https://github.com/spencerwooo/Substats</a><br><a href="https://sspai.com/post/59593">https://sspai.com/post/59593</a><br><a href="https://www.cnblogs.com/sddai/p/13779316.html">https://www.cnblogs.com/sddai/p/13779316.html</a><br><a href="https://shields.io/">https://shields.io/</a><br><a href="https://www.baidu.com/s?wd=https%3A%2F%2Fshields.io%2F&amp;pn=10&amp;oq=https%3A%2F%2Fshields.io%2F&amp;ie=utf-8&amp;rsv_pq=bf92913f0003488b&amp;rsv_t=d46aUVHAFQ77ZmEGMpHpwQ5ncdiMRCwA4exwuw8jxTdXvT1%2BpwCVWcKKgec&amp;rsv_jmp=slow">https://www.baidu.com/s?wd=https%3A%2F%2Fshields.io%2F&amp;pn=10&amp;oq=https%3A%2F%2Fshields.io%2F&amp;ie=utf-8&amp;rsv_pq=bf92913f0003488b&amp;rsv_t=d46aUVHAFQ77ZmEGMpHpwQ5ncdiMRCwA4exwuw8jxTdXvT1%2BpwCVWcKKgec&amp;rsv_jmp=slow</a></p>]]></content>
+    <content type="html"><![CDATA[<p>在之前第二篇主题样式修改的学习记录里，就出现过很多引用jsdelivr的链接，一直不知道这是做什么用的，今天就来<code>学习</code>、<code>记录</code>、<code>配置</code>一下jsdelivr。</p><blockquote><p><code>CDN</code>的全称是Content Delivery Network，即内容分发网络。CDN是构建在现有网络基础之上的智能虚拟网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。——百度百科</p></blockquote><p>放在Github的资源在国内加载速度比较慢，因此需要使用CDN加速来优化网站打开速度，jsDelivr + Github便是免费且好用的CDN，非常适合博客网站使用。</p><p><code>jsDelivr</code> <a href="https://www.jsdelivr.com/">https://www.jsdelivr.com/</a> 是一个CDN服务提供商，优点在于全球通用。专门提供js相关的CDN，对npm,github做了加速镜像。针对npm, github提供了CDN镜像。<br><img src="https://gitee.com/tsuiwade/images/raw/master/20210310122850.png" alt=""></p><p>接下来，将介绍如何将自己的字体文件上传jsDelivr。</p><h2 id="新建github仓库"><a href="#新建github仓库" class="headerlink" title="新建github仓库"></a>新建github仓库</h2><p>在此，仓库名设置为CDN。<br><img src="https://gitee.com/tsuiwade/images/raw/master/20210310122920.png" alt=""></p><h2 id="克隆github仓库到本地"><a href="#克隆github仓库到本地" class="headerlink" title="克隆github仓库到本地"></a>克隆github仓库到本地</h2><pre><code>git clone git@github.com:tsuiwade/CDN.git</code></pre><p><img src="https://gitee.com/tsuiwade/images/raw/master/20210310123017.png" alt=""><br>在vscode的cmd中输入代码，倘若出现如下的报错，是因为客户端与服务端未生成 ssh key，为解决以上问题，我们需要重新生成一次ssh key ，并重新配置一下GitHub账户即可。具体参考 <a href="https://blog.csdn.net/weixin_40922744/article/details/107576748">https://blog.csdn.net/weixin_40922744/article/details/107576748</a><br>（其中，解决方法里面的cmd窗口是Git bash。）<br><img src="https://gitee.com/tsuiwade/images/raw/master/20210310123042.png" alt=""><br>如果出现ssh无效问题 参考 <a href="https://blog.csdn.net/weixin_45604257/article/details/106649576">https://blog.csdn.net/weixin_45604257/article/details/106649576</a></p><h2 id="上传资源"><a href="#上传资源" class="headerlink" title="上传资源"></a>上传资源</h2><p>将需要上传的资源放进本地CDN仓库中。<br><img src="https://gitee.com/tsuiwade/images/raw/master/20210310123058.png" alt=""><br>（注：jsDelivr不支持加载超过20M的资源），在本地git仓库目录下右键 Git Bash Here，执行以下命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git status                    &#x2F;&#x2F;查看状态</span><br><span class="line">git add .                     &#x2F;&#x2F;添加所有文件到暂存区</span><br><span class="line">git commit -m &#39;第一次提交&#39;      &#x2F;&#x2F;把文件提交到仓库</span><br><span class="line">git push                      &#x2F;&#x2F;推送至远程仓库</span><br></pre></td></tr></table></figure></p><h2 id="发布仓库"><a href="#发布仓库" class="headerlink" title="发布仓库"></a>发布仓库</h2><p>回到github上，点击release发布，填写必要信息如下图所示。<br><img src="https://gitee.com/tsuiwade/images/raw/master/20210310123121.png" alt=""></p><p>这就设置完成了，接下来可以引用资源了。</p><h2 id="通过jsDelivr引用资源"><a href="#通过jsDelivr引用资源" class="headerlink" title="通过jsDelivr引用资源"></a>通过jsDelivr引用资源</h2><p><code>使用方法：https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径</code><br>例如：<br><a href="https://cdn.jsdelivr.net/gh/tsuiwade/CDN@4.0/font/yenianti.otf">https://cdn.jsdelivr.net/gh/tsuiwade/CDN@4.0/font/yenianti.otf</a></p><p>这里就大功告成了，这里引用的字体，可以参考第二篇博客的首页字体修改。</p><p>本文主要参考 <a href="https://blog.csdn.net/qq_36759224/article/details/86936453">https://blog.csdn.net/qq_36759224/article/details/86936453</a></p><p><a href="https://github.com/badges/shields">https://github.com/badges/shields</a><br><a href="https://github.com/spencerwooo/Substats">https://github.com/spencerwooo/Substats</a><br><a href="https://sspai.com/post/59593">https://sspai.com/post/59593</a><br><a href="https://www.cnblogs.com/sddai/p/13779316.html">https://www.cnblogs.com/sddai/p/13779316.html</a><br><a href="https://shields.io/">https://shields.io/</a><br><a href="https://www.baidu.com/s?wd=https%3A%2F%2Fshields.io%2F&amp;pn=10&amp;oq=https%3A%2F%2Fshields.io%2F&amp;ie=utf-8&amp;rsv_pq=bf92913f0003488b&amp;rsv_t=d46aUVHAFQ77ZmEGMpHpwQ5ncdiMRCwA4exwuw8jxTdXvT1%2BpwCVWcKKgec&amp;rsv_jmp=slow">https://www.baidu.com/s?wd=https%3A%2F%2Fshields.io%2F&amp;pn=10&amp;oq=https%3A%2F%2Fshields.io%2F&amp;ie=utf-8&amp;rsv_pq=bf92913f0003488b&amp;rsv_t=d46aUVHAFQ77ZmEGMpHpwQ5ncdiMRCwA4exwuw8jxTdXvT1%2BpwCVWcKKgec&amp;rsv_jmp=slow</a></p>]]></content>
     
     
     <summary type="html">jsDelivr提供静态资源CDN加速是个什么东西？</summary>
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="jeDelivr" scheme="https://tsuiwade.github.io/tags/jeDelivr/"/>
+    <category term="jeDelivr" scheme="https://tsuiwade.gitee.io/tags/jeDelivr/"/>
     
-    <category term="CDN" scheme="https://tsuiwade.github.io/tags/CDN/"/>
+    <category term="CDN" scheme="https://tsuiwade.gitee.io/tags/CDN/"/>
     
   </entry>
   
   <entry>
     <title>【第6篇博客】写博客的git概念和指令学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/01/09/blog6-BaseGit/"/>
-    <id>https://tsuiwade.github.io/2021/01/09/blog6-BaseGit/</id>
+    <link href="https://tsuiwade.gitee.io/2021/01/09/blog6-BaseGit/"/>
+    <id>https://tsuiwade.gitee.io/2021/01/09/blog6-BaseGit/</id>
     <published>2021-01-09T10:55:12.000Z</published>
     <updated>2021-01-26T10:31:23.000Z</updated>
     
@@ -225,19 +226,19 @@
     
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/categories/github/"/>
+    <category term="github" scheme="https://tsuiwade.gitee.io/categories/github/"/>
     
     
-    <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://tsuiwade.gitee.io/tags/hexo/"/>
     
-    <category term="github" scheme="https://tsuiwade.github.io/tags/github/"/>
+    <category term="github" scheme="https://tsuiwade.gitee.io/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>【第5篇博客】hexo下的markdown的语法(GFM)学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/"/>
-    <id>https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/</id>
+    <link href="https://tsuiwade.gitee.io/2021/01/02/blog5-MarkdownLearning/"/>
+    <id>https://tsuiwade.gitee.io/2021/01/02/blog5-MarkdownLearning/</id>
     <published>2021-01-02T11:31:14.000Z</published>
     <updated>2021-01-26T10:31:23.000Z</updated>
     
@@ -251,19 +252,19 @@
     
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/categories/github/"/>
+    <category term="github" scheme="https://tsuiwade.gitee.io/categories/github/"/>
     
     
-    <category term="markdown" scheme="https://tsuiwade.github.io/tags/markdown/"/>
+    <category term="markdown" scheme="https://tsuiwade.gitee.io/tags/markdown/"/>
     
-    <category term="GFM" scheme="https://tsuiwade.github.io/tags/GFM/"/>
+    <category term="GFM" scheme="https://tsuiwade.gitee.io/tags/GFM/"/>
     
   </entry>
   
   <entry>
     <title>【第4篇博客】hexo的常见指令及简写汇总</title>
-    <link href="https://tsuiwade.github.io/2021/01/01/blog4_hexo_commands/"/>
-    <id>https://tsuiwade.github.io/2021/01/01/blog4_hexo_commands/</id>
+    <link href="https://tsuiwade.gitee.io/2021/01/01/blog4_hexo_commands/"/>
+    <id>https://tsuiwade.gitee.io/2021/01/01/blog4_hexo_commands/</id>
     <published>2021-01-01T10:21:44.000Z</published>
     <updated>2021-01-26T10:31:23.000Z</updated>
     
@@ -274,17 +275,17 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://tsuiwade.gitee.io/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>【第3篇博客】如何在无外网情况下访问自己的github.io博客</title>
-    <link href="https://tsuiwade.github.io/2020/10/10/blog3_DnsBlogGithubIo/"/>
-    <id>https://tsuiwade.github.io/2020/10/10/blog3_DnsBlogGithubIo/</id>
+    <link href="https://tsuiwade.gitee.io/2020/10/10/blog3_DnsBlogGithubIo/"/>
+    <id>https://tsuiwade.gitee.io/2020/10/10/blog3_DnsBlogGithubIo/</id>
     <published>2020-10-10T10:55:12.000Z</published>
     <updated>2021-01-26T10:31:23.000Z</updated>
     
@@ -295,19 +296,19 @@
     
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/categories/github/"/>
+    <category term="github" scheme="https://tsuiwade.gitee.io/categories/github/"/>
     
     
-    <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://tsuiwade.gitee.io/tags/hexo/"/>
     
-    <category term="github" scheme="https://tsuiwade.github.io/tags/github/"/>
+    <category term="github" scheme="https://tsuiwade.gitee.io/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>【第2篇博客】butterfly样式修改学习记录</title>
-    <link href="https://tsuiwade.github.io/2020/10/09/blog2-BlogTheme/"/>
-    <id>https://tsuiwade.github.io/2020/10/09/blog2-BlogTheme/</id>
+    <link href="https://tsuiwade.gitee.io/2020/10/09/blog2-BlogTheme/"/>
+    <id>https://tsuiwade.gitee.io/2020/10/09/blog2-BlogTheme/</id>
     <published>2020-10-09T08:41:21.000Z</published>
     <updated>2021-03-04T10:31:23.000Z</updated>
     
@@ -318,33 +319,33 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://tsuiwade.gitee.io/tags/hexo/"/>
     
-    <category term="butterfly" scheme="https://tsuiwade.github.io/tags/butterfly/"/>
+    <category term="butterfly" scheme="https://tsuiwade.gitee.io/tags/butterfly/"/>
     
   </entry>
   
   <entry>
     <title>【第1篇博客】hexo搭建github.io博客学习记录</title>
-    <link href="https://tsuiwade.github.io/2020/07/05/blog1-MyBlog/"/>
-    <id>https://tsuiwade.github.io/2020/07/05/blog1-MyBlog/</id>
+    <link href="https://tsuiwade.gitee.io/2020/07/05/blog1-MyBlog/"/>
+    <id>https://tsuiwade.gitee.io/2020/07/05/blog1-MyBlog/</id>
     <published>2020-07-05T10:30:44.000Z</published>
     <updated>2021-02-11T10:31:23.000Z</updated>
     
-    <content type="html"><![CDATA[<p>github Pages可以被认为是用户编写的、托管在github上的静态网页。</p><p>本文将记录如下步骤：</p><ol><li>环境准备</li><li>hexo博客搭建</li><li>github静态网站部署</li><li>通过github的Action自动部署项目</li></ol><hr><h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><h2 id="github账号申请及repository仓库新建"><a href="#github账号申请及repository仓库新建" class="headerlink" title="github账号申请及repository仓库新建"></a>github账号申请及repository仓库新建</h2><p>首先需要进入官网 <a href="https://github.com">https://github.com</a> 申请一个github账号。</p><p>然后在右上角New一个repository，注意Repository name 必须为自己的<code>用户名.github.io</code>，例如 tsuiwade.github.io。（因为这样最后生成的博客网址才会足够的短，直接为<code>username.github.io</code>，否则生成的网址还有前面的用户名，网址过长而不美观。） </p><p><img src="https://gitee.com/tsuiwade/images/raw/master/1.jpg" alt=""></p><p>其他默认，最后<code>creat repository</code></p><h1 id="hexo博客搭建"><a href="#hexo博客搭建" class="headerlink" title="hexo博客搭建"></a>hexo博客搭建</h1><h2 id="搭建静态博客的框架-hexo"><a href="#搭建静态博客的框架-hexo" class="headerlink" title="搭建静态博客的框架-hexo"></a>搭建静态博客的框架-hexo</h2><p>hexo是一个快速、简洁且高效的博客框架，具有超快速度、支持markdown、一键部署、插件和可扩展性的特性。官网为 <a href="https://hexo.io/">https://hexo.io/</a> 。</p><p>hexo框架的主题样式比较丰富，可用插件也较多，虽然功能不够强大，但仍然能满足现阶段我们写博客的需求，比较适合新手。</p><p>在搭建博客之前，最好有HTML/JS/CSS、Node/Npm、git/github的技能，不过没有也没关系，跟着我的这篇博客走，能完成自己博客的搭建，我的其他文章可以帮助你补全知识框架。</p><h2 id="开始搭建hexo博客"><a href="#开始搭建hexo博客" class="headerlink" title="开始搭建hexo博客"></a>开始搭建hexo博客</h2><p>初始化hexo将使用以下命令。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g # 全局安装hexo提供的脚手架工具hexo-cli</span><br><span class="line">hexo init blog # 使用脚手架工具提供的hexo init来初始化一个hexo项目，后面填写项目名称</span><br><span class="line">cd blog # 项目初始化之后，进入项目文件夹，并且用vscode打开该文件夹</span><br><span class="line">npm install</span><br><span class="line">hexo server # 可简写为hexo s来运行项目，便可以在本地服务4000端口来访问</span><br></pre></td></tr></table></figure><br>在浏览器中访问 <a href="http://localhost:4000">http://localhost:4000</a> ，便可看到博客页面如下图所示，当前博客使用了hexo所提供的一个默认主题<code>landscape</code>，后续可以更换一个更好看的主题。<br><img src="https://gitee.com/tsuiwade/images/raw/master/2.jpg" alt=""></p><p>我们回到项目文件夹中，主要文件的含义如下图所示。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/3.png" alt=""></p><p>其中，根目录下的<code>_config.yml</code>文件是我们经常会修改的，可修改博客的一些默认配置。yml是一种用来表达数据序列化的格式，类似于json。</p><p>打开该文件，修改如下博客配置属性。</p><div class="table-container"><table><thead><tr><th style="text-align:left">修改前</th><th style="text-align:left">修改后 </th></tr></thead><tbody><tr><td style="text-align:left">title: Hexo&lt;/br&gt;description: ‘’&lt;/br&gt;author: John Doe&lt;/br&gt;language: en&lt;/br&gt;url: <a href="http://example.com">http://example.com</a> &lt;/br&gt;</td><td style="text-align:left">title: TsuiWade’s blog&lt;/br&gt;description: “记录技术生活的点点滴滴”&lt;/br&gt;author: tsuiwade&lt;/br&gt;language: zh-CN&lt;/br&gt;url:<a href="https://tsuiwade.github.io/">https://tsuiwade.github.io/</a></td></tr></tbody></table></div><p>修改后可以看到浏览器上的博客页面也做了相应的变化。</p><p>此时，一个基本的博客已经搭建完成。</p><h2 id="修改主题样式"><a href="#修改主题样式" class="headerlink" title="修改主题样式"></a>修改主题样式</h2><p>hexo官网 <a href="https://hexo.io/">https://hexo.io/</a> 里提供了300多种主题样式，可以在跟随我使用同样的主题，学会设置主题样式后可自行选择任意一款你喜欢的样式来使用。<br><img src="https://gitee.com/tsuiwade/images/raw/master/5.png" alt=""></p><p>这里我们选择<code>Butterfly</code>样式，同我的博客样式一样。</p><p>官网 <a href="https://butterfly.js.org/">https://butterfly.js.org/</a> 。 官网也做成了该主题的博客样式，使用的butterfly样式，其中有许多hexo博客优化教程，后续我也会学习整理。</p><p>还有github项目地址 <a href="https://github.com/jerryc127/hexo-theme-butterfly">https://github.com/jerryc127/hexo-theme-butterfly</a> 。其中有配置主题的教程，我们先打开来走一遍该流程。</p><p>1、回到vscode，将该主题克隆到themes目录下。</p><p>输入</p><pre><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</code></pre><p>可以看到在themes文件夹下多了一个butterfly文件夹，即为主题样式文件。</p><p>2、在根目录的<code>_config.yml</code>中修改主题属性：<br>修改前   | 修改后<br>:- | :-<br>theme: landscape | theme: butterfly</p><p>3、在文件夹中显示butterfly，删除<code>.git</code>文件夹，删除该主题的默认的git配置文件，是为了把该主题和我们的博客项目合并为一个项目，统一由一个git来管理。</p><p>4、更换主题后，如果输入hexo s，则会看到Hexo启动服务器页面显示报错extends includes/layout.pug block content include includes/recent-posts.pug include</p><p>此时我们在cmd中输入</p><pre><code>npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive</code></pre><p>此时<code>hexo s</code>即可看到主题样式应用成功。</p><p>倘若还不能解决，则进行清除缓存<br><code>hexo clean</code><br>生成静态文件，查看效果<br><code>hexo g</code><br><code>hexo s</code><br>可看到主题样式配置生效。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/3.jpg" alt=""></p><h1 id="github静态网站部署"><a href="#github静态网站部署" class="headerlink" title="github静态网站部署"></a>github静态网站部署</h1><p>此时，我们的博客只能在本地访问。接下来我们需要把博客部署到github上的一个仓库上，然后使用github pages功能，获取到一个站点来访问我们的博客。</p><p>由前面的github账号创建的仓库。打开该github页面，正如页面提示的一样。<br><img src="https://gitee.com/tsuiwade/images/raw/master/4.jpg" alt=""></p><p>首先进行·git初始化：</p><pre><code>git init</code></pre><p>然后给当前仓库添加一个远程的git地址：</p><pre><code>git remote add origin https://github.com/miemietou/miemietou.github.io.git</code></pre><p>在使用hexo部署博客之前，我们需要先安装一个叫<code>hexo-deployer-git</code>的依赖，这个库会帮助我们将生成好的代码部署到一个具体的分支。</p><pre><code>yarn add hexo-deployer-git</code></pre><p>安装完之后，我们打开<code>_config.yml</code>文件，拉到最下面，修改deploy属性。部署类型为git，仓库地址填项目地址，分支填写master，注意我们的打包产物需要提交到master分支。<br>将</p><pre><code>deploy:  type: &#39;&#39;</code></pre><p>修改为</p><pre><code>deploy:  type: git  repo: https://github.com/miemietou/miemietou.github.io  branch: master</code></pre><p>接着输入</p><pre><code>hexo deploy</code></pre><p>来部署我们的代码，代码提交完成之后，我们打开github项目的首页，就能看到我们打包上传的产物已经提交到了master分支上。master分支里面的代码其实就是生成的public目录下的文件。然后点击仓库页面的setting，找到github pages一栏，顺利的话将显示我们的站点已成功部署，可以打开该网址检查是否被部署成功。</p><p>此时我们已经完成一个博客的基本部署功能。接下来将做一个非常有趣的自动化部署功能。</p><p>在自动化部署之前，我们需要把我们的源代码提交到github上，因为master分支已经被占用，所以我们只能把源代码提交到另一个分支上，首先我们需要commit一下本地代码。</p><pre><code>git add .git commit -m &quot;none&quot;</code></pre><p>然后我们重建一个分支myblog，然后将该分支push到github上。</p><pre><code>git push --set-upstream origin myblog</code></pre><p>接着，myblog分支已经被push到了github上。</p><h1 id="github-actions实现自动化部署"><a href="#github-actions实现自动化部署" class="headerlink" title="github actions实现自动化部署"></a>github actions实现自动化部署</h1><p>不需要自己在本地进行代码的构建打包，使仓库的action功能，点击该按钮，可以看到github actions提供的功能：帮助构建、测试、部署你的代码，还能使用github actions来做code review、分支管理和issue的追踪。我们这里将会使用它来实现项目的自动打包和代码的部署。</p><p>首先，我们需要在项目根目录下创建.github文件夹和.github目录下的workflows文件夹，然后在里面新建deploy.yml文件，复制粘贴如下代码，该代码的作用就是配置代码部署过程中的一些步骤，例如第一步需要checkout，然后需要安装和打包构建，最后触发一个代码的部署。</p><pre><code>name: Build and Deployon: [push]jobs:build-and-deploy:    runs-on: ubuntu-latest    steps:    - name: Checkout 🛎️        uses: actions/checkout@v2 # If you&#39;re using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.        with:        persist-credentials: false    - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the &#39;build&#39; folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.        run: |        npm install        npm run build        env:        CI: false    - name: Deploy 🚀        uses: JamesIves/github-pages-deploy-action@releases/v3        with:        GITHUB_TOKEN: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;        BRANCH: master # The branch the action should deploy to.        FOLDER: public # The folder the action should deploy.</code></pre><p>接下来，就输入提交代码老三行：<br>    git add .<br>    git commit -m “message”<br>    git push</p><p>提交之后，我们回到仓库首页，点击actions标签，可以看到所有的工作流，如果显示绿色打钩则代码部署成功，站点内容就会成功更新。</p><p>参考： <a href="https://www.bilibili.com/video/BV1dt4y1Q7UE?t=354">https://www.bilibili.com/video/BV1dt4y1Q7UE?t=354</a></p><p><a href="https://www.antmoe.com/posts/4b1b8c9f/">https://www.antmoe.com/posts/4b1b8c9f/</a></p>]]></content>
+    <content type="html"><![CDATA[<p>github Pages可以被认为是用户编写的、托管在github上的静态网页。</p><p>本文将记录如下步骤：</p><ol><li>环境准备</li><li>hexo博客搭建</li><li>github静态网站部署</li><li>通过github的Action自动部署项目</li></ol><hr><h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><h2 id="github账号申请及repository仓库新建"><a href="#github账号申请及repository仓库新建" class="headerlink" title="github账号申请及repository仓库新建"></a>github账号申请及repository仓库新建</h2><p>首先需要进入官网 <a href="https://github.com">https://github.com</a> 申请一个github账号。</p><p>然后在右上角New一个repository，注意Repository name 必须为自己的<code>用户名.github.io</code>，例如 tsuiwade.github.io。（因为这样最后生成的博客网址才会足够的短，直接为<code>username.github.io</code>，否则生成的网址还有前面的用户名，网址过长而不美观。） </p><p><img src="https://gitee.com/tsuiwade/images/raw/master/1.jpg" alt=""></p><p>其他默认，最后<code>creat repository</code></p><h1 id="hexo博客搭建"><a href="#hexo博客搭建" class="headerlink" title="hexo博客搭建"></a>hexo博客搭建</h1><h2 id="搭建静态博客的框架-hexo"><a href="#搭建静态博客的框架-hexo" class="headerlink" title="搭建静态博客的框架-hexo"></a>搭建静态博客的框架-hexo</h2><p>hexo是一个快速、简洁且高效的博客框架，具有超快速度、支持markdown、一键部署、插件和可扩展性的特性。官网为 <a href="https://hexo.io/">https://hexo.io/</a> 。</p><p>hexo框架的主题样式比较丰富，可用插件也较多，虽然功能不够强大，但仍然能满足现阶段我们写博客的需求，比较适合新手。</p><p>在搭建博客之前，最好有HTML/JS/CSS、Node/Npm、git/github的技能，不过没有也没关系，跟着我的这篇博客走，能完成自己博客的搭建，我的其他文章可以帮助你补全知识框架。</p><h2 id="开始搭建hexo博客"><a href="#开始搭建hexo博客" class="headerlink" title="开始搭建hexo博客"></a>开始搭建hexo博客</h2><p>初始化hexo将使用以下命令。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g # 全局安装hexo提供的脚手架工具hexo-cli</span><br><span class="line">hexo init blog # 使用脚手架工具提供的hexo init来初始化一个hexo项目，后面填写项目名称</span><br><span class="line">cd blog # 项目初始化之后，进入项目文件夹，并且用vscode打开该文件夹</span><br><span class="line">npm install</span><br><span class="line">hexo server # 可简写为hexo s来运行项目，便可以在本地服务4000端口来访问</span><br></pre></td></tr></table></figure><br>在浏览器中访问 <a href="http://localhost:4000">http://localhost:4000</a> ，便可看到博客页面如下图所示，当前博客使用了hexo所提供的一个默认主题<code>landscape</code>，后续可以更换一个更好看的主题。<br><img src="https://gitee.com/tsuiwade/images/raw/master/2.jpg" alt=""></p><p>我们回到项目文件夹中，主要文件的含义如下图所示。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/3.png" alt=""></p><p>其中，根目录下的<code>_config.yml</code>文件是我们经常会修改的，可修改博客的一些默认配置。yml是一种用来表达数据序列化的格式，类似于json。</p><p>打开该文件，修改如下博客配置属性。</p><div class="table-container"><table><thead><tr><th style="text-align:left">修改前</th><th style="text-align:left">修改后 </th></tr></thead><tbody><tr><td style="text-align:left">title: Hexo&lt;/br&gt;description: ‘’&lt;/br&gt;author: John Doe&lt;/br&gt;language: en&lt;/br&gt;url: <a href="http://example.com">http://example.com</a> &lt;/br&gt;</td><td style="text-align:left">title: TsuiWade’s blog&lt;/br&gt;description: “记录技术生活的点点滴滴”&lt;/br&gt;author: tsuiwade&lt;/br&gt;language: zh-CN&lt;/br&gt;url:<a href="https://tsuiwade.github.io/">https://tsuiwade.github.io/</a></td></tr></tbody></table></div><p>修改后可以看到浏览器上的博客页面也做了相应的变化。</p><p>此时，一个基本的博客已经搭建完成。</p><h2 id="修改主题样式"><a href="#修改主题样式" class="headerlink" title="修改主题样式"></a>修改主题样式</h2><p>hexo官网 <a href="https://hexo.io/">https://hexo.io/</a> 里提供了300多种主题样式，可以在跟随我使用同样的主题，学会设置主题样式后可自行选择任意一款你喜欢的样式来使用。<br><img src="https://gitee.com/tsuiwade/images/raw/master/5.png" alt=""></p><p>这里我们选择<code>Butterfly</code>样式，同我的博客样式一样。</p><p>官网 <a href="https://butterfly.js.org/">https://butterfly.js.org/</a> 。 官网也做成了该主题的博客样式，使用的butterfly样式，其中有许多hexo博客优化教程，后续我也会学习整理。</p><p>还有github项目地址 <a href="https://github.com/jerryc127/hexo-theme-butterfly">https://github.com/jerryc127/hexo-theme-butterfly</a> 。其中有配置主题的教程，我们先打开来走一遍该流程。</p><p>1、回到vscode，将该主题克隆到themes目录下。</p><p>输入</p><pre><code>git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</code></pre><p>可以看到在themes文件夹下多了一个butterfly文件夹，即为主题样式文件。</p><p>2、在根目录的<code>_config.yml</code>中修改主题属性：</p><div class="table-container"><table><thead><tr><th style="text-align:left">修改前</th><th style="text-align:left">修改后 </th></tr></thead><tbody><tr><td style="text-align:left">theme: landscape</td><td style="text-align:left">theme: butterfly</td></tr></tbody></table></div><p>3、在文件夹中显示butterfly，删除<code>.git</code>文件夹，删除该主题的默认的git配置文件，是为了把该主题和我们的博客项目合并为一个项目，统一由一个git来管理。</p><p>4、更换主题后，如果输入hexo s，则会看到Hexo启动服务器页面显示报错extends includes/layout.pug block content include includes/recent-posts.pug include</p><p>此时我们在cmd中输入</p><pre><code>npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive</code></pre><p>此时<code>hexo s</code>即可看到主题样式应用成功。</p><p>倘若还不能解决，则进行清除缓存<br><code>hexo clean</code><br>生成静态文件，查看效果<br><code>hexo g</code><br><code>hexo s</code><br>可看到主题样式配置生效。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/3.jpg" alt=""></p><h1 id="github静态网站部署"><a href="#github静态网站部署" class="headerlink" title="github静态网站部署"></a>github静态网站部署</h1><p>此时，我们的博客只能在本地访问。接下来我们需要把博客部署到github上的一个仓库上，然后使用github pages功能，获取到一个站点来访问我们的博客。</p><p>由前面的github账号创建的仓库。打开该github页面，正如页面提示的一样。<br><img src="https://gitee.com/tsuiwade/images/raw/master/4.jpg" alt=""></p><p>首先进行·git初始化：</p><pre><code>git init</code></pre><p>然后给当前仓库添加一个远程的git地址：</p><pre><code>git remote add origin https://github.com/miemietou/miemietou.github.io.git</code></pre><p>在使用hexo部署博客之前，我们需要先安装一个叫<code>hexo-deployer-git</code>的依赖，这个库会帮助我们将生成好的代码部署到一个具体的分支。</p><pre><code>yarn add hexo-deployer-git</code></pre><p>安装完之后，我们打开<code>_config.yml</code>文件，拉到最下面，修改deploy属性。部署类型为git，仓库地址填项目地址，分支填写master，注意我们的打包产物需要提交到master分支。<br>将</p><pre><code>deploy:  type: &#39;&#39;</code></pre><p>修改为</p><pre><code>deploy:  type: git  repo: https://github.com/miemietou/miemietou.github.io  branch: master</code></pre><p>接着输入</p><pre><code>hexo deploy</code></pre><p>来部署我们的代码，代码提交完成之后，我们打开github项目的首页，就能看到我们打包上传的产物已经提交到了master分支上。master分支里面的代码其实就是生成的public目录下的文件。然后点击仓库页面的setting，找到github pages一栏，顺利的话将显示我们的站点已成功部署，可以打开该网址检查是否被部署成功。</p><p>此时我们已经完成一个博客的基本部署功能。接下来将做一个非常有趣的自动化部署功能。</p><p>在自动化部署之前，我们需要把我们的源代码提交到github上，因为master分支已经被占用，所以我们只能把源代码提交到另一个分支上，首先我们需要commit一下本地代码。</p><pre><code>git add .git commit -m &quot;none&quot;</code></pre><p>然后我们重建一个分支myblog，然后将该分支push到github上。</p><pre><code>git push --set-upstream origin myblog</code></pre><p>接着，myblog分支已经被push到了github上。</p><h1 id="github-actions实现自动化部署"><a href="#github-actions实现自动化部署" class="headerlink" title="github actions实现自动化部署"></a>github actions实现自动化部署</h1><p>不需要自己在本地进行代码的构建打包，使仓库的action功能，点击该按钮，可以看到github actions提供的功能：帮助构建、测试、部署你的代码，还能使用github actions来做code review、分支管理和issue的追踪。我们这里将会使用它来实现项目的自动打包和代码的部署。</p><p>首先，我们需要在项目根目录下创建.github文件夹和.github目录下的workflows文件夹，然后在里面新建deploy.yml文件，复制粘贴如下代码，该代码的作用就是配置代码部署过程中的一些步骤，例如第一步需要checkout，然后需要安装和打包构建，最后触发一个代码的部署。</p><pre><code>name: Build and Deployon: [push]jobs:build-and-deploy:    runs-on: ubuntu-latest    steps:    - name: Checkout 🛎️        uses: actions/checkout@v2 # If you&#39;re using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.        with:        persist-credentials: false    - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the &#39;build&#39; folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.        run: |        npm install        npm run build        env:        CI: false    - name: Deploy 🚀        uses: JamesIves/github-pages-deploy-action@releases/v3        with:        GITHUB_TOKEN: $&#123;&#123; secrets.GITHUB_TOKEN &#125;&#125;        BRANCH: master # The branch the action should deploy to.        FOLDER: public # The folder the action should deploy.</code></pre><p>接下来，就输入提交代码老三行：<br>    git add .<br>    git commit -m “message”<br>    git push</p><p>提交之后，我们回到仓库首页，点击actions标签，可以看到所有的工作流，如果显示绿色打钩则代码部署成功，站点内容就会成功更新。</p><p>参考： <a href="https://www.bilibili.com/video/BV1dt4y1Q7UE?t=354">https://www.bilibili.com/video/BV1dt4y1Q7UE?t=354</a></p><p><a href="https://www.antmoe.com/posts/4b1b8c9f/">https://www.antmoe.com/posts/4b1b8c9f/</a></p>]]></content>
     
     
     <summary type="html">hexo搭建博客记录</summary>
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://tsuiwade.gitee.io/tags/hexo/"/>
     
   </entry>
   
