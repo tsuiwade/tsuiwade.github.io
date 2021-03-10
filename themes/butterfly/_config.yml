@@ -94,7 +94,7 @@ favicon: /img/me.png
 
 # Avatar (頭像)
 avatar:
-  img: https://cdn.imzjw.cn/img/71 # /img/me.png
+  img: https://gitee.com/tsuiwade/images/raw/master/1a27de723e1cb04e5acd82cbf4146166_31ebbe760ba45b872b1b8f6c19eb6246.gif # /img/me.png
   effect: false
 
 # Disable all banner image

@@ -16,10 +16,10 @@ categories:
 
 
 效果如下：
-![p62](https://cdn.imzjw.cn/img/62)
+![](https://gitee.com/tsuiwade/images/raw/master/20210310123146.png)
 大家平时在逛GitHub，Gitee，各大论坛博客的时候，都有类似很好看很漂亮的徽章，主要通过 [shields.io](https://shields.io/) 在线生成。
 
-![p63](https://cdn.imzjw.cn/img/63)
+![](https://gitee.com/tsuiwade/images/raw/master/20210310123227.png)
 
 其中，找到Your BADGE 专属定制徽章
 - label：标签，徽标左侧内容

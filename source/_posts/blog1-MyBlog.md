@@ -94,6 +94,7 @@ hexo官网 https://hexo.io/ 里提供了300多种主题样式，可以在跟随�
 
 
 2、在根目录的`_config.yml`中修改主题属性：
+
 修改前   | 修改后 
 :- | :- 
 theme: landscape | theme: butterfly

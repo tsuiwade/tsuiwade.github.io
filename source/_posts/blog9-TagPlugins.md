@@ -3,7 +3,7 @@ title: 【第9篇博客】标签外挂的配置学习记录
 date: 2021-02-07 22:04:18
 updated: 2021-03-04 15:40:49
 description: 
-cover: "https://cdn.imzjw.cn/img/66"
+cover: "https://gitee.com/tsuiwade/images/raw/master/20210310123253.png"
 tags: 
   - 标签外挂
   - github
