@@ -3,11 +3,11 @@
   <title>TsuiWade&#39;s blog</title>
   
   
-  <link href="https://tsuiwade.github.io/atom.xml" rel="self"/>
+  <link href="https://tsuiwade.tk/atom.xml" rel="self"/>
   
-  <link href="https://tsuiwade.github.io/"/>
+  <link href="https://tsuiwade.tk/"/>
   <updated>2021-03-11T22:35:24.000Z</updated>
-  <id>https://tsuiwade.github.io/</id>
+  <id>https://tsuiwade.tk/</id>
   
   <author>
     <name>tsuiwade</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>【第15篇博客】申请新的短域名</title>
-    <link href="https://tsuiwade.github.io/2021/03/11/blog15-NewDomain/"/>
-    <id>https://tsuiwade.github.io/2021/03/11/blog15-NewDomain/</id>
+    <link href="https://tsuiwade.tk/2021/03/11/blog15-NewDomain/"/>
+    <id>https://tsuiwade.tk/2021/03/11/blog15-NewDomain/</id>
     <published>2021-03-11T22:35:24.000Z</published>
     <updated>2021-03-11T22:35:24.000Z</updated>
     
@@ -30,19 +30,19 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.tk/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/tags/github/"/>
+    <category term="github" scheme="https://tsuiwade.tk/tags/github/"/>
     
-    <category term="domain" scheme="https://tsuiwade.github.io/tags/domain/"/>
+    <category term="domain" scheme="https://tsuiwade.tk/tags/domain/"/>
     
   </entry>
   
   <entry>
     <title>【第14篇博客】带上gitee，双线部署</title>
-    <link href="https://tsuiwade.github.io/2021/03/09/blog14-gitee/"/>
-    <id>https://tsuiwade.github.io/2021/03/09/blog14-gitee/</id>
+    <link href="https://tsuiwade.tk/2021/03/09/blog14-gitee/"/>
+    <id>https://tsuiwade.tk/2021/03/09/blog14-gitee/</id>
     <published>2021-03-09T20:43:52.000Z</published>
     <updated>2021-03-09T20:43:52.000Z</updated>
     
@@ -53,17 +53,17 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.tk/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="gitee" scheme="https://tsuiwade.github.io/tags/gitee/"/>
+    <category term="gitee" scheme="https://tsuiwade.tk/tags/gitee/"/>
     
   </entry>
   
   <entry>
     <title>【第13篇博客】github贡献日历上画画及博客首页显示gitcalendar</title>
-    <link href="https://tsuiwade.github.io/2021/03/07/blog13-githubpaint/"/>
-    <id>https://tsuiwade.github.io/2021/03/07/blog13-githubpaint/</id>
+    <link href="https://tsuiwade.tk/2021/03/07/blog13-githubpaint/"/>
+    <id>https://tsuiwade.tk/2021/03/07/blog13-githubpaint/</id>
     <published>2021-03-07T22:36:44.000Z</published>
     <updated>2021-03-07T22:36:44.000Z</updated>
     
@@ -74,19 +74,19 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.tk/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/tags/github/"/>
+    <category term="github" scheme="https://tsuiwade.tk/tags/github/"/>
     
-    <category term="gitcalendar" scheme="https://tsuiwade.github.io/tags/gitcalendar/"/>
+    <category term="gitcalendar" scheme="https://tsuiwade.tk/tags/gitcalendar/"/>
     
   </entry>
   
   <entry>
     <title>【第12篇博客】PicGo图床工具配合Typora的便捷贴图配置</title>
-    <link href="https://tsuiwade.github.io/2021/03/06/blog12-PicGo/"/>
-    <id>https://tsuiwade.github.io/2021/03/06/blog12-PicGo/</id>
+    <link href="https://tsuiwade.tk/2021/03/06/blog12-PicGo/"/>
+    <id>https://tsuiwade.tk/2021/03/06/blog12-PicGo/</id>
     <published>2021-03-06T16:57:32.000Z</published>
     <updated>2021-03-06T16:57:32.000Z</updated>
     
@@ -97,21 +97,21 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.tk/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="Typora" scheme="https://tsuiwade.github.io/tags/Typora/"/>
+    <category term="Typora" scheme="https://tsuiwade.tk/tags/Typora/"/>
     
-    <category term="PicGo" scheme="https://tsuiwade.github.io/tags/PicGo/"/>
+    <category term="PicGo" scheme="https://tsuiwade.tk/tags/PicGo/"/>
     
-    <category term="Gitee" scheme="https://tsuiwade.github.io/tags/Gitee/"/>
+    <category term="Gitee" scheme="https://tsuiwade.tk/tags/Gitee/"/>
     
   </entry>
   
   <entry>
     <title>【第11篇博客】博客操作优化2——使用bat优化操作及bat语法学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/03/06/blog11-BatLearning/"/>
-    <id>https://tsuiwade.github.io/2021/03/06/blog11-BatLearning/</id>
+    <link href="https://tsuiwade.tk/2021/03/06/blog11-BatLearning/"/>
+    <id>https://tsuiwade.tk/2021/03/06/blog11-BatLearning/</id>
     <published>2021-03-06T12:14:04.000Z</published>
     <updated>2021-03-06T12:14:04.000Z</updated>
     
@@ -122,19 +122,19 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.tk/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="博客优化" scheme="https://tsuiwade.github.io/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/"/>
+    <category term="博客优化" scheme="https://tsuiwade.tk/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/"/>
     
-    <category term="bat" scheme="https://tsuiwade.github.io/tags/bat/"/>
+    <category term="bat" scheme="https://tsuiwade.tk/tags/bat/"/>
     
   </entry>
   
   <entry>
     <title>【第10篇博客】博客操作优化1——使用Typora编写markdown博客</title>
-    <link href="https://tsuiwade.github.io/2021/03/06/blog10-Typora/"/>
-    <id>https://tsuiwade.github.io/2021/03/06/blog10-Typora/</id>
+    <link href="https://tsuiwade.tk/2021/03/06/blog10-Typora/"/>
+    <id>https://tsuiwade.tk/2021/03/06/blog10-Typora/</id>
     <published>2021-03-06T12:06:31.000Z</published>
     <updated>2021-03-06T12:06:31.000Z</updated>
     
@@ -145,21 +145,21 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.tk/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="Typora" scheme="https://tsuiwade.github.io/tags/Typora/"/>
+    <category term="Typora" scheme="https://tsuiwade.tk/tags/Typora/"/>
     
-    <category term="markdown" scheme="https://tsuiwade.github.io/tags/markdown/"/>
+    <category term="markdown" scheme="https://tsuiwade.tk/tags/markdown/"/>
     
-    <category term="博客优化" scheme="https://tsuiwade.github.io/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/"/>
+    <category term="博客优化" scheme="https://tsuiwade.tk/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>【第9篇博客】标签外挂的配置学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/02/07/blog9-TagPlugins/"/>
-    <id>https://tsuiwade.github.io/2021/02/07/blog9-TagPlugins/</id>
+    <link href="https://tsuiwade.tk/2021/02/07/blog9-TagPlugins/"/>
+    <id>https://tsuiwade.tk/2021/02/07/blog9-TagPlugins/</id>
     <published>2021-02-07T22:04:18.000Z</published>
     <updated>2021-03-04T15:40:49.000Z</updated>
     
@@ -174,19 +174,19 @@
     
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/categories/github/"/>
+    <category term="github" scheme="https://tsuiwade.tk/categories/github/"/>
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/tags/github/"/>
+    <category term="github" scheme="https://tsuiwade.tk/tags/github/"/>
     
-    <category term="标签外挂" scheme="https://tsuiwade.github.io/tags/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/"/>
+    <category term="标签外挂" scheme="https://tsuiwade.tk/tags/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/"/>
     
   </entry>
   
   <entry>
     <title>【第8篇博客】GitHub Badge的配置学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/02/04/blog8-ShieldIoBadge/"/>
-    <id>https://tsuiwade.github.io/2021/02/04/blog8-ShieldIoBadge/</id>
+    <link href="https://tsuiwade.tk/2021/02/04/blog8-ShieldIoBadge/"/>
+    <id>https://tsuiwade.tk/2021/02/04/blog8-ShieldIoBadge/</id>
     <published>2021-02-04T22:04:18.000Z</published>
     <updated>2021-03-04T15:40:49.000Z</updated>
     
@@ -200,19 +200,19 @@
     
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/categories/github/"/>
+    <category term="github" scheme="https://tsuiwade.tk/categories/github/"/>
     
     
-    <category term="shield.io" scheme="https://tsuiwade.github.io/tags/shield-io/"/>
+    <category term="shield.io" scheme="https://tsuiwade.tk/tags/shield-io/"/>
     
-    <category term="GitHub Badge" scheme="https://tsuiwade.github.io/tags/GitHub-Badge/"/>
+    <category term="GitHub Badge" scheme="https://tsuiwade.tk/tags/GitHub-Badge/"/>
     
   </entry>
   
   <entry>
     <title>【第7篇博客】配置jsDelivr提供静态资源CDN加速学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/02/01/blog7-JdDelivrUse/"/>
-    <id>https://tsuiwade.github.io/2021/02/01/blog7-JdDelivrUse/</id>
+    <link href="https://tsuiwade.tk/2021/02/01/blog7-JdDelivrUse/"/>
+    <id>https://tsuiwade.tk/2021/02/01/blog7-JdDelivrUse/</id>
     <published>2021-02-01T15:40:49.000Z</published>
     <updated>2021-03-04T15:40:49.000Z</updated>
     
@@ -223,19 +223,19 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.tk/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="jeDelivr" scheme="https://tsuiwade.github.io/tags/jeDelivr/"/>
+    <category term="jeDelivr" scheme="https://tsuiwade.tk/tags/jeDelivr/"/>
     
-    <category term="CDN" scheme="https://tsuiwade.github.io/tags/CDN/"/>
+    <category term="CDN" scheme="https://tsuiwade.tk/tags/CDN/"/>
     
   </entry>
   
   <entry>
     <title>【第6篇博客】写博客的git概念和指令学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/01/09/blog6-BaseGit/"/>
-    <id>https://tsuiwade.github.io/2021/01/09/blog6-BaseGit/</id>
+    <link href="https://tsuiwade.tk/2021/01/09/blog6-BaseGit/"/>
+    <id>https://tsuiwade.tk/2021/01/09/blog6-BaseGit/</id>
     <published>2021-01-09T10:55:12.000Z</published>
     <updated>2021-01-26T10:31:23.000Z</updated>
     
@@ -249,19 +249,19 @@
     
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/categories/github/"/>
+    <category term="github" scheme="https://tsuiwade.tk/categories/github/"/>
     
     
-    <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://tsuiwade.tk/tags/hexo/"/>
     
-    <category term="github" scheme="https://tsuiwade.github.io/tags/github/"/>
+    <category term="github" scheme="https://tsuiwade.tk/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>【第5篇博客】hexo下的markdown的语法(GFM)学习记录</title>
-    <link href="https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/"/>
-    <id>https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/</id>
+    <link href="https://tsuiwade.tk/2021/01/02/blog5-MarkdownLearning/"/>
+    <id>https://tsuiwade.tk/2021/01/02/blog5-MarkdownLearning/</id>
     <published>2021-01-02T11:31:14.000Z</published>
     <updated>2021-01-26T10:31:23.000Z</updated>
     
@@ -275,19 +275,19 @@
     
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/categories/github/"/>
+    <category term="github" scheme="https://tsuiwade.tk/categories/github/"/>
     
     
-    <category term="markdown" scheme="https://tsuiwade.github.io/tags/markdown/"/>
+    <category term="markdown" scheme="https://tsuiwade.tk/tags/markdown/"/>
     
-    <category term="GFM" scheme="https://tsuiwade.github.io/tags/GFM/"/>
+    <category term="GFM" scheme="https://tsuiwade.tk/tags/GFM/"/>
     
   </entry>
   
   <entry>
     <title>【第4篇博客】hexo的常见指令及简写汇总</title>
-    <link href="https://tsuiwade.github.io/2021/01/01/blog4_hexo_commands/"/>
-    <id>https://tsuiwade.github.io/2021/01/01/blog4_hexo_commands/</id>
+    <link href="https://tsuiwade.tk/2021/01/01/blog4_hexo_commands/"/>
+    <id>https://tsuiwade.tk/2021/01/01/blog4_hexo_commands/</id>
     <published>2021-01-01T10:21:44.000Z</published>
     <updated>2021-01-26T10:31:23.000Z</updated>
     
@@ -298,17 +298,17 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.tk/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://tsuiwade.tk/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>【第3篇博客】如何在无外网情况下访问自己的github.io博客</title>
-    <link href="https://tsuiwade.github.io/2020/10/10/blog3_DnsBlogGithubIo/"/>
-    <id>https://tsuiwade.github.io/2020/10/10/blog3_DnsBlogGithubIo/</id>
+    <link href="https://tsuiwade.tk/2020/10/10/blog3_DnsBlogGithubIo/"/>
+    <id>https://tsuiwade.tk/2020/10/10/blog3_DnsBlogGithubIo/</id>
     <published>2020-10-10T10:55:12.000Z</published>
     <updated>2021-01-26T10:31:23.000Z</updated>
     
@@ -319,19 +319,19 @@
     
     
     
-    <category term="github" scheme="https://tsuiwade.github.io/categories/github/"/>
+    <category term="github" scheme="https://tsuiwade.tk/categories/github/"/>
     
     
-    <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://tsuiwade.tk/tags/hexo/"/>
     
-    <category term="github" scheme="https://tsuiwade.github.io/tags/github/"/>
+    <category term="github" scheme="https://tsuiwade.tk/tags/github/"/>
     
   </entry>
   
   <entry>
     <title>【第2篇博客】butterfly样式修改学习记录</title>
-    <link href="https://tsuiwade.github.io/2020/10/09/blog2-BlogTheme/"/>
-    <id>https://tsuiwade.github.io/2020/10/09/blog2-BlogTheme/</id>
+    <link href="https://tsuiwade.tk/2020/10/09/blog2-BlogTheme/"/>
+    <id>https://tsuiwade.tk/2020/10/09/blog2-BlogTheme/</id>
     <published>2020-10-09T08:41:21.000Z</published>
     <updated>2021-03-04T10:31:23.000Z</updated>
     
@@ -342,19 +342,19 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.tk/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://tsuiwade.tk/tags/hexo/"/>
     
-    <category term="butterfly" scheme="https://tsuiwade.github.io/tags/butterfly/"/>
+    <category term="butterfly" scheme="https://tsuiwade.tk/tags/butterfly/"/>
     
   </entry>
   
   <entry>
     <title>【第1篇博客】hexo搭建github.io博客学习记录</title>
-    <link href="https://tsuiwade.github.io/2020/07/05/blog1-MyBlog/"/>
-    <id>https://tsuiwade.github.io/2020/07/05/blog1-MyBlog/</id>
+    <link href="https://tsuiwade.tk/2020/07/05/blog1-MyBlog/"/>
+    <id>https://tsuiwade.tk/2020/07/05/blog1-MyBlog/</id>
     <published>2020-07-05T10:30:44.000Z</published>
     <updated>2021-02-11T10:31:23.000Z</updated>
     
@@ -365,10 +365,10 @@
     
     
     
-    <category term="博客搭建记录" scheme="https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
+    <category term="博客搭建记录" scheme="https://tsuiwade.tk/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="hexo" scheme="https://tsuiwade.github.io/tags/hexo/"/>
+    <category term="hexo" scheme="https://tsuiwade.tk/tags/hexo/"/>
     
   </entry>
   
