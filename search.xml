@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>【第15篇博客】申请新的短域名</title>
+      <link href="2021/03/11/blog15-NewDomain/"/>
+      <url>2021/03/11/blog15-NewDomain/</url>
+      
+        <content type="html"><![CDATA[<h2 id="注册freenom免费域名"><a href="#注册freenom免费域名" class="headerlink" title="注册freenom免费域名"></a>注册freenom免费域名</h2><p>我们熟知的免费域名，有.tk，.ml，.cf。.tk域名是南太平洋岛国托克劳的顶级域名，.ml则是马里的顶级域名，.cf则是中非共和国的域名，不过搜索引擎基本上已经不收录了，虽然这些域名和.cn其实没什么区别。以前这些免费域名都是分开注册的，后来都被托管到了freenom，更加方便大家的注册。不过先在freenom也办法直接注册了，当你注册的时候会显示如下:</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210311231105623.png" alt="image-20210311231105623"></p><p>建议先用google登录！然后寻找自己想要的域名。</p><p>然后进入到购物车，选择12个月免费，点击continue继续。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210311231131960.png" alt="image-20210311231131960"></p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210311231757557.png" alt="image-20210311231757557"></p><p>注意这里框中的ip地址为自己的github.io的ip地址，具体下图方法可查。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210311233445471.png" alt="image-20210311233445471"></p><p>接着去结账</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210311232743765.png" alt="image-20210311232743765"></p><p>接下来可以看到自己已经申请成功。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210311232920762.png" alt="image-20210311232920762"></p><h2 id="Github仓库Settings"><a href="#Github仓库Settings" class="headerlink" title="Github仓库Settings"></a>Github仓库Settings</h2><p>找到GitHub Pages项。</p><p>输入刚才申请的域名如<code>miemietou.tk</code>，点击保存。下面那个HTTPS证书会在你保存域名后自动帮你申请，不过可能最长需要24小时才能申请成功。</p><p>如果上面的步骤都完成后，等待一会，在浏览器的地址栏输入新增域名，应该就可以跳转到你的博客页面了。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210311233633554.png" alt="image-20210311233633554"></p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210311233810077.png" alt="image-20210311233810077"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客搭建记录 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+            <tag> domain </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【第14篇博客】带上gitee，双线部署</title>
       <link href="2021/03/09/blog14-gitee/"/>
       <url>2021/03/09/blog14-gitee/</url>
