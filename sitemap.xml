@@ -2,126 +2,119 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tsuiwade.github.io/categories/index.html</loc>
+    <loc>https://tsuiwade.gitee.io/categories/index.html</loc>
     
     <lastmod>2021-03-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/charts/index.html</loc>
+    <loc>https://tsuiwade.gitee.io/charts/index.html</loc>
     
     <lastmod>2021-03-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/index.html</loc>
+    <loc>https://tsuiwade.gitee.io/tags/index.html</loc>
     
     <lastmod>2021-03-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/03/11/blog15-NewDomain/</loc>
-    
-    <lastmod>2021-03-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://tsuiwade.github.io/2021/03/09/blog14-gitee/</loc>
+    <loc>https://tsuiwade.gitee.io/2021/03/09/blog14-gitee/</loc>
     
     <lastmod>2021-03-09</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/03/07/blog13-githubpaint/</loc>
+    <loc>https://tsuiwade.gitee.io/2021/03/07/blog13-githubpaint/</loc>
     
     <lastmod>2021-03-07</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/03/06/blog12-PicGo/</loc>
+    <loc>https://tsuiwade.gitee.io/2021/03/06/blog12-PicGo/</loc>
     
     <lastmod>2021-03-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/03/06/blog11-BatLearning/</loc>
+    <loc>https://tsuiwade.gitee.io/2021/03/06/blog11-BatLearning/</loc>
     
     <lastmod>2021-03-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/03/06/blog10-Typora/</loc>
+    <loc>https://tsuiwade.gitee.io/2021/03/06/blog10-Typora/</loc>
     
     <lastmod>2021-03-06</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/02/01/blog7-JdDelivrUse/</loc>
+    <loc>https://tsuiwade.gitee.io/2021/02/01/blog7-JdDelivrUse/</loc>
     
     <lastmod>2021-03-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/02/04/blog8-ShieldIoBadge/</loc>
+    <loc>https://tsuiwade.gitee.io/2021/02/04/blog8-ShieldIoBadge/</loc>
     
     <lastmod>2021-03-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/02/07/blog9-TagPlugins/</loc>
+    <loc>https://tsuiwade.gitee.io/2021/02/07/blog9-TagPlugins/</loc>
     
     <lastmod>2021-03-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2020/10/09/blog2-BlogTheme/</loc>
+    <loc>https://tsuiwade.gitee.io/2020/10/09/blog2-BlogTheme/</loc>
     
     <lastmod>2021-03-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2020/07/05/blog1-MyBlog/</loc>
+    <loc>https://tsuiwade.gitee.io/2020/07/05/blog1-MyBlog/</loc>
     
     <lastmod>2021-02-11</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2020/10/10/blog3_DnsBlogGithubIo/</loc>
+    <loc>https://tsuiwade.gitee.io/2020/10/10/blog3_DnsBlogGithubIo/</loc>
     
     <lastmod>2021-01-26</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/01/01/blog4_hexo_commands/</loc>
+    <loc>https://tsuiwade.gitee.io/2021/01/01/blog4_hexo_commands/</loc>
     
     <lastmod>2021-01-26</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/01/02/blog5-MarkdownLearning/</loc>
+    <loc>https://tsuiwade.gitee.io/2021/01/02/blog5-MarkdownLearning/</loc>
     
     <lastmod>2021-01-26</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/01/09/blog6-BaseGit/</loc>
+    <loc>https://tsuiwade.gitee.io/2021/01/09/blog6-BaseGit/</loc>
     
     <lastmod>2021-01-26</lastmod>
     
@@ -129,7 +122,7 @@
   
 
   <url>
-    <loc>https://tsuiwade.github.io/</loc>
+    <loc>https://tsuiwade.gitee.io/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -137,126 +130,119 @@
 
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/hexo/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/hexo/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/Typora/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/Typora/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/markdown/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/markdown/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/bat/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/bat/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/PicGo/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/PicGo/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/Gitee/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/Gitee/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/github/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/github/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/gitcalendar/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/gitcalendar/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/gitee/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/gitee/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/domain/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/GFM/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/GFM/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/jeDelivr/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/jeDelivr/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/CDN/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/CDN/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/shield-io/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/shield-io/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/GitHub-Badge/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/GitHub-Badge/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/</loc>
-    <lastmod>2021-03-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://tsuiwade.github.io/tags/butterfly/</loc>
+    <loc>https://tsuiwade.gitee.io/tags/butterfly/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -265,14 +251,14 @@
 
   
   <url>
-    <loc>https://tsuiwade.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://tsuiwade.gitee.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/categories/github/</loc>
+    <loc>https://tsuiwade.gitee.io/categories/github/</loc>
     <lastmod>2021-03-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
