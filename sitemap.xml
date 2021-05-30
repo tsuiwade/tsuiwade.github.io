@@ -30,14 +30,14 @@
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/03/13/blog17_RasperryPi/</loc>
+    <loc>https://tsuiwade.github.io/2021/03/14/blog18_RasperryPi64bit/</loc>
     
     <lastmod>2021-03-13</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/2021/03/14/blog18_RasperryPi64bit/</loc>
+    <loc>https://tsuiwade.github.io/2021/03/13/blog17_RasperryPi/</loc>
     
     <lastmod>2021-03-13</lastmod>
     
@@ -270,13 +270,6 @@
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/flutter/</loc>
-    <lastmod>2021-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tsuiwade.github.io/tags/GFM/</loc>
     <lastmod>2021-05-30</lastmod>
     <changefreq>daily</changefreq>
@@ -319,6 +312,13 @@
   </url>
   
   <url>
+    <loc>https://tsuiwade.github.io/tags/flutter/</loc>
+    <lastmod>2021-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://tsuiwade.github.io/tags/butterfly/</loc>
     <lastmod>2021-05-30</lastmod>
     <changefreq>daily</changefreq>
@@ -342,13 +342,6 @@
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/categories/flutter/</loc>
-    <lastmod>2021-05-30</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://tsuiwade.github.io/categories/raspberrypi/</loc>
     <lastmod>2021-05-30</lastmod>
     <changefreq>daily</changefreq>
@@ -357,6 +350,13 @@
   
   <url>
     <loc>https://tsuiwade.github.io/categories/github/</loc>
+    <lastmod>2021-05-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://tsuiwade.github.io/categories/flutter/</loc>
     <lastmod>2021-05-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
