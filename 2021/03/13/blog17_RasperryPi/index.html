@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【第17篇博客】windows下开发树莓派运行flutter项目 | TsuiWade's blog</title><meta name="keywords" content="raspberrypi,flutter"><meta name="author" content="tsuiwade"><meta name="copyright" content="tsuiwade"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="下载和安装Raspberry Pi OS（以前称为Raspbian）打开raspberrypi官网，www.raspberrypi.org&#x2F; ，进入software，可以看到有三种下载方式。  我选择第二种Manually install an operating system image  下载2021-01-11-raspios-buster-armhf-full.zip，共2.8g 再下载b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【第17篇博客】windows下开发树莓派运行flutter项目">
+<meta property="og:url" content="https://tsuiwade.github.io/2021/03/13/blog17_RasperryPi/index.html">
+<meta property="og:site_name" content="TsuiWade&#39;s blog">
+<meta property="og:description" content="下载和安装Raspberry Pi OS（以前称为Raspbian）打开raspberrypi官网，www.raspberrypi.org&#x2F; ，进入software，可以看到有三种下载方式。  我选择第二种Manually install an operating system image  下载2021-01-11-raspios-buster-armhf-full.zip，共2.8g 再下载b">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tsuiwade/images/raw/master/image-20210530101351766.png">
+<meta property="article:published_time" content="2021-03-13T00:13:31.000Z">
+<meta property="article:modified_time" content="2021-03-13T00:13:31.000Z">
+<meta property="article:author" content="tsuiwade">
+<meta property="article:tag" content="raspberrypi">
+<meta property="article:tag" content="flutter">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tsuiwade/images/raw/master/image-20210530101351766.png"><link rel="shortcut icon" href="/img/me.png"><link rel="canonical" href="https://tsuiwade.github.io/2021/03/13/blog17_RasperryPi/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-03-13 00:13:31'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/iconfont.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_2390943_bv078yuunhu.css"><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="TsuiWade's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://gitee.com/tsuiwade/images/raw/master/1a27de723e1cb04e5acd82cbf4146166_31ebbe760ba45b872b1b8f6c19eb6246.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fas fa-chart-bar"></i><span> 统计</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/tsuiwade/images/raw/master/image-20210530101351766.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">TsuiWade's blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fas fa-chart-bar"></i><span> 统计</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【第17篇博客】windows下开发树莓派运行flutter项目</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-13T00:13:31.000Z" title="发表于 2021-03-13 00:13:31">2021-03-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-13T00:13:31.000Z" title="更新于 2021-03-13 00:13:31">2021-03-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/flutter/">flutter</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="下载和安装Raspberry-Pi-OS（以前称为Raspbian）"><a href="#下载和安装Raspberry-Pi-OS（以前称为Raspbian）" class="headerlink" title="下载和安装Raspberry Pi OS（以前称为Raspbian）"></a>下载和安装Raspberry Pi OS（以前称为Raspbian）</h2><p>打开raspberrypi官网，www.raspberrypi.org/ ，进入<code>software</code>，可以看到有三种下载方式。</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210316090859590.png" alt="image-20210316090859590"></p>
+<p>我选择第二种Manually install an operating system image</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210318231323830.png" alt="image-20210318231323830"></p>
+<p>下载2021-01-11-raspios-buster-armhf-full.zip，共2.8g</p>
+<p>再下载balenaEtcher软件，是一种镜像刻录工具。打开来，选择Flash from file，选择刚刚下载的2.8g的zip。第二步select target选择自己的SD卡，记得需要格式化。</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210318231625865.png" alt="image-20210318231625865"></p>
+<p>刻录完成之后，SD卡插至树莓派上，接上电源，自动安装系统，接着填写必要信息，接上wifi或网线，系统就安装完成了。</p>
+<h2 id="安装dart"><a href="#安装dart" class="headerlink" title="安装dart"></a><del>安装dart</del></h2><p><del><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44601948/article/details/105620588">https://blog.csdn.net/weixin_44601948/article/details/105620588</a></del></p>
+<p>Dart SDK已经在打包在Flutter SDK里了，没有必要单独安装Dart。</p>
+<h2 id="windows下安装flutter"><a href="#windows下安装flutter" class="headerlink" title="windows下安装flutter"></a>windows下安装flutter</h2><p><a target="_blank" rel="noopener" href="https://flutter.cn/docs/get-started/install/windows">https://flutter.cn/docs/get-started/install/windows</a></p>
+<p>下载安装</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210317101157787.png" alt="image-20210317101157787"></p>
+<p>解压 环境变量</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210317101223767.png" alt="image-20210317101223767"></p>
+<h3 id="安装-Android-Studio"><a href="#安装-Android-Studio" class="headerlink" title="安装 Android Studio"></a>安装 Android Studio</h3><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210317101415553.png" alt="image-20210317101415553"></p>
+<p>运行 Android Studio，并进入 ‘Android Studio Setup Wizard’，这会安装最新的 Android SDK， Android SDK Platform-Tools 以及 Android SDK Build-Tools，这些都是在开发 Android Flutter 应用时所需要的。</p>
+<p>记得sdk安装的目录！</p>
+<p>安装前</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210317102818861.png" alt="image-20210317102818861"></p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210317121537227.png" alt="image-20210317121537227"></p>
+<p>一路y，最终。</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210317121600734.png" alt="image-20210317121600734"></p>
+<h2 id="flutter使用"><a href="#flutter使用" class="headerlink" title="flutter使用"></a>flutter使用</h2><p>一些常用flutter指令</p>
+<p>flutter creat 创建项目</p>
+<p>进入项目根目录</p>
+<p>flutter run</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210319194525325.png" alt="image-20210319194525325"></p>
+<h2 id="Flutter应用模板"><a href="#Flutter应用模板" class="headerlink" title="Flutter应用模板"></a>Flutter应用模板</h2><ol>
+<li>导入包。</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;package:flutter/material.dart&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>此行代码作用是导入了Material UI组件库。<a target="_blank" rel="noopener" href="https://material.io/guidelines/">Material (opens new window)</a>是一种标准的移动端和web端的视觉设计语言， Flutter默认提供了一套丰富的Material风格的UI组件。</p>
+<ol>
+<li>应用入口。</li>
+</ol>
+<figure class="highlight dart"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> main() =&gt; runApp(MyApp());</span><br></pre></td></tr></table></figure>
+<ul>
+<li>与C/C++、Java类似，Flutter 应用中<code>main</code>函数为应用程序的入口。<code>main</code>函数中调用了<code>runApp</code> 方法，它的功能是启动Flutter应用。<code>runApp</code>它接受一个<code>Widget</code>参数，在本示例中它是一个<code>MyApp</code>对象，<code>MyApp()</code>是Flutter应用的根组件。</li>
+<li><code>main</code>函数使用了(<code>=&gt;</code>)符号，这是Dart中单行函数或方法的简写。</li>
+</ul>
+<ol>
+<li>应用结构。</li>
+</ol>
+<ul>
+<li><code>MyApp</code>类代表Flutter应用，它继承了 <code>StatelessWidget</code>类，这也就意味着应用本身也是一个widget。</li>
+<li>在Flutter中，大多数东西都是widget（后同“组件”或“部件”），包括对齐(alignment)、填充(padding)和布局(layout)等，它们都是以widget的形式提供。</li>
+<li>Flutter在构建页面时，会调用组件的<code>build</code>方法，widget的主要工作是提供一个build()方法来描述如何构建UI界面（通常是通过组合、拼装其它基础widget）。</li>
+<li><code>MaterialApp</code> 是Material库中提供的Flutter APP框架，通过它可以设置应用的名称、主题、语言、首页及路由列表等。<code>MaterialApp</code>也是一个widget。</li>
+<li><code>home</code> 为Flutter应用的首页，它也是一个widget。</li>
+</ul>
+<ol>
+<li><p>首页 </p>
+<p><code>MyHomePage</code> 是Flutter应用的首页，它继承自<code>StatefulWidget</code>类，表示它是一个有状态的组件（Stateful widget）。关于Stateful widget我们将在第三章“Widget简介”一节仔细介绍，现在我们只需简单认为有状态的组件（Stateful widget） 和无状态的组件（Stateless widget）有两点不同：</p>
+<ol>
+<li><p>Stateful widget可以拥有状态，这些状态在widget生命周期中是可以变的，而Stateless widget是不可变的。</p>
+</li>
+<li><p>Stateful widget至少由两个类组成：</p>
+<ul>
+<li>一个<code>StatefulWidget</code>类。</li>
+<li>一个 <code>State</code>类； <code>StatefulWidget</code>类本身是不变的，但是<code>State</code>类中持有的状态在widget生命周期中可能会发生变化。</li>
+</ul>
+<p><code>_MyHomePageState</code>类是<code>MyHomePage</code>类对应的状态类。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="树莓派4B板载资源介绍"><a href="#树莓派4B板载资源介绍" class="headerlink" title="树莓派4B板载资源介绍"></a>树莓派4B板载资源介绍</h2><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210318112405257.png" alt="image-20210318112405257"></p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210318112640216.png" alt="image-20210318112640216"></p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/21545108-38395d45b6e243d5.png" alt="img"></p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/c822fb58546d27deba8091a729ccf7d892b5b3a0.png@1320w_1110h.webp" alt="img"></p>
+<p>SD卡格式化 </p>
+<p>Etcher </p>
+<p>启动ssh、修改密码即可。</p>
+<p><a target="_blank" rel="noopener" href="https://www.w3schools.com/nodejs/nodejs_raspberrypi.asp">https://www.w3schools.com/nodejs/nodejs_raspberrypi.asp</a></p>
+<p>下载putty，输入树莓派右上角的ip。</p>
+<p>Hostname： pi</p>
+<p>password : pi</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210318160026149.png" alt=""></p>
+<p>第一个是pi</p>
+<p>第二个还是pi</p>
+<h2 id="用windows远程桌面连接树莓派，xrdp"><a href="#用windows远程桌面连接树莓派，xrdp" class="headerlink" title="用windows远程桌面连接树莓派，xrdp"></a>用windows远程桌面连接树莓派，xrdp</h2><p><a target="_blank" rel="noopener" href="https://gitee.com/null_695_7527/raspberry_school_learning/tree/master/01.%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BC%80%E6%9C%BA%E5%87%86%E5%A4%87">https://gitee.com/null_695_7527/raspberry_school_learning/tree/master/01.%E6%A0%91%E8%8E%93%E6%B4%BE%E5%BC%80%E6%9C%BA%E5%87%86%E5%A4%87</a></p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210318161025649.png" alt="image-20210318161025649"></p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210318161050426.png" alt="image-20210318161050426"></p>
+<h1 id="树莓派学习笔记——文件管理及常用命令"><a href="#树莓派学习笔记——文件管理及常用命令" class="headerlink" title="树莓派学习笔记——文件管理及常用命令"></a>树莓派学习笔记——文件管理及常用命令</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/youngandyang/article/details/100042966?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control">https://blog.csdn.net/youngandyang/article/details/100042966?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo shutdown -h now</span><br></pre></td></tr></table></figure>
+<p>ctrl+d 关闭终端。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43336281/article/details/97373288">https://blog.csdn.net/weixin_43336281/article/details/97373288</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/67b9e6ebf8a0">https://www.jianshu.com/p/67b9e6ebf8a0</a></p>
+<p>检查包版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-cache policy libstdc++6</span><br></pre></td></tr></table></figure>
+<p><strong>Sudo</strong> 的全称为：<strong>super user do</strong>。 顾名思义：干超级用户才能干的事！所以Sudo最常用的功能就是提升一个命名的执行权限。</p>
+<p>apt（Advanced Packaging Tool）是一个在 Debian 和 Ubuntu 中的 Shell 前端软件包管理器。</p>
+<p>apt 命令提供了查找、安装、升级、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
+<p>apt 命令执行需要超级管理员权限(root)。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">apt [options] [command] [package ...]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>options：</strong>可选，选项包括 -h（帮助），-y（当安装过程提示选择全部为”yes”），-q（不显示安装的过程）等等。</li>
+<li><strong>command：</strong>要进行的操作。</li>
+<li><strong>package</strong>：安装的包名。</li>
+</ul>
+<p>apt 常用命令</p>
+<ul>
+<li><p>列出所有可更新的软件清单命令：<strong>sudo apt update</strong></p>
+</li>
+<li><p>升级软件包：<strong>sudo apt upgrade</strong></p>
+<p>列出可更新的软件包及版本信息：<strong>apt list —upgradeable</strong></p>
+<p>升级软件包，升级前先删除需要更新软件包：<strong>sudo apt full-upgrade</strong></p>
+</li>
+<li><p>安装指定的软件命令：<strong>sudo apt install <package_name></strong></p>
+<p>安装多个软件包：<strong>sudo apt install <package_1> <package_2> <package_3></strong></p>
+</li>
+<li><p>更新指定的软件命令：<strong>sudo apt update <package_name></strong></p>
+</li>
+<li><p>显示软件包具体信息,例如：版本号，安装大小，依赖关系等等：<strong>sudo apt show <package_name></strong></p>
+</li>
+<li><p>删除软件包命令：<strong>sudo apt remove <package_name></strong></p>
+</li>
+<li><p>清理不再使用的依赖和库文件: <strong>sudo apt autoremove</strong></p>
+</li>
+<li><p>移除软件包及配置文件: <strong>sudo apt purge <package_name></strong></p>
+</li>
+<li><p>查找软件包命令： <strong>sudo apt search <keyword></strong></p>
+</li>
+<li><p>列出所有已安装的包：<strong>apt list —installe</strong>d</p>
+</li>
+<li><p>列出所有已安装的包的版本信息：<strong>apt list —all-versions</strong></p>
+</li>
+</ul>
+<h2 id="遇到的git-clone-问题"><a href="#遇到的git-clone-问题" class="headerlink" title="遇到的git clone 问题"></a>遇到的git clone 问题</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011386173/article/details/109099134?spm=1001.2014.3001.5501">https://blog.csdn.net/u011386173/article/details/109099134?spm=1001.2014.3001.5501</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fe1354db42b2">https://www.jianshu.com/p/fe1354db42b2</a></p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210322093157733.png" alt="image-20210322093157733"></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29545715/article/details/103576549">https://blog.csdn.net/qq_29545715/article/details/103576549</a></p>
+<p>vscode remote ssh 连接远程服务器</p>
+<p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/remote/ssh">https://code.visualstudio.com/docs/remote/ssh</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21117409/article/details/105325444">https://blog.csdn.net/qq_21117409/article/details/105325444</a></p>
+<p>chrome快捷键<a target="_blank" rel="noopener" href="https://support.google.com/chrome/answer/157179?co=GENIE.Platform%3DDesktop&amp;hl=zh-Hans#zippy=">https://support.google.com/chrome/answer/157179?co=GENIE.Platform%3DDesktop&amp;hl=zh-Hans#zippy=</a></p>
+<p>卡住<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9a7c32628d01">https://www.jianshu.com/p/9a7c32628d01</a></p>
+<h2 id="树莓派系统linux桌面运行flutter"><a href="#树莓派系统linux桌面运行flutter" class="headerlink" title="树莓派系统linux桌面运行flutter"></a>树莓派系统linux桌面运行flutter</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">libGL error: unable to load driver: swrast_dri.so</span><br><span class="line">libGL error: failed to load driver: swrast</span><br><span class="line"></span><br><span class="line">** (dummy_desktop:10814): WARNING **: Failed to start Flutter renderer: Unable to create a GL context</span><br><span class="line"></span><br><span class="line">** (dummy_desktop:10814): WARNING **: Unable to retrieve framework response: No engine to send to</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://github.com/flutter/flutter/issues/76178">https://github.com/flutter/flutter/issues/76178</a></p>
+<h2 id="windows系统下vscode通过ssh远程树莓派"><a href="#windows系统下vscode通过ssh远程树莓派" class="headerlink" title="windows系统下vscode通过ssh远程树莓派"></a>windows系统下vscode通过ssh远程树莓派</h2><p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/remote/ssh">https://code.visualstudio.com/docs/remote/ssh</a></p>
+<ul>
+<li><p>在树莓派系统的<code>applications menu</code>的<code>首选项</code>的<code>raspberry pi configuration</code>中<code>Interfaces</code>中开启<code>SSH</code>，</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210528155231462.png" alt="image-20210528155231462"></p>
+</li>
+<li><p>修改树莓派的用户名，在<code>System</code>选项卡中修改<code>password</code>和<code>Hostname</code>，假定都改为pi。 打开一个终端会话，您应该看到如下提示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pi@raspberrypi: ~ $</span><br></pre></td></tr></table></figure>
+<p>在每个命令后都会看到的提示（pi @ raspberrypi：〜$）提醒您用户名User（pi）和计算机名HostName（raspberrypi）。 〜字符是您的主目录（/ home / pi）的简写。</p>
+<p><strong>这里我修改的原因在于一直是这里配置不对，当然如果你能分清以上概念，应该也是可以配置成功。</strong></p>
+</li>
+</ul>
+<p>接着在客户端windows的vscode上，输入<code>F1</code>打开命令面板，输入<code>remote ssh connect to host</code>，选择<code>Configure SSH Hosts</code>. 再选择自己用户目录下.ssh文件夹下的config文件，进行配置，Host填ip地址。树莓派 Raspbian 系统默认的主机名HostName为 raspberrypi，这里我们修改为</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/]APMJ58}4YM%{JR9@E5PA0U.png" alt="img"></p>
+<p>接着再进行Connect to host选择刚刚的10.0.1.83就可以连接到树莓派了。</p>
+<p>成功。</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210528154606211.png" alt="image-20210528154606211"></p>
+<p>可以打开远端树莓派的程序文件，并且在vscode中安装相应的代码插件。</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210528161322051.png" alt="image-20210528161322051"></p>
+<h2 id="树莓派配置git镜像"><a href="#树莓派配置git镜像" class="headerlink" title="树莓派配置git镜像"></a>树莓派配置git镜像</h2><p><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/git-repo/">https://mirrors.tuna.tsinghua.edu.cn/help/git-repo/</a></p>
+<h5 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;git&#x2F;git-repo -o repo</span><br><span class="line">chmod +x repo</span><br></pre></td></tr></table></figure>
+<h5 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h5><p>repo的运行过程中会尝试访问官方的git源更新自己，如果想使用tuna的镜像源进行更新，可以将如下内容复制到你的<code>~/.bashrc</code>里</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export REPO_URL&#x3D;&#39;https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;git&#x2F;git-repo&#39;</span><br></pre></td></tr></table></figure>
+<p>并重启终端模拟器。</p>
+<p>将代码输入Terminal中即可git clone下载。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">tsuiwade</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://tsuiwade.github.io/2021/03/13/blog17_RasperryPi/">https://tsuiwade.github.io/2021/03/13/blog17_RasperryPi/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://tsuiwade.github.io" target="_blank">TsuiWade's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/raspberrypi/">raspberrypi</a><a class="post-meta__tags" href="/tags/flutter/">flutter</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/tsuiwade/images/raw/master/image-20210530101351766.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><link rel="stylesheet" href="/css/coin.css" media="defer" onload="this.media='all'"/><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">不给糖就捣蛋</span><div class="coin-wrapper"><div class="coin"><div class="coin__middle"></div><div class="coin__back"></div><div class="coin__front"></div></div></div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></button></div><script defer="defer" src="/js/coin.js"></script><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/03/15/blog18-GithubActions/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">blog18-GithubActions</div></div></a></div><div class="next-post pull-right"><a href="/2021/03/12/blog16-DNS/"><img class="next-cover" src="https://gitee.com/tsuiwade/images/raw/master/image-20210312162958310.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【第16篇博客】DNS解析及浏览器渲染流程</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://gitee.com/tsuiwade/images/raw/master/1a27de723e1cb04e5acd82cbf4146166_31ebbe760ba45b872b1b8f6c19eb6246.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">tsuiwade</div><div class="author-info__description">记录技术生活的点点滴滴</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">18</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/tsuiwade"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tsuiwade" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:478451541@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/381957255" target="_blank" title="bilibili"><i class="iconfont  icon-bilibili"></i></a><a class="social-icon" href="/img/alipay.jpg" target="_blank" title="alipay"><i class="fab  fa-alipay"></i></a><a class="social-icon" href="/img/wechat.jpg" target="_blank" title="wechat"><i class="fab  fa-weixin"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=478451541" target="_blank" title="qq"><i class="fab  fa-qq"></i></a><a class="social-icon" href="https://blog.csdn.net/" target="_blank" title="CSDN"><i class="iconfont  icon-csdn3"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=321642197" target="_blank" title="wangyiyun"><i class="iconfont  icon-wangyiyunyinyuemusic1193417easyiconnet"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%92%8C%E5%AE%89%E8%A3%85Raspberry-Pi-OS%EF%BC%88%E4%BB%A5%E5%89%8D%E7%A7%B0%E4%B8%BARaspbian%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">下载和安装Raspberry Pi OS（以前称为Raspbian）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85dart"><span class="toc-number">2.</span> <span class="toc-text">安装dart</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#windows%E4%B8%8B%E5%AE%89%E8%A3%85flutter"><span class="toc-number">3.</span> <span class="toc-text">windows下安装flutter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Android-Studio"><span class="toc-number">3.1.</span> <span class="toc-text">安装 Android Studio</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flutter%E4%BD%BF%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">flutter使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flutter%E5%BA%94%E7%94%A8%E6%A8%A1%E6%9D%BF"><span class="toc-number">5.</span> <span class="toc-text">Flutter应用模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE4B%E6%9D%BF%E8%BD%BD%E8%B5%84%E6%BA%90%E4%BB%8B%E7%BB%8D"><span class="toc-number">6.</span> <span class="toc-text">树莓派4B板载资源介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8windows%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E8%BF%9E%E6%8E%A5%E6%A0%91%E8%8E%93%E6%B4%BE%EF%BC%8Cxrdp"><span class="toc-number">7.</span> <span class="toc-text">用windows远程桌面连接树莓派，xrdp</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E2%80%94%E2%80%94%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%8F%8A%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number"></span> <span class="toc-text">树莓派学习笔记——文件管理及常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%87%E5%88%B0%E7%9A%84git-clone-%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">遇到的git clone 问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE%E7%B3%BB%E7%BB%9Flinux%E6%A1%8C%E9%9D%A2%E8%BF%90%E8%A1%8Cflutter"><span class="toc-number">2.</span> <span class="toc-text">树莓派系统linux桌面运行flutter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#windows%E7%B3%BB%E7%BB%9F%E4%B8%8Bvscode%E9%80%9A%E8%BF%87ssh%E8%BF%9C%E7%A8%8B%E6%A0%91%E8%8E%93%E6%B4%BE"><span class="toc-number">3.</span> <span class="toc-text">windows系统下vscode通过ssh远程树莓派</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE%E9%85%8D%E7%BD%AEgit%E9%95%9C%E5%83%8F"><span class="toc-number">4.</span> <span class="toc-text">树莓派配置git镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-number">4.0.0.1.</span> <span class="toc-text">下载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0"><span class="toc-number">4.0.0.2.</span> <span class="toc-text">更新</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-clock"><div id="clock"><img v-if="clockshow == &quot;false&quot;" alt="" src="/assets/weather/loading.gif" height="120px" width="100%"/><table class="clock" v-if="clockshow"><tbody><tr><td class="clockdate">{{date}}</td><td class="weatherimg"><img id="weatherimg" :src="weatherimg" alt=""/></td><td class="temperature">{{temperature}}</td><td class="humidityimg"><img id="humidityimg" :src="humidityimg" alt=""/></td><td class="humidity">{{humidity}}</td></tr><tr class="time"><td colspan="5">{{time}}</td></tr><tr><td class="usaqi" colspan="1"><span>{{ip}}</span></td><td class="city" colspan="2">{{city}}</td><td class="daylight" colspan="2">{{daylight}}</td></tr></tbody></table></div></div><script defer="defer" data-pjax="data-pjax" src="/js/card_clock.js"></script><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/03/15/blog18-GithubActions/" title="blog18-GithubActions"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="blog18-GithubActions"/></a><div class="content"><a class="title" href="/2021/03/15/blog18-GithubActions/" title="blog18-GithubActions">blog18-GithubActions</a><time datetime="2021-03-15T16:11:50.000Z" title="发表于 2021-03-15 16:11:50">2021-03-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/13/blog17_RasperryPi/" title="【第17篇博客】windows下开发树莓派运行flutter项目"><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210530101351766.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【第17篇博客】windows下开发树莓派运行flutter项目"/></a><div class="content"><a class="title" href="/2021/03/13/blog17_RasperryPi/" title="【第17篇博客】windows下开发树莓派运行flutter项目">【第17篇博客】windows下开发树莓派运行flutter项目</a><time datetime="2021-03-13T00:13:31.000Z" title="发表于 2021-03-13 00:13:31">2021-03-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/12/blog16-DNS/" title="【第16篇博客】DNS解析及浏览器渲染流程"><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210312162958310.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【第16篇博客】DNS解析及浏览器渲染流程"/></a><div class="content"><a class="title" href="/2021/03/12/blog16-DNS/" title="【第16篇博客】DNS解析及浏览器渲染流程">【第16篇博客】DNS解析及浏览器渲染流程</a><time datetime="2021-03-12T15:32:40.000Z" title="发表于 2021-03-12 15:32:40">2021-03-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/11/blog15-NewDomain/" title="【第15篇博客】使用新的免费短域名"><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210311230656242.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【第15篇博客】使用新的免费短域名"/></a><div class="content"><a class="title" href="/2021/03/11/blog15-NewDomain/" title="【第15篇博客】使用新的免费短域名">【第15篇博客】使用新的免费短域名</a><time datetime="2021-03-11T22:35:24.000Z" title="发表于 2021-03-11 22:35:24">2021-03-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/09/blog14-gitee/" title="【第14篇博客】带上gitee，双线部署"><img src="https://gitee.com/tsuiwade/images/raw/master/20210310094946.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【第14篇博客】带上gitee，双线部署"/></a><div class="content"><a class="title" href="/2021/03/09/blog14-gitee/" title="【第14篇博客】带上gitee，双线部署">【第14篇博客】带上gitee，双线部署</a><time datetime="2021-03-09T20:43:52.000Z" title="发表于 2021-03-09 20:43:52">2021-03-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/tsuiwade/images/raw/master/image-20210530101351766.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By tsuiwade</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div><div id="workboard"><script async="async" src="/js/runtime.js"></script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'mjS6lvGtY7MvAlxolqz8OdMn-gzGzoHsz',
+      appKey: 'QakpY3QuhiOscnuh50tI450M',
+      placeholder: '留下你的足迹吧~~',
+      avatar: 'monsterid',
+      meta: 'nick'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/hideMobileSidebar.js"></script><script defer src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script data-pjax src="/js/myjs.js"></script><script data-pjax src="/js/githubcalendar.js"></script><script data-pjax src="/js/giteecalendar.js"></script><script defer data-pjax src="/js/wow_init.js"></script><script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/mouse_snow.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@latest/source/js/issues.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?tsuiwade";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="tsuiwade";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
