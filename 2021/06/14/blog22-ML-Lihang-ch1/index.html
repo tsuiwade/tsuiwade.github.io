@@ -1,0 +1,458 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【第22篇博客】李航《统计学习方法·第一章》笔记、代码、习题 | TsuiWade's blog</title><meta name="keywords" content="ML,统计学习"><meta name="author" content="tsuiwade"><meta name="copyright" content="tsuiwade"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本博客记录如何将 树莓派作服务器端，使用nodejs 和 主机作客户端使用flutter 进行socket.io通信。在此过程中遇到了许多坑点，例如nodejs中的socket.io版本问题、运行环境使用chrome的web程序和windows的desktop程序等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【第22篇博客】李航《统计学习方法·第一章》笔记、代码、习题">
+<meta property="og:url" content="https://tsuiwade.github.io/2021/06/14/blog22-ML-Lihang-ch1/index.html">
+<meta property="og:site_name" content="TsuiWade&#39;s blog">
+<meta property="og:description" content="本博客记录如何将 树莓派作服务器端，使用nodejs 和 主机作客户端使用flutter 进行socket.io通信。在此过程中遇到了许多坑点，例如nodejs中的socket.io版本问题、运行环境使用chrome的web程序和windows的desktop程序等。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tsuiwade/images/raw/master/image-20210602211352022.png">
+<meta property="article:published_time" content="2021-06-14T20:44:11.000Z">
+<meta property="article:modified_time" content="2021-06-14T20:44:11.000Z">
+<meta property="article:author" content="tsuiwade">
+<meta property="article:tag" content="ML">
+<meta property="article:tag" content="统计学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tsuiwade/images/raw/master/image-20210602211352022.png"><link rel="shortcut icon" href="/img/me.png"><link rel="canonical" href="https://tsuiwade.github.io/2021/06/14/blog22-ML-Lihang-ch1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-06-14 20:44:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/iconfont.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_2390943_bv078yuunhu.css"><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="TsuiWade's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://gitee.com/tsuiwade/images/raw/master/1a27de723e1cb04e5acd82cbf4146166_31ebbe760ba45b872b1b8f6c19eb6246.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fas fa-chart-bar"></i><span> 统计</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/tsuiwade/images/raw/master/image-20210602211352022.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">TsuiWade's blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fas fa-chart-bar"></i><span> 统计</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">【第22篇博客】李航《统计学习方法·第一章》笔记、代码、习题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-14T20:44:11.000Z" title="发表于 2021-06-14 20:44:11">2021-06-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-06-14T20:44:11.000Z" title="更新于 2021-06-14 20:44:11">2021-06-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/ML/">ML</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="CH01-统计学习及监督学习概论"><a href="#CH01-统计学习及监督学习概论" class="headerlink" title="CH01 统计学习及监督学习概论"></a>CH01 统计学习及监督学习概论</h1><p>[TOC]</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h3 id="章节目录"><a href="#章节目录" class="headerlink" title="章节目录"></a>章节目录</h3><ol>
+<li>统计学习</li>
+<li>统计学习的分类<ol>
+<li>基本分类</li>
+<li>按模型分类</li>
+<li>按算法分类</li>
+<li>按技巧分类</li>
+</ol>
+</li>
+<li>统计学习三要素<ol>
+<li>模型</li>
+<li>策略</li>
+<li>算法</li>
+</ol>
+</li>
+<li>模型评估与模型选择<ol>
+<li>训练误差与测试误差</li>
+<li>过拟合与模型选择</li>
+</ol>
+</li>
+<li>正则化与交叉验证<ol>
+<li>正则化</li>
+<li>交叉验证</li>
+</ol>
+</li>
+<li>泛化能力<ol>
+<li>泛化误差</li>
+<li>泛化误差上界</li>
+</ol>
+</li>
+<li>生成模型与判别模型</li>
+<li>监督学习应用<ol>
+<li>分类问题</li>
+<li>标注问题</li>
+<li>回归问题</li>
+</ol>
+</li>
+</ol>
+<h2 id="1-1-统计学习"><a href="#1-1-统计学习" class="headerlink" title="1.1 统计学习"></a>1.1 统计学习</h2><h4 id="实现统计学习方法的步骤"><a href="#实现统计学习方法的步骤" class="headerlink" title="实现统计学习方法的步骤"></a>实现统计学习方法的步骤</h4><p>统计学习方法三要素：模型，策略，算法</p>
+<blockquote>
+<ol>
+<li>得到一个有限的训练数据集合</li>
+<li>确定包含所有可能的模型的<strong>假设空间</strong>，即学习模型的集合</li>
+<li>确定模型选择的准则，即学习的<strong>策略</strong></li>
+<li>实现求解最优模型的算法，即学习的<strong>算法</strong></li>
+<li>通过学习方法选择最优的模型</li>
+<li>利用学习的最优模型对新数据进行预测或分析</li>
+</ol>
+</blockquote>
+<h2 id="1-2-统计学习分类"><a href="#1-2-统计学习分类" class="headerlink" title="1.2 统计学习分类"></a>1.2 统计学习分类</h2><h3 id="基本分类"><a href="#基本分类" class="headerlink" title="基本分类"></a>基本分类</h3><p>这部分内容新增了无监督学习和强化学习。值得注意的一个点，之前因为只写了监督学习，样本表示(x, y)对，在无监督学习里面，样本就是x。</p>
+<h4 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h4><ul>
+<li><p>监督学习指从标注数据中学习预测模型的机器学习问题，其本质是学习输入到输出的映射的统计规律。</p>
+</li>
+<li><p>输入变量<strong>X</strong>和输出变量<strong>Y</strong>有不同的类型，可以是连续或是离散的。根据输入输出变量的不同类型，对预测任务给予不同的名称：输入与输出均为连续变量的预测问题称为<strong>回归问题</strong>；输出变量为有限个离散变量的预测问题称为<strong>分类问题</strong>；输入与输出变量均为变量序列的预测问题称为<strong>标注问题</strong>。</p>
+</li>
+<li><p>条件概率分布 $\hat{P}(Y|X)$ 或决策函数 $Y=\hat{f}(X)$ 描述输入与输出随机变量之间的映射关系。</p>
+<script type="math/tex; mode=display">
+\hat{f}</script></li>
+</ul>
+<h4 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h4><ul>
+<li>无监督学习模型，即函数 $z=\hat{g}(x)$, 条件概率分布 $\hat{P}(z|x)$ 或者条件概率分布 $\hat{P}(x|z)$ 可以实现对数据的聚类、降维或概率估计。在预测过程中，预测系统对于给定的输入 $x<em>{N+1}$ ，由模型 $z</em>{N+1}=\hat{g}(x<em>{N+1})$ 或 $z</em>{N+1}=\arg\max\limits<em>{z}\hat{P}(z|x</em>{N+1})$ 给出相应的输出 $z<em>{N+1}$ 进行聚类或降维，或者由模型 $\hat{P}(x|z)$ 给出输出的概率 $\hat{P}(x</em>{N+1}|z_{N+1})$ 进行概率估计。</li>
+</ul>
+<h4 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h4><h3 id="按模型分类"><a href="#按模型分类" class="headerlink" title="按模型分类"></a>按模型分类</h3><ol>
+<li><h4 id="概率模型与非概率模型（确定性模型）"><a href="#概率模型与非概率模型（确定性模型）" class="headerlink" title="概率模型与非概率模型（确定性模型）"></a>概率模型与非概率模型（确定性模型）</h4><ul>
+<li>在监督学习中，概率模型 ${P}(y|x)$ 是生成模型，非概率模型 $y=f(x)$ 是判别模型。本书介绍的决策树、朴素贝叶斯、隐马尔科夫模型、条件随机场、概率潜在语义分析、潜在狄利克雷分配、高斯混合模型是概率模型。</li>
+<li>在无监督学习中，概率模型取条件概率分布形式 ${P}(x|z)$ 或${P}(z|x)$ ，非概率模型取函数形式 $z=g(x)$ 。本书介绍的感知机、支持向量机、k近邻、AdaBoost、k均值、潜在语义分析、神经网络是非概率模型。Logistic回归两者都可算是。</li>
+<li>条件概率分布和函数可以相互转化：条件概率分布最大化后得到函数，函数归一化得到条件概率分布。</li>
+</ul>
+</li>
+<li><p>线性模型和非线性模型</p>
+</li>
+<li><p>参数化模型与非参数化模型</p>
+</li>
+</ol>
+<h3 id="按算法分类"><a href="#按算法分类" class="headerlink" title="按算法分类"></a>按算法分类</h3><p>在线学习和批量学习，在线学习通常比批量学习更难。</p>
+<h3 id="按技巧分类"><a href="#按技巧分类" class="headerlink" title="按技巧分类"></a>按技巧分类</h3><ul>
+<li><p>贝叶斯学习</p>
+</li>
+<li><p>核方法（SVM、PCA、K-means）</p>
+</li>
+</ul>
+<h2 id="1-3-统计学习方法三要素"><a href="#1-3-统计学习方法三要素" class="headerlink" title="1.3  统计学习方法三要素"></a>1.3  统计学习方法三要素</h2><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a><u>模型</u></h3><h4 id="模型是什么"><a href="#模型是什么" class="headerlink" title="模型是什么?"></a>模型是什么?</h4><p>在监督学习过程中，模型就是所要学习的<strong>条件概率分布</strong>或者<strong>决策函数</strong>，模型的假设空间包含所有可能的条件概率分布或者决策函数。</p>
+<p>注意书中的这部分描述，整理了一下到表格里：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>假设空间$\cal F$</th>
+<th>输入空间$\cal X$</th>
+<th>输出空间$\cal Y$</th>
+<th>参数空间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>决策函数</td>
+<td>$\cal F\it ={f_{\theta}</td>
+<td>Y=f_{\theta}(x), \theta \in \bf R \it ^n}$</td>
+<td>变量</td>
+<td>变量</td>
+<td>$\bf R\it ^n$</td>
+</tr>
+<tr>
+<td>条件概率分布</td>
+<td>$\cal F\it ={P</td>
+<td>P_{\theta}(Y</td>
+<td>X),\theta\in \bf R \it ^n}$</td>
+<td>随机变量</td>
+<td>随机变量</td>
+<td>$\bf R\it ^n$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>书中描述的时候，有提到<strong>条件概率分布族</strong>，这个留一下，后面<a href="../CH06/README.md">CH06</a>有提到确认逻辑斯谛分布属于指数分布族。</p>
+<h3 id="策略"><a href="#策略" class="headerlink" title="策略"></a><u>策略</u></h3><h4 id="损失函数与风险函数"><a href="#损失函数与风险函数" class="headerlink" title="损失函数与风险函数"></a>损失函数与风险函数</h4><blockquote>
+<p><strong>损失函数</strong>度量模型<strong>一次预测</strong>的好坏，<strong>风险函数</strong>度量<strong>平均意义</strong>下模型预测的好坏。</p>
+</blockquote>
+<ol>
+<li><p>损失函数(loss function)或代价函数(cost function)<br>损失函数定义为给定输入$X$的<strong>预测值$f(X)$</strong>和<strong>真实值$Y$</strong>之间的<strong>非负实值</strong>函数，记作<strong>$L(Y,f(X))$</strong></p>
+</li>
+<li><p>风险函数(risk function)或期望损失(expected loss)<br>这个和模型的泛化误差的形式是一样的<br>$R<em>{exp}(f)=E_p[L(Y, f(X))]=\int</em>{\mathcal X\times\mathcal Y}L(y,f(x))P(x,y)\, {\rm d}x{\rm d}y$<br>模型$f(X)$关于联合分布$P(X,Y)$的<strong>平均意义下的</strong>损失(<strong>期望</strong>损失)，但是因为$P(X,Y)$是未知的，所以前面的用词是<strong>期望</strong>，以及<strong>平均意义下的</strong>。</p>
+<p>这个表示其实就是损失的均值，反映了对整个数据的预测效果的好坏，P(x,y)$转换成$\frac {\nu(X=x, Y=y)}{N}$更容易直观理解, 可以参考<a href="../CH09/README.md">CH09</a>，6.2.2节的部分描述来理解，但是真实的数据N是无穷的。</p>
+</li>
+<li><p><strong>经验风险</strong>(empirical risk)或<strong>经验损失</strong>(empirical loss)<br>$R<em>{emp}(f)=\frac{1}{N}\sum^{N}</em>{i=1}L(y_i,f(x_i))$<br>模型$f$关于<strong>训练样本集</strong>的平均损失<br>根据大数定律，当样本容量N趋于无穷大时，经验风险趋于期望风险</p>
+</li>
+<li><p><strong>结构风险</strong>(structural risk)<br>$R<em>{srm}(f)=\frac{1}{N}\sum</em>{i=1}^{N}L(y_i,f(x_i))+\lambda J(f)$<br>$J(f)$为模型复杂度, $\lambda \geqslant 0$是系数，用以权衡经验风险和模型复杂度。</p>
+</li>
+</ol>
+<h4 id="常用损失函数"><a href="#常用损失函数" class="headerlink" title="常用损失函数"></a>常用损失函数</h4><p>损失函数数值越小，模型就越好</p>
+<ol>
+<li>0-1损失<br>$L(Y,f(X))=\begin{cases}1, Y \neq f(X) \0, Y=f(X) \end{cases}$</li>
+<li>平方损失<br>$L(Y,f(X))=(Y-f(X))^2$</li>
+<li><p>绝对损失<br>$L(Y,f(X))=|Y-f(X)|$</p>
+</li>
+<li><p>对数损失<br>这里$P(Y|X)\leqslant 1$，对应的对数是负值，所以对数损失中包含一个负号，为什么不是绝对值？因为肯定是负的。<br>$L(Y,P(Y|X))=-\log P(Y|X)$</p>
+</li>
+</ol>
+<h4 id="ERM与SRM"><a href="#ERM与SRM" class="headerlink" title="ERM与SRM"></a>ERM与SRM</h4><p>经验风险最小化(ERM)与结构风险最小化(SRM)</p>
+<ol>
+<li><strong>极大似然估计</strong>是<strong>经验风险最小化</strong>的一个例子<br>当模型是条件概率分布，损失函数是对数损失函数时，经验风险最小化等价于极大似然估计</li>
+<li><strong>贝叶斯估计</strong>中的<strong>最大后验概率估计</strong>是<strong>结构风险最小化</strong>的一个例子<br>当模型是条件概率分布，损失函数是对数损失函数，<strong>模型复杂度由模型的先验概率表示</strong>时，结构风险最小化等价于最大后验概率估计</li>
+</ol>
+<h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a><u>算法</u></h3><p>这章里面简单提了一下，具体可以参考<a href="../CH12/README.md">CH12</a>表格中关于学习算法的描述。</p>
+<h2 id="1-4-模型评估与模型选择"><a href="#1-4-模型评估与模型选择" class="headerlink" title="1.4 模型评估与模型选择"></a>1.4 模型评估与模型选择</h2><p><strong>训练误差和测试误差</strong>是模型关于数据集的平均损失。</p>
+<p>提到一句， <code>统计学习方法具体采用的损失函数未必是评估时使用的损失函数</code>，这句理解下。参考下在数据科学比赛中给出的评分标准，与实际学习采用的损失函数之间的关系。</p>
+<h3 id="过拟合与模型选择"><a href="#过拟合与模型选择" class="headerlink" title="过拟合与模型选择"></a>过拟合与模型选择</h3><p>这部分讲到了最小二乘法，给了PRML中的一个例子。</p>
+<p>这个问题中<strong>训练数据</strong>为$T={(x_1, y_1),(x_2,y_2),\cdots,(x_N,y_N)}$</p>
+<p><strong>模型</strong>为</p>
+<p>$f<em>M(x,w)=w_0+w_1x+w_2x^2+\cdots+w_Mx^M=\sum\limits</em>{j=0}^Mw_jx^j$</p>
+<p>经验风险最小化策略下</p>
+<p>$L(w)=\frac{1}{2}\sum\limits_{i=1}^N(f(x_i,w)-y_i)^2$</p>
+<p>将模型和训练数据带入到上式得到</p>
+<p>$L(w)=\frac{1}{2}\sum\limits<em>{i=1}^N\left(\sum\limits</em>{j=0}^Mw<em>jx_i^j-y_i\right)^2=\frac{1}{2}\sum\limits</em>{i=1}^N(w\cdot x_i-y_i)^2$</p>
+<p>这个问题要求$w=(w_0^<em>,w_1^</em>,\cdots,w_M^*)$</p>
+<p>对$w$求偏导令其为零，得到一系列方程，求解可以用梯度下降或者矩阵分解。</p>
+<p>求解线性方程组$Ax=b$，可以表示为$x=A/b$，问题展开之后可以涉及到<strong>矩阵分解</strong>。</p>
+<h3 id="正则化与交叉验证"><a href="#正则化与交叉验证" class="headerlink" title="正则化与交叉验证"></a>正则化与交叉验证</h3><h4 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h4><p>模型选择的典型方法是正则化。从贝叶斯估计的角度来看，正则化项对应于模型的先验概率。可以假设复杂的模型有较小的先验概率，简单的模型有较大的先验概率。</p>
+<h4 id="交叉验证"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证</h4><p>另一种常用的模型选择方法是交叉验证</p>
+<ul>
+<li>简单</li>
+<li>S折(K折, K-Fold)</li>
+<li>留一法</li>
+</ul>
+<p>关于交叉验证，这里补充一点。</p>
+<p>数据集的划分这个问题，书中有提到数据充足的情况下，将数据划分为三个部分，训练集，验证集和测试集。看到这里，不知道大家会不会有一样的问题：<strong>验证集和测试集有什么区别？</strong></p>
+<p>注意这里，在算法学习的过程中，测试集可能是固定的，但是验证集和训练集可能是变化的。比如K折交叉验证的情况下，分成K折之后，其中的K-1折作为训练集，1折作为验证集，这样针对每一个模型操作K次，计算平均测试误差，最后选择平均测试误差最小的模型。这个过程中用来验证模型效果的那一折数据就是<strong>验证集</strong>。交叉<strong>验证</strong>，就是这样一个使用<strong>验证</strong>集测试模型好坏的过程。他允许我们在模型选择的过程中，使用一部分数据（验证集）“偷窥”一下模型的效果。</p>
+<h2 id="泛化能力"><a href="#泛化能力" class="headerlink" title="泛化能力"></a>泛化能力</h2><ul>
+<li><p>现实中采用最多的方法是通过测试误差来评价学习方法的泛化能力</p>
+</li>
+<li><p>统计学习理论试图从理论上对学习方法的泛化能力进行分析</p>
+</li>
+<li><p>学习方法的泛化能力往往是通过研究泛化误差的<strong>概率上界</strong>进行的, 简称为泛化误差上界(generalization error bound)</p>
+<p>这本书里面讨论的不多，在<a href="../CH08/README.md">CH08</a>里面有讨论提升方法的误差分析, 提到$AdaBoost$不需要知道下界$\gamma$。在<a href="../CH02/README.md">CH02</a>中讨论算法的收敛性的时候有提到误分类次数的上界.</p>
+</li>
+</ul>
+<p>注意泛化误差的定义，书中有说<strong>事实上，泛化误差就是所学习到的模型的期望风险</strong></p>
+<h2 id="生成模型与判别模型"><a href="#生成模型与判别模型" class="headerlink" title="生成模型与判别模型"></a>生成模型与判别模型</h2><p><strong>监督学习方法</strong>可分为<strong>生成方法</strong>(generative approach)与<strong>判别方法</strong>(discriminative approach)</p>
+<h3 id="生成方法"><a href="#生成方法" class="headerlink" title="生成方法"></a>生成方法</h3><p>generative approach</p>
+<ul>
+<li>可以还原出<strong>联合概率分布</strong>$P(X,Y)$</li>
+<li>收敛速度快, 当样本容量增加时, 学到的模型可以更快收敛到真实模型</li>
+<li>当存在隐变量时仍可以用</li>
+</ul>
+<h3 id="判别方法"><a href="#判别方法" class="headerlink" title="判别方法"></a>判别方法</h3><p>discriminative approach</p>
+<ul>
+<li>直接学习<strong>条件概率</strong>$P(Y|X)$或者<strong>决策函数</strong>$f(X)$</li>
+<li>直接面对预测, 往往学习准确率更高</li>
+<li>可以对数据进行各种程度的抽象,  定义特征并使用特征, 可以简化学习问题</li>
+</ul>
+<h1 id="习题解答"><a href="#习题解答" class="headerlink" title="习题解答"></a>习题解答</h1><ul>
+<li><p><strong>1.1</strong>   说明伯努利模型的极大似然估计以及贝叶斯估计中的统计学方法三要素</p>
+<ul>
+<li><p>伯努利模型是定义在取值为0与1的随机变量上的概率分布。统计学分为两派：<strong>经典统计学派</strong>和<strong>贝叶斯统计学派</strong>。两者的不同主要是，<u>经典统计学派认为模型已定，参数未知，参数是固定的，只是还不知道</u>；<u>贝叶斯统计学派是通过观察到的现象对概率分布中的主观认定不断进行修正</u>。</p>
+<ul>
+<li><p><strong>极大似然估计</strong>用的是<u>经典统计学派的策略</u>，<strong>贝叶斯估计</strong>用的是<u>贝叶斯统计学派的策略</u>；为了得到使经验风险最小的参数值，使用的算法都是对经验风险求导，使导数为0。</p>
+</li>
+<li><p>定义随机变量$A$为一次伯努利试验的结果，$A$的取值为${0,1}$，概率分布为$P(A)$：</p>
+<pre><code>                $P(A=1)=θ，P(A=0)=1-θ$
+</code></pre></li>
+<li><p>极大似然估计<br>$L(θ)=\prod_{i=1}^nP(A_i)=θ^k(1-θ)^{n-k}$</p>
+<script type="math/tex; mode=display">θ=\arg\max_{θ}L(θ)=\frac{k}{n}</script><p>上述估计通过取对数求导得到，$A_i$为第$i$次随机试验</p>
+</li>
+<li><p>贝叶斯估计<br>$P(θ|A_1,A_2,…，A_n)=\frac{P(A_1,A_2,…，A_n|θ)P(θ)}{P(A_1,A_2,…，A_n)}$</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>   根据观察到的结果修正$θ$，也就是假设$θ$是随机变量，$θ$服从β分布，有很多个可能的取值，我们要取的值是在已知观察结果的条件下使$θ$出现概率最大的值。上式分母是不变的，求分子最大就可以。 
+
+  $\begin&#123;aligned&#125;
+  \theta 
+  &amp;=arg\max \limits_\theta &#123;P(A_1,A_2,...,A_n|\theta)P(\theta)&#125; \\ 
+  &amp;= arg\max \limits_\theta &#123;\prod_&#123;i=1&#125;^&#123;n&#125;P(A_i|\theta)P(\theta)&#125;  \\
+  &amp;=arg \max \limits_\theta &#123;\theta^k(1-\theta)^&#123;n-k&#125;\theta^&#123;a-1&#125;(1-\theta)^&#123;b-1&#125;&#125; \\
+  &amp;=\frac&#123;k+(a-1)&#125;&#123;n+(a-1)+(b-1)&#125;
+  \end&#123;aligned&#125;$
+
+  β分布是一个作为伯努利分布和二项式分布的共轭先验分布的密度函数，是指一组定义在$(0,1)$区间的连续概率分布，有两个参数α，β&gt;0。选定参数后就可以确定$\theta$。
+
+* 统计学习方法的三要素为模型，策略，算法。
+</code></pre><p><img src="https://img-blog.csdnimg.cn/20190524102938764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2x5YzQ0ODEzNDE4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li><strong>1.2</strong> 通过经验风险最小化推导极大似然估计。证明模型是条件概率分布，当损失函数是对数损失函数时，经验风险最小化等价于极大似然估计。<ul>
+<li>模型是条件概率分布：$P<em>θ(Y|X)$，<br>损失函数是对数损失函数：$L(Y,P</em>θ(Y|X))=−logP<em>θ(Y|X)$<br>经验风险为：$$ \begin{aligned}<br>R</em>{emp}(f)&amp;=\frac{1}{N}\sum<em>{i=1}^{N}L(y_i,f(x_i)) \<br>&amp;=\frac{1}{N}\sum</em>{i=1}^{N}-logP(y<em>i|x_i) \<br>&amp;=-\frac{1}{N}\sum</em>{i=1}^{N}logP(y_i|x_i)<br>\end{aligned}$$</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>极大似然估计的似然函数为： </p>
+<script type="math/tex; mode=display">L(\theta)=\prod_DP_{\theta}(Y|X)</script><ul>
+<li>取对数<script type="math/tex; mode=display">log(L(\theta))=\sum_DlogP_{\theta}(Y|X)</script><script type="math/tex; mode=display">arg\max_\theta\sum_DlogP_{\theta}(Y|X)=arg\min_{\theta}\sum_D-logP_{\theta}(Y|X)</script></li>
+</ul>
+<ul>
+<li>因此，当损失函数是对数损失函数时，经验风险最小化等价于极大似然估计。</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">tsuiwade</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://tsuiwade.github.io/2021/06/14/blog22-ML-Lihang-ch1/">https://tsuiwade.github.io/2021/06/14/blog22-ML-Lihang-ch1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://tsuiwade.github.io" target="_blank">TsuiWade's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/ML/">ML</a><a class="post-meta__tags" href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0/">统计学习</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/tsuiwade/images/raw/master/image-20210602211352022.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><link rel="stylesheet" href="/css/coin.css" media="defer" onload="this.media='all'"/><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">不给糖就捣蛋</span><div class="coin-wrapper"><div class="coin"><div class="coin__middle"></div><div class="coin__back"></div><div class="coin__front"></div></div></div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></button></div><script defer="defer" src="/js/coin.js"></script><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/07/26/blog24-leetcode/"><img class="prev-cover" src="https://gitee.com/tsuiwade/images/raw/master/image-20210726145111636.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">leetcode刷题之路的一些记录</div></div></a></div><div class="next-post pull-right"><a href="/2021/06/02/blog21-RaspberryPi-SocketIo/"><img class="next-cover" src="https://gitee.com/tsuiwade/images/raw/master/image-20210602211352022.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【第21篇博客】树莓派-服务器端-nodejs 和 主机-客户端-flutter 进行socket.io通信</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://gitee.com/tsuiwade/images/raw/master/1a27de723e1cb04e5acd82cbf4146166_31ebbe760ba45b872b1b8f6c19eb6246.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">tsuiwade</div><div class="author-info__description">记录技术生活的点点滴滴</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/tsuiwade"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tsuiwade" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:478451541@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/381957255" target="_blank" title="bilibili"><i class="iconfont  icon-bilibili"></i></a><a class="social-icon" href="/img/alipay.jpg" target="_blank" title="alipay"><i class="fab  fa-alipay"></i></a><a class="social-icon" href="/img/wechat.jpg" target="_blank" title="wechat"><i class="fab  fa-weixin"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=478451541" target="_blank" title="qq"><i class="fab  fa-qq"></i></a><a class="social-icon" href="https://blog.csdn.net/" target="_blank" title="CSDN"><i class="iconfont  icon-csdn3"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=321642197" target="_blank" title="wangyiyun"><i class="iconfont  icon-wangyiyunyinyuemusic1193417easyiconnet"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CH01-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%8F%8A%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E6%A6%82%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">CH01 统计学习及监督学习概论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%A0%E8%8A%82%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">章节目录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.2.</span> <span class="toc-text">1.1 统计学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">实现统计学习方法的步骤</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.</span> <span class="toc-text">1.2 统计学习分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.1.</span> <span class="toc-text">基本分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">监督学习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">无监督学习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">强化学习</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E6%A8%A1%E5%9E%8B%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.2.</span> <span class="toc-text">按模型分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B%E4%B8%8E%E9%9D%9E%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B%EF%BC%88%E7%A1%AE%E5%AE%9A%E6%80%A7%E6%A8%A1%E5%9E%8B%EF%BC%89"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">概率模型与非概率模型（确定性模型）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E7%AE%97%E6%B3%95%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.3.</span> <span class="toc-text">按算法分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E6%8A%80%E5%B7%A7%E5%88%86%E7%B1%BB"><span class="toc-number">1.3.4.</span> <span class="toc-text">按技巧分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-number">1.4.</span> <span class="toc-text">1.3  统计学习方法三要素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.4.1.</span> <span class="toc-text">模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">模型是什么?</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%96%E7%95%A5"><span class="toc-number">1.4.2.</span> <span class="toc-text">策略</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E9%A3%8E%E9%99%A9%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">损失函数与风险函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">常用损失函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ERM%E4%B8%8ESRM"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">ERM与SRM</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">1.4.3.</span> <span class="toc-text">算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9"><span class="toc-number">1.5.</span> <span class="toc-text">1.4 模型评估与模型选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88%E4%B8%8E%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9"><span class="toc-number">1.5.1.</span> <span class="toc-text">过拟合与模型选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96%E4%B8%8E%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"><span class="toc-number">1.5.2.</span> <span class="toc-text">正则化与交叉验证</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">正则化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">交叉验证</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%8C%96%E8%83%BD%E5%8A%9B"><span class="toc-number">1.6.</span> <span class="toc-text">泛化能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%88%A4%E5%88%AB%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.7.</span> <span class="toc-text">生成模型与判别模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95"><span class="toc-number">1.7.1.</span> <span class="toc-text">生成方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E5%88%AB%E6%96%B9%E6%B3%95"><span class="toc-number">1.7.2.</span> <span class="toc-text">判别方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94"><span class="toc-number">2.</span> <span class="toc-text">习题解答</span></a></li></ol></div></div><div class="card-widget card-clock"><div id="clock"><img v-if="clockshow == &quot;false&quot;" alt="" src="/assets/weather/loading.gif" height="120px" width="100%"/><table class="clock" v-if="clockshow"><tbody><tr><td class="clockdate">{{date}}</td><td class="weatherimg"><img id="weatherimg" :src="weatherimg" alt=""/></td><td class="temperature">{{temperature}}</td><td class="humidityimg"><img id="humidityimg" :src="humidityimg" alt=""/></td><td class="humidity">{{humidity}}</td></tr><tr class="time"><td colspan="5">{{time}}</td></tr><tr><td class="usaqi" colspan="1"><span>{{ip}}</span></td><td class="city" colspan="2">{{city}}</td><td class="daylight" colspan="2">{{daylight}}</td></tr></tbody></table></div></div><script defer="defer" data-pjax="data-pjax" src="/js/card_clock.js"></script><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/07/27/blog25-journeyOfAlgorithm/" title="《小灰的算法之旅》记录"><img src="https://gitee.com/tsuiwade/images/raw/master/5899917d9bb0f0bc415160813245e44707c03a20043650742781379faca25692-image.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《小灰的算法之旅》记录"/></a><div class="content"><a class="title" href="/2021/07/27/blog25-journeyOfAlgorithm/" title="《小灰的算法之旅》记录">《小灰的算法之旅》记录</a><time datetime="2021-07-27T14:52:44.000Z" title="发表于 2021-07-27 14:52:44">2021-07-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/26/blog23-hashtable/" title="hashtable"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hashtable"/></a><div class="content"><a class="title" href="/2021/07/26/blog23-hashtable/" title="hashtable">hashtable</a><time datetime="2021-07-26T16:11:25.000Z" title="发表于 2021-07-26 16:11:25">2021-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/26/blog24-leetcode/" title="leetcode刷题之路的一些记录"><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210726145111636.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="leetcode刷题之路的一些记录"/></a><div class="content"><a class="title" href="/2021/07/26/blog24-leetcode/" title="leetcode刷题之路的一些记录">leetcode刷题之路的一些记录</a><time datetime="2021-07-26T14:35:47.000Z" title="发表于 2021-07-26 14:35:47">2021-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/14/blog22-ML-Lihang-ch1/" title="【第22篇博客】李航《统计学习方法·第一章》笔记、代码、习题"><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210602211352022.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【第22篇博客】李航《统计学习方法·第一章》笔记、代码、习题"/></a><div class="content"><a class="title" href="/2021/06/14/blog22-ML-Lihang-ch1/" title="【第22篇博客】李航《统计学习方法·第一章》笔记、代码、习题">【第22篇博客】李航《统计学习方法·第一章》笔记、代码、习题</a><time datetime="2021-06-14T20:44:11.000Z" title="发表于 2021-06-14 20:44:11">2021-06-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/02/blog21-RaspberryPi-SocketIo/" title="【第21篇博客】树莓派-服务器端-nodejs 和 主机-客户端-flutter 进行socket.io通信"><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210602211352022.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【第21篇博客】树莓派-服务器端-nodejs 和 主机-客户端-flutter 进行socket.io通信"/></a><div class="content"><a class="title" href="/2021/06/02/blog21-RaspberryPi-SocketIo/" title="【第21篇博客】树莓派-服务器端-nodejs 和 主机-客户端-flutter 进行socket.io通信">【第21篇博客】树莓派-服务器端-nodejs 和 主机-客户端-flutter 进行socket.io通信</a><time datetime="2021-06-02T20:44:11.000Z" title="发表于 2021-06-02 20:44:11">2021-06-02</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/tsuiwade/images/raw/master/image-20210602211352022.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By tsuiwade</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div><div id="workboard"><script async="async" src="/js/runtime.js"></script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'mjS6lvGtY7MvAlxolqz8OdMn-gzGzoHsz',
+      appKey: 'QakpY3QuhiOscnuh50tI450M',
+      placeholder: '留下你的足迹吧~~',
+      avatar: 'monsterid',
+      meta: 'nick'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/hideMobileSidebar.js"></script><script defer src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script data-pjax src="/js/myjs.js"></script><script data-pjax src="/js/githubcalendar.js"></script><script data-pjax src="/js/giteecalendar.js"></script><script defer data-pjax src="/js/wow_init.js"></script><script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/mouse_snow.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@latest/source/js/issues.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?tsuiwade";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="tsuiwade";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
