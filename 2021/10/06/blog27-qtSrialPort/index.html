@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>《QT》项目 | TsuiWade's blog</title><meta name="author" content="tsuiwade"><meta name="copyright" content="tsuiwade"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="https:&#x2F;&#x2F;github.com&#x2F;tsuiwade&#x2F;translationTableControlSystem210909 这是一个简单的平移台控制软件，主要用到的是qt的串口功能。  https:&#x2F;&#x2F;blog.csdn.net&#x2F;Mark_md&#x2F;article&#x2F;details&#x2F;109048127  重写ComboBox下拉框的鼠标点击事件，实现点击下拉框扫描可用串口  尝试过点击主菜单产生的事">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《QT》项目">
+<meta property="og:url" content="https://tsuiwade.github.io/2021/10/06/blog27-qtSrialPort/index.html">
+<meta property="og:site_name" content="TsuiWade&#39;s blog">
+<meta property="og:description" content="https:&#x2F;&#x2F;github.com&#x2F;tsuiwade&#x2F;translationTableControlSystem210909 这是一个简单的平移台控制软件，主要用到的是qt的串口功能。  https:&#x2F;&#x2F;blog.csdn.net&#x2F;Mark_md&#x2F;article&#x2F;details&#x2F;109048127  重写ComboBox下拉框的鼠标点击事件，实现点击下拉框扫描可用串口  尝试过点击主菜单产生的事">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/tsuiwade/images/raw/master/image-20211006193232544.png">
+<meta property="article:published_time" content="2021-10-06T20:49:36.000Z">
+<meta property="article:modified_time" content="2021-10-06T20:49:36.000Z">
+<meta property="article:author" content="tsuiwade">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/tsuiwade/images/raw/master/image-20211006193232544.png"><link rel="shortcut icon" href="/img/me.png"><link rel="canonical" href="https://tsuiwade.github.io/2021/10/06/blog27-qtSrialPort/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-10-06 20:49:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/StaticFile_HEXO@latest/butterfly/css/iconfont.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_2390943_bv078yuunhu.css"><link rel="stylesheet" href="/css/background.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="TsuiWade's blog" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="https://gitee.com/tsuiwade/images/raw/master/1a27de723e1cb04e5acd82cbf4146166_31ebbe760ba45b872b1b8f6c19eb6246.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fas fa-chart-bar"></i><span> 统计</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://gitee.com/tsuiwade/images/raw/master/image-20211006193232544.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">TsuiWade's blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/charts/"><i class="fa-fw fas fa-chart-bar"></i><span> 统计</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">《QT》项目</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-06T20:49:36.000Z" title="发表于 2021-10-06 20:49:36">2021-10-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-06T20:49:36.000Z" title="更新于 2021-10-06 20:49:36">2021-10-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><a target="_blank" rel="noopener" href="https://github.com/tsuiwade/translationTableControlSystem210909">https://github.com/tsuiwade/translationTableControlSystem210909</a></p>
+<p>这是一个简单的平移台控制软件，主要用到的是qt的串口功能。</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mark_md/article/details/109048127">https://blog.csdn.net/Mark_md/article/details/109048127</a></li>
+</ol>
+<p>重写ComboBox下拉框的鼠标点击事件，实现点击下拉框扫描可用串口</p>
+<ol>
+<li><p>尝试过点击主菜单产生的事件，失败，不可提升为自定义类。</p>
+</li>
+<li><p>把新的 timeshow 文件夹重命名为 timeshowfixed，并把 timeshowfixed 里面 timeshow.pro.user 用户文件删掉。<br>进入 timeshowfixed 文件夹，把 timeshow.pro 重命名为 timeshowfixed.pro。<br>③用记事本打开 timeshowfixed.pro，修改里面的 TARGET 一行，变成下面这句：<br>TARGET = timeshowfixed<br>进行这样三步操作后，我们本章第一个例子的项目 timeshowfixed 就建立好了。</p>
+</li>
+<li><p>布局的时候花了几天时间。</p>
+<p>调布局时，发现一直不如自己所愿。出现了问题：布局中的布局里的间隙无法拉伸。效果就是第一个栅格布局高度不变。加了groupbox，并且改变为同其他类型的布局后，高度便可以开始拉伸，成功。<br><img src="https://user-images.githubusercontent.com/78476272/132862407-86f434ff-2748-4944-a236-213f7f98c96d.png" alt="image"></p>
+</li>
+</ol>
+<p><img src="https://user-images.githubusercontent.com/78476272/132862466-c9d9b781-1851-478a-b0ec-54154e6004ab.png" alt="image"></p>
+<ol>
+<li><p>经过几天的优化。总体样式如下：</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20211006193232544.png" alt="image-20211006193232544"></p>
+<p>项目结构如下：</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20211006193838493.png" alt="image-20211006193838493"></p>
+</li>
+</ol>
+<ul>
+<li><p>先定分辨率1024<em>768，又布局了几天。布局采用Card的想法，分组放置，故研究阴影的放置，但出现groupBox<strong>与子组件的样式和阴影不兼容问题</strong>，查了好几天没找到是什么问题，最终偶然间下载qt5.14时，发现是<em>*5.9的bug</em></em>。</p>
+</li>
+<li><p>除了布局的设计，还有样式和阴影的设计。在qss文件和窗口文件中设置。</p>
+<p>加阴影的代码已经经过优化，优化前写的较重复且乱，有个问题一个阴影对象只可以幅值给一个对象，因此…</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">QList&lt;QWidget*&gt; qList = &#123;ui-&gt;horizontalSlider, ui-&gt;comboBox_portName,  ui-&gt;centralWidget&#125;; <span class="comment">//</span></span><br><span class="line">   </span><br><span class="line">   QList&lt;QPushButton*&gt; btnList = ui-&gt;centralWidget-&gt;findChildren&lt;QPushButton*&gt;();</span><br><span class="line">   QList&lt;QLineEdit*&gt; lineList = ui-&gt;centralWidget-&gt;findChildren&lt;QLineEdit*&gt;();</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">auto</span> i : btnList)  qList.append(i);</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">auto</span> i : lineList)  qList.append(i);</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">auto</span> i : qList) &#123;</span><br><span class="line">       QGraphicsDropShadowEffect * shadow_effect = <span class="keyword">new</span> QGraphicsDropShadowEffect(<span class="keyword">this</span>);</span><br><span class="line">       shadow_effect-&gt;setOffset(<span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">       shadow_effect-&gt;setColor(QColor(<span class="number">55</span>, <span class="number">55</span>, <span class="number">55</span>));</span><br><span class="line">       shadow_effect-&gt;setBlurRadius(<span class="number">8</span>);</span><br><span class="line">   </span><br><span class="line">       i-&gt;setGraphicsEffect(shadow_effect);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">QPushButton</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="built_in">rgb</span>(<span class="number">253</span>,<span class="number">253</span>,<span class="number">253</span>);</span><br><span class="line">    <span class="attribute">border-radius</span>:<span class="number">8px</span>;</span><br><span class="line">    <span class="attribute">border-width</span>:<span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">border-color</span>:<span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">50</span>);</span><br><span class="line">    <span class="attribute">border-style</span>:outset;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">qlineargradient</span>(x1: <span class="number">0</span>, y1: <span class="number">0</span>, x2: <span class="number">0</span>, y2: <span class="number">1</span>,</span><br><span class="line">                                      stop: <span class="number">0</span> #f6f7fa, stop: <span class="number">1</span> #dadbde);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">QPushButton</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="built_in">rgb</span>(<span class="number">224</span>,<span class="number">238</span>,<span class="number">249</span>);</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="built_in">rgb</span>(<span class="number">11</span>,<span class="number">137</span>,<span class="number">234</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">QPushButton</span><span class="selector-pseudo">:pressed</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">qlineargradient</span>(x1: <span class="number">0</span>, y1: <span class="number">0</span>, x2: <span class="number">0</span>, y2: <span class="number">1</span>,</span><br><span class="line">                                      stop: <span class="number">0</span> #dadbde, stop: <span class="number">1</span> #f6f7fa);</span><br><span class="line">    <span class="attribute">padding-left</span>:<span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">padding-top</span>:<span class="number">2px</span>;</span><br><span class="line">    <span class="attribute">border-style</span>:inset;</span><br><span class="line">    <span class="attribute">border-color</span>:<span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">50</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">QSlider</span><span class="selector-pseudo">::horizontal</span>&#123;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">24px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">QSlider</span><span class="selector-pseudo">::groove</span><span class="selector-pseudo">:horizontal</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="string">&quot;#EC7064&quot;</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">6px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">QSlider</span><span class="selector-pseudo">::add-page</span><span class="selector-pseudo">:horizontal</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="string">&quot;#EC7064&quot;</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">6px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">QSlider</span><span class="selector-pseudo">::sub-page</span><span class="selector-pseudo">:horizontal</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="string">&quot;#2EE1C1&quot;</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">6px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">QSlider</span><span class="selector-pseudo">::handle</span><span class="selector-pseudo">:horizontal</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">24px</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">margin-bottom</span>:-<span class="number">6px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">background</span>:<span class="built_in">qradialgradient</span>(spread:pad,cx:<span class="number">0.5</span>,cy:<span class="number">0.5</span>,radius:<span class="number">0.5</span>,fx:<span class="number">0.5</span>,fy:<span class="number">0.5</span>,stop:<span class="number">0.6</span> <span class="string">&quot;#FFFFFF&quot;</span>,stop:<span class="number">0.8</span> <span class="string">&quot;#34495E&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">QGroupBox</span><span class="selector-id">#groupBox_1</span>, <span class="selector-id">#groupBox_2</span>, <span class="selector-id">#groupBox_3</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">background-color</span>:<span class="built_in">qlineargradient</span>(x1: <span class="number">0</span>, y1: <span class="number">0</span>, x2: <span class="number">0</span>, y2: <span class="number">1</span>,</span><br><span class="line">    stop: <span class="number">0</span> #f6f7fa, stop: <span class="number">1</span> #dadbde);</span><br><span class="line">    <span class="attribute">border-radius</span>:<span class="number">20px</span>;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">border-width</span>:<span class="number">1px</span>;</span><br><span class="line">    <span class="attribute">border-color</span>:<span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">50</span>);</span><br><span class="line">    <span class="attribute">border-style</span>:outset;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>样式包括圆角、偏移、渐变及渐变的颠倒、滑动条的前后样式和滑块样式。</p>
+<p>还有一个小tip是加上icon会生动许多。</p>
+</li>
+<li><p>还有完成标志的动画。</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20211006194645681.png" alt="image-20211006194645681"></p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20211006194751940.png" alt=""></p>
+<p>截图看不出动画的效果，是有关位置和透明度的动画。</p>
+<p>主要是设计了一个新对话框窗体，以非模态的方式出现3秒后自动消失。对话框淡入淡出的动画代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">    <span class="comment">//获取主屏幕分辨率</span></span><br><span class="line">    QRect screenRect = QGuiApplication::primaryScreen()-&gt;geometry();</span><br><span class="line"></span><br><span class="line">    QPropertyAnimation *appearPositionAnimation = <span class="keyword">new</span> QPropertyAnimation(<span class="keyword">this</span>, <span class="string">&quot;geometry&quot;</span>);</span><br><span class="line">    appearPositionAnimation-&gt;setDuration(<span class="number">1000</span>);</span><br><span class="line">    appearPositionAnimation-&gt;setStartValue(QRect((screenRect.width() / <span class="number">2</span>) - <span class="number">80</span>, screenRect.height() / <span class="number">2</span> - <span class="number">40</span>, <span class="number">0</span>, <span class="number">0</span>));</span><br><span class="line">    appearPositionAnimation-&gt;setEndValue(QRect(screenRect.width() / <span class="number">2</span> - <span class="number">80</span>, screenRect.height() / <span class="number">2</span>, <span class="number">160</span>, <span class="number">80</span>));</span><br><span class="line">    appearPositionAnimation-&gt;setEasingCurve(QEasingCurve::InOutElastic);</span><br><span class="line"></span><br><span class="line"><span class="comment">//    QPropertyAnimation *vanishPostionAnimation = new QPropertyAnimation(this, &quot;geometry&quot;);</span></span><br><span class="line"><span class="comment">//    vanishPostionAnimation-&gt;setDuration(1000);</span></span><br><span class="line"><span class="comment">//    vanishPostionAnimation-&gt;setStartValue(QRect(1024 / 2 - 80, 768 / 2, 160, 80));</span></span><br><span class="line"><span class="comment">//    vanishPostionAnimation-&gt;setEndValue(QRect(1024 / 2 - 80, 768 / 2 - 40, 0, 0));</span></span><br><span class="line"><span class="comment">//    vanishPostionAnimation-&gt;setEasingCurve(QEasingCurve::InBounce);</span></span><br><span class="line"></span><br><span class="line">    QSequentialAnimationGroup *positionAnimationGroup = <span class="keyword">new</span> QSequentialAnimationGroup(<span class="keyword">this</span>);</span><br><span class="line">    positionAnimationGroup-&gt;addAnimation(appearPositionAnimation);</span><br><span class="line">    positionAnimationGroup-&gt;addPause(<span class="number">2000</span>);</span><br><span class="line"><span class="comment">//    pScaleGroup-&gt;addAnimation(vanishPostionAnimation);</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>-&gt;setWindowOpacity(<span class="number">0.0</span>);</span><br><span class="line"></span><br><span class="line">    QPropertyAnimation* appearOpacityAnimation = <span class="keyword">new</span> QPropertyAnimation(<span class="keyword">this</span>, <span class="string">&quot;windowOpacity&quot;</span>);</span><br><span class="line">    appearOpacityAnimation-&gt;setDuration(<span class="number">1000</span>); <span class="comment">// will take 5 seconds</span></span><br><span class="line">    appearOpacityAnimation-&gt;setEasingCurve(QEasingCurve::OutBack); <span class="comment">// just demonstration, there are a lot of curves to choose</span></span><br><span class="line">    appearOpacityAnimation-&gt;setStartValue(<span class="number">0.0</span>);</span><br><span class="line">    appearOpacityAnimation-&gt;setEndValue(<span class="number">1.0</span>);</span><br><span class="line"></span><br><span class="line">    QPropertyAnimation* vanishOpacityAnimation = <span class="keyword">new</span> QPropertyAnimation(<span class="keyword">this</span>, <span class="string">&quot;windowOpacity&quot;</span>);</span><br><span class="line">    vanishOpacityAnimation-&gt;setDuration(<span class="number">1000</span>); <span class="comment">// will take 5 seconds</span></span><br><span class="line">    vanishOpacityAnimation-&gt;setEasingCurve(QEasingCurve::Linear); <span class="comment">// just demonstration, there are a lot of curves to choose</span></span><br><span class="line">    vanishOpacityAnimation-&gt;setStartValue(<span class="number">1.0</span>);</span><br><span class="line">    vanishOpacityAnimation-&gt;setEndValue(<span class="number">0.0</span>);</span><br><span class="line"></span><br><span class="line">    QSequentialAnimationGroup *opacityAnimationGroup = <span class="keyword">new</span> QSequentialAnimationGroup(<span class="keyword">this</span>);</span><br><span class="line">    opacityAnimationGroup-&gt;addAnimation(appearOpacityAnimation);</span><br><span class="line">    opacityAnimationGroup-&gt;addPause(<span class="number">2000</span>);</span><br><span class="line">    opacityAnimationGroup-&gt;addAnimation(vanishOpacityAnimation);</span><br><span class="line"></span><br><span class="line"><span class="comment">//    anim-&gt;start(QAbstractAnimation::DeleteWhenStopped);</span></span><br><span class="line"></span><br><span class="line">    m_group = <span class="keyword">new</span> QParallelAnimationGroup(<span class="keyword">this</span>);</span><br><span class="line">    m_group-&gt;addAnimation(positionAnimationGroup);</span><br><span class="line">    m_group-&gt;addAnimation(opacityAnimationGroup);</span><br><span class="line">    m_group-&gt;setDirection(QAbstractAnimation::Forward);</span><br><span class="line">    m_group-&gt;setLoopCount(<span class="number">1</span>);</span><br><span class="line">    m_group-&gt;start();</span><br><span class="line">    connect(<span class="keyword">this</span>-&gt;m_group, SIGNAL(finished()), m_group, SLOT(deleteLater()), Qt::UniqueConnection);</span><br><span class="line">    connect(<span class="keyword">this</span>-&gt;m_group, SIGNAL(finished()), <span class="keyword">this</span>, SLOT(close()));</span><br></pre></td></tr></table></figure>
+<p>其中最后几句槽函数是花了一些时间找来的，当动画消失后，对话框窗体关闭。</p>
+<ul>
+<li><p>点击QLineEdit，弹出虚拟数字键盘，代码也是网上找的修改了一下样式。</p>
+<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20211006195444106.png" alt="image-20211006195444106"></p>
+<p>QT数字软键盘，包括QLineEdit弹出代码和键盘样式来自：<a target="_blank" rel="noopener" href="https://download.csdn.net/download/zhuifengcong/8833143">https://download.csdn.net/download/zhuifengcong/8833143</a></p>
+<p>最后采用遮罩蒙版，当某个窗体出现，背景变黑。代码来自：<a target="_blank" rel="noopener" href="https://blog.csdn.net/tax10240809163com/article/details/108086890">https://blog.csdn.net/tax10240809163com/article/details/108086890</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">tsuiwade</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://tsuiwade.github.io/2021/10/06/blog27-qtSrialPort/">https://tsuiwade.github.io/2021/10/06/blog27-qtSrialPort/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://tsuiwade.github.io" target="_blank">TsuiWade's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/tsuiwade/images/raw/master/image-20211006193232544.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><link rel="stylesheet" href="/css/coin.css" media="defer" onload="this.media='all'"/><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">不给糖就捣蛋</span><div class="coin-wrapper"><div class="coin"><div class="coin__middle"></div><div class="coin__back"></div><div class="coin__front"></div></div></div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></button></div><script defer="defer" src="/js/coin.js"></script><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/08/11/blog26-cpp-stl/"><img class="next-cover" src="https://gitee.com/tsuiwade/images/raw/master/14ce36d3d539b60060e9c92ce750352ac65cb702.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">《黑马程序员c++_STL》记录</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="https://gitee.com/tsuiwade/images/raw/master/1a27de723e1cb04e5acd82cbf4146166_31ebbe760ba45b872b1b8f6c19eb6246.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">tsuiwade</div><div class="author-info__description">记录技术生活的点点滴滴</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">12</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/tsuiwade"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tsuiwade" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:478451541@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/381957255" target="_blank" title="bilibili"><i class="iconfont  icon-bilibili"></i></a><a class="social-icon" href="/img/alipay.jpg" target="_blank" title="alipay"><i class="fab  fa-alipay"></i></a><a class="social-icon" href="/img/wechat.jpg" target="_blank" title="wechat"><i class="fab  fa-weixin"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=478451541" target="_blank" title="qq"><i class="fab  fa-qq"></i></a><a class="social-icon" href="https://blog.csdn.net/" target="_blank" title="CSDN"><i class="iconfont  icon-csdn3"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=321642197" target="_blank" title="wangyiyun"><i class="iconfont  icon-wangyiyunyinyuemusic1193417easyiconnet"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-clock"><div id="clock"><img v-if="clockshow == &quot;false&quot;" alt="" src="/assets/weather/loading.gif" height="120px" width="100%"/><table class="clock" v-if="clockshow"><tbody><tr><td class="clockdate">{{date}}</td><td class="weatherimg"><img id="weatherimg" :src="weatherimg" alt=""/></td><td class="temperature">{{temperature}}</td><td class="humidityimg"><img id="humidityimg" :src="humidityimg" alt=""/></td><td class="humidity">{{humidity}}</td></tr><tr class="time"><td colspan="5">{{time}}</td></tr><tr><td class="usaqi" colspan="1"><span>{{ip}}</span></td><td class="city" colspan="2">{{city}}</td><td class="daylight" colspan="2">{{daylight}}</td></tr></tbody></table></div></div><script defer="defer" data-pjax="data-pjax" src="/js/card_clock.js"></script><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/10/06/blog27-qtSrialPort/" title="《QT》项目"><img src="https://gitee.com/tsuiwade/images/raw/master/image-20211006193232544.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《QT》项目"/></a><div class="content"><a class="title" href="/2021/10/06/blog27-qtSrialPort/" title="《QT》项目">《QT》项目</a><time datetime="2021-10-06T20:49:36.000Z" title="发表于 2021-10-06 20:49:36">2021-10-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/11/blog26-cpp-stl/" title="《黑马程序员c++_STL》记录"><img src="https://gitee.com/tsuiwade/images/raw/master/14ce36d3d539b60060e9c92ce750352ac65cb702.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《黑马程序员c++_STL》记录"/></a><div class="content"><a class="title" href="/2021/08/11/blog26-cpp-stl/" title="《黑马程序员c++_STL》记录">《黑马程序员c++_STL》记录</a><time datetime="2021-08-11T23:03:10.000Z" title="发表于 2021-08-11 23:03:10">2021-08-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/27/blog25-journeyOfAlgorithm/" title="《小灰的算法之旅》记录"><img src="https://gitee.com/tsuiwade/images/raw/master/5899917d9bb0f0bc415160813245e44707c03a20043650742781379faca25692-image.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《小灰的算法之旅》记录"/></a><div class="content"><a class="title" href="/2021/07/27/blog25-journeyOfAlgorithm/" title="《小灰的算法之旅》记录">《小灰的算法之旅》记录</a><time datetime="2021-07-27T14:52:44.000Z" title="发表于 2021-07-27 14:52:44">2021-07-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/26/blog23-hashtable/" title="哈希表"><img src="https://gitee.com/tsuiwade/images/raw/master/3bd5f08f7df9d4aef616155ae4a4f92c.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="哈希表"/></a><div class="content"><a class="title" href="/2021/07/26/blog23-hashtable/" title="哈希表">哈希表</a><time datetime="2021-07-26T16:11:25.000Z" title="发表于 2021-07-26 16:11:25">2021-07-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/26/blog24-leetcode/" title="leetcode刷题之路的一些记录"><img src="https://gitee.com/tsuiwade/images/raw/master/image-20210726145111636.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="leetcode刷题之路的一些记录"/></a><div class="content"><a class="title" href="/2021/07/26/blog24-leetcode/" title="leetcode刷题之路的一些记录">leetcode刷题之路的一些记录</a><time datetime="2021-07-26T14:35:47.000Z" title="发表于 2021-07-26 14:35:47">2021-07-26</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://gitee.com/tsuiwade/images/raw/master/image-20211006193232544.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By tsuiwade</div><div class="footer_custom_text"><p><a style="margin-inline:5px"target="_blank" href="https://hexo.io/"><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&logo=hexo" title="博客框架为 Hexo" alt="HEXO"></a><a style="margin-inline:5px"target="_blank" href="https://butterfly.js.org/"><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&logo=bitdefender" title="主题采用 Butterfly" alt="Butterfly"></a><a style="margin-inline:5px"target="_blank" href="https://www.jsdelivr.com/"><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr" title="本站使用 Jsdelivr 为静态资源提供CDN加速" alt="Jsdelivr"></a><a style="margin-inline:5px"target="_blank" href="https://github.com/"><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&logo=GitHub" title="本站项目由 GitHub 托管" alt="GitHub"></a><a style="margin-inline:5px"target="_blank"href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&logo=Claris" alt="img" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div><div id="workboard"><script async="async" src="/js/runtime.js"></script></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: 'mjS6lvGtY7MvAlxolqz8OdMn-gzGzoHsz',
+      appKey: 'QakpY3QuhiOscnuh50tI450M',
+      placeholder: '留下你的足迹吧~~',
+      avatar: 'monsterid',
+      meta: 'nick'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/hideMobileSidebar.js"></script><script defer src="https://cdn.jsdelivr.net/gh/graingert/wow@1.3.0/dist/wow.min.js"></script><script data-pjax src="/js/myjs.js"></script><script data-pjax src="/js/githubcalendar.js"></script><script data-pjax src="/js/giteecalendar.js"></script><script defer data-pjax src="/js/wow_init.js"></script><script src="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/js/mouse_snow.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/hexo-theme-volantis@latest/source/js/issues.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start -->
+  <script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js"></script>
+  <script data-pjax>
+        function GithubCalendarConfig(){
+            var git_githubapiurl ="https://python-github-calendar-api.vercel.app/api?tsuiwade";
+            var git_color =['#ebedf0', '#fdcdec', '#fc9bd9', '#fa6ac5', '#f838b2', '#f5089f', '#c4067e', '#92055e', '#540336', '#48022f', '#30021f'];
+            var git_user ="tsuiwade";
+            var parent_div_git = document.getElementById('recent-posts');
+            var git_div_html = '<div class="recent-post-item" style="width:100%;height:auto;padding:10px;"><div id="github_loading" style="width:10%;height:100%;margin:0 auto;display: block"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform></path></svg></div><div id="github_container"></div></div>';
+            if(parent_div_git && location.pathname =='/'){
+                console.log('已挂载github calendar')
+                // parent_div_git.innerHTML=git_div_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",git_div_html) // 有报错，但不影响使用(支持pjax跳转)
+            };
+            GithubCalendar(git_githubapiurl,git_color,git_user)
+        }
+        if(document.getElementById('recent-posts')){
+            GithubCalendarConfig()
+        }
+    </script>
+    <style>#github_container{min-height:280px}@media screen and (max-width:650px) {#github_container{background-image:;min-height:0px}}</style>
+    <style></style><!-- hexo injector body_end end --></body></html>
