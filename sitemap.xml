@@ -16,14 +16,14 @@
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/tags/index.html</loc>
+    <loc>https://tsuiwade.github.io/charts/index.html</loc>
     
     <lastmod>2021-10-10</lastmod>
     
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/charts/index.html</loc>
+    <loc>https://tsuiwade.github.io/tags/index.html</loc>
     
     <lastmod>2021-10-10</lastmod>
     
@@ -489,14 +489,14 @@
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/categories/leetcode/cpp/</loc>
+    <loc>https://tsuiwade.github.io/categories/github/</loc>
     <lastmod>2021-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://tsuiwade.github.io/categories/github/</loc>
+    <loc>https://tsuiwade.github.io/categories/leetcode/cpp/</loc>
     <lastmod>2021-10-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
