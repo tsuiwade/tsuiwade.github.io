@@ -29,6 +29,19 @@
     
     
     <entry>
+      <title>bolg28-raspberrypiQt</title>
+      <link href="2021/10/07/bolg28-raspberrypiQt/"/>
+      <url>2021/10/07/bolg28-raspberrypiQt/</url>
+      
+        <content type="html"><![CDATA[<p>第二次装树莓派系统。</p><p>google搜索raspberrypi os，下载imager和os系统，准备一个U盘或者sd卡，然后进行烧写。</p><p>默认安装完，由于我有买固态，想将U盘启动改为ssd启动，从而进行转移。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20211007192857479.png" alt="image-20211007192857479"></p><p>接下来是换源：直接看官方文档，我的确实是debian10 buster版本系统。</p><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/">https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/</a></p><p>接下来是准备远程环境。下载putty，开启ssh和vnc，最后远程桌面连接即可。<a href="https://tsuiwade.tk/2021/03/13/blog18_RaspberryPi/">https://tsuiwade.tk/2021/03/13/blog18_RaspberryPi/</a></p><p>再接下来是安装qt。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《QT项目》平移台控制</title>
       <link href="2021/10/06/blog27-qtSrialPort/"/>
       <url>2021/10/06/blog27-qtSrialPort/</url>
