@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>星图识别</title>
+      <link href="2022/01/07/blog30-starId-1/"/>
+      <url>2022/01/07/blog30-starId-1/</url>
+      
+        <content type="html"><![CDATA[<p>这篇博客主要是针对2019主要介绍的是<a href="https://www.shumo.com/wiki/doku.php?id=%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8A_2019_%E5%85%A8%E5%9B%BD%E7%A0%94%E7%A9%B6%E7%94%9F%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%AB%9E%E8%B5%9B_npmcm_%E8%AF%95%E9%A2%98">第十六届(2019)全国研究生数学建模竞赛(NPMCM)试题B题</a>：天文导航中的星图识别，这里我下载了<a href="https://github.com/tsuiwade/MathModel/tree/master/%E5%9B%BD%E8%B5%9B%E8%AE%BA%E6%96%87/2019%E5%B9%B4%E4%BC%98%E7%A7%80%E8%AE%BA%E6%96%87/B">5篇优秀论文</a>，以及优秀的<a href="https://www.bilibili.com/video/BV17J41117Ut?from=search&amp;seid=305839988149914531&amp;spm_id_from=333.337.0.0">答辩现场录像</a>，在这篇博客中，我将选取<code>B19102880053</code>提到的<code>基于角距传统算法</code>进行复现。</p><p>此赛题提供的4908个导航星表数据是.mat文件，因此将使用<code>MATLAB</code>进行代码编写。</p><ul><li><p>1、星表数据处理</p><p>首先将星表数据的<code>天球坐标系下的赤经、赤纬</code>转为<code>直角坐标系下的x/y/z轴的值</code>，利用公式</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/20220108103109.png" alt=""></p><p>得到</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/20220108103148.png" alt=""></p></li></ul><ul><li><p>2、准备库矩阵和星图矩阵</p><p> <img src="https://gitee.com/tsuiwade/images/raw/master/20220108094645.png" alt=""></p><ul><li><p>式6-1导航星角距库比较好理解，我将其化成度数，得到：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/20220108103624.png" alt=""></p></li><li><p>而式6-2某星图角距矩阵，文中作者提到选取导航星方式，但不妨以任意星，例如表中顺序来求。在此我选取第一个星<code>A01</code>作为基准星，求解与其他星的角距，但在此我去除了与本身星的角距（因其为0），得到如下角距：</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/20220108103940.png" alt=""></p></li></ul></li></ul><ul><li><p>3、算法描述</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/20220108104116.png" alt=""></p><p>（其实在此我理解错了，怪不得我运行了这么长时间，先说一下我的理解的算法，是没有优化的算法，在于最后一步还进行遍历循环。）</p><p>取<code>星图角距矩阵</code>第i(i=1)个元素与<code>导航星角距矩阵</code>第j(j=1)列的元素依次匹配，若匹配到角距相等或近似的元素，判断矩阵第i(i=1)个元素数值加 1；  </p><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (   <span class="built_in">length</span>(<span class="built_in">find</span>(<span class="built_in">abs</span>(<span class="built_in">angle</span>(:,<span class="built_in">j</span>)-angle1(<span class="built_in">i</span>)) &lt; <span class="number">0.1</span>  ) <span class="comment">% 这里的0.1是匹配到角距的判定</span></span><br><span class="line">panduan(<span class="built_in">j</span>) = panduan(<span class="built_in">j</span>)+ <span class="number">1</span> ;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><p>取<code>星图角距矩阵</code>第i （ i= 2,3,…,n）个元素，重复上一步操作； （该步完成后，若导航星就是第j列，则判断矩阵会加很多个1；）</p><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">size</span>(angle1,<span class="number">2</span>) </span><br><span class="line"><span class="keyword">if</span> (   <span class="built_in">length</span>(<span class="built_in">find</span>(<span class="built_in">abs</span>(<span class="built_in">angle</span>(:,<span class="built_in">j</span>)-angle1(<span class="built_in">i</span>))&lt; <span class="number">0.1</span>  )</span><br><span class="line">panduan(<span class="built_in">j</span>) = panduan(<span class="built_in">j</span>)+ <span class="number">1</span> ;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><p>若星图矩阵所有元素均完成匹配，则取导航星矩阵第 j （ j = 2,3,…,4908）列元素重复上两步操作； </p><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:<span class="number">4908</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">size</span>(angle1,<span class="number">2</span>) </span><br><span class="line"><span class="keyword">if</span> (   <span class="built_in">length</span>(<span class="built_in">find</span>(<span class="built_in">abs</span>(<span class="built_in">angle</span>(:,<span class="built_in">j</span>)-angle1(<span class="built_in">i</span>))&lt; <span class="number">0.1</span>     )</span><br><span class="line">panduan(<span class="built_in">j</span>) = panduan(<span class="built_in">j</span>)+ <span class="number">1</span> ;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure><p>取判断矩阵最大元素所在列（记为 x ）作为基准星编号 x ；  </p><p>（关于0.1的设置，假设其为a，我希望采用智能化判断，即当判断矩阵的最大的一个值不大于最大的值的2倍时，差距a减半，继续判断，直到第一个值大于第二个值，即能够明显判断出差异和保证准确性时，判断截止）</p><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> delta=<span class="number">1</span>:<span class="number">10</span> </span><br><span class="line">       panduan = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="number">4908</span>);</span><br><span class="line">       <span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:<span class="number">4908</span></span><br><span class="line">           <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">size</span>(angle1,<span class="number">2</span>) </span><br><span class="line">               <span class="keyword">if</span> (   <span class="built_in">length</span>(<span class="built_in">find</span>(<span class="built_in">abs</span>(<span class="built_in">angle</span>(:,<span class="built_in">j</span>)-angle1(<span class="built_in">i</span>))&lt; (<span class="number">2</span>^(-delta))))     )</span><br><span class="line">                   panduan(<span class="built_in">j</span>) = panduan(<span class="built_in">j</span>)+ <span class="number">1</span> ;</span><br><span class="line">               <span class="keyword">end</span></span><br><span class="line">           <span class="keyword">end</span></span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">       [<span class="built_in">max</span>,I ] = maxk(panduan,<span class="number">5</span>)</span><br><span class="line">       <span class="keyword">if</span>( <span class="built_in">max</span>(<span class="number">1</span>) &gt; <span class="built_in">max</span>(<span class="number">2</span>)+<span class="number">1</span> )</span><br><span class="line">           newNewMatrix(ii,<span class="number">4</span>)=I(<span class="number">1</span>); </span><br><span class="line">           <span class="keyword">break</span>;</span><br><span class="line">       <span class="keyword">end</span></span><br><span class="line">   <span class="keyword">end</span></span><br></pre></td></tr></table></figure><p>继续匹配导航星矩阵第 x 列，确定星图其他恒星编号 。（其实我的理解的差别在这，作者由基准星的列直接判断其他星，而笨拙的方法是遍历其他基准星，<strong>若采用笨拙的方法，星图1将耗时60s，若不遍历，则耗时6s左右，若设定固定0.1差距，则耗时1s左右</strong>）</p><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:<span class="built_in">size</span>(newNewMatrix,<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    angle1 = <span class="built_in">real</span>(<span class="built_in">acosd</span>(newNewMatrix(ii,<span class="number">1</span>:<span class="number">3</span>) * newNewMatrix(:,<span class="number">1</span>:<span class="number">3</span>).&#x27;));</span><br><span class="line">    angle1(<span class="built_in">find</span>(angle1==<span class="number">0</span>))=[];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> delta=<span class="number">1</span>:<span class="number">10</span> </span><br><span class="line">        panduan = <span class="built_in">zeros</span>(<span class="number">1</span>,<span class="number">4908</span>);</span><br><span class="line">        <span class="keyword">for</span> <span class="built_in">j</span> = <span class="number">1</span>:<span class="number">4908</span></span><br><span class="line">            <span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:<span class="built_in">size</span>(angle1,<span class="number">2</span>) </span><br><span class="line">                <span class="keyword">if</span> (   <span class="built_in">length</span>(<span class="built_in">find</span>(<span class="built_in">abs</span>(<span class="built_in">angle</span>(:,<span class="built_in">j</span>)-angle1(<span class="built_in">i</span>))&lt; (<span class="number">2</span>^(-delta))))     )</span><br><span class="line">                    panduan(<span class="built_in">j</span>) = panduan(<span class="built_in">j</span>)+ <span class="number">1</span> ;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        [<span class="built_in">max</span>,I ] = maxk(panduan,<span class="number">5</span>)</span><br><span class="line">        <span class="keyword">if</span>( <span class="built_in">max</span>(<span class="number">1</span>) &gt; <span class="built_in">max</span>(<span class="number">2</span>)+<span class="number">1</span> )</span><br><span class="line">            newNewMatrix(ii,<span class="number">4</span>)=I(<span class="number">1</span>); </span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></li></ul><ul><li></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 星图识别 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 星图识别 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《QT项目》靶轮控制</title>
       <link href="2021/10/10/blog28-qtTargetWheelConsole/"/>
       <url>2021/10/10/blog28-qtTargetWheelConsole/</url>
@@ -29,13 +54,29 @@
     
     
     <entry>
-      <title>bolg28-raspberrypiQt</title>
-      <link href="2021/10/07/bolg28-raspberrypiQt/"/>
-      <url>2021/10/07/bolg28-raspberrypiQt/</url>
+      <title>树莓派qt</title>
+      <link href="2021/10/07/bolg29-raspberrypiQt/"/>
+      <url>2021/10/07/bolg29-raspberrypiQt/</url>
       
         <content type="html"><![CDATA[<p>第二次装树莓派系统。</p><p>google搜索raspberrypi os，下载imager和os系统，准备一个U盘或者sd卡，然后进行烧写。</p><p>默认安装完，由于我有买固态，想将U盘启动改为ssd启动，从而进行转移。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20211007192857479.png" alt="image-20211007192857479"></p><p>接下来是换源：直接看官方文档，我的确实是debian10 buster版本系统。</p><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/">https://mirrors.tuna.tsinghua.edu.cn/help/raspbian/</a></p><p>接下来是准备远程环境。下载putty，开启ssh和vnc，最后远程桌面连接即可。<a href="https://tsuiwade.tk/2021/03/13/blog18_RaspberryPi/">https://tsuiwade.tk/2021/03/13/blog18_RaspberryPi/</a></p><p>再接下来是安装qt。</p>]]></content>
       
       
+      <categories>
+          
+          <category> qt </category>
+          
+          <category> raspberrypi </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> raspberrypi </tag>
+            
+            <tag> qt </tag>
+            
+        </tags>
       
     </entry>
     
