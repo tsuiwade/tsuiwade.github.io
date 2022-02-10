@@ -55,13 +55,13 @@
   </entry>
   
   <entry>
-    <title>星图识别4-求滚转角</title>
+    <title>星图识别4-共线方程与求滚转角</title>
     <link href="https://tsuiwade.github.io/2022/01/10/blog33-starId-4/"/>
     <id>https://tsuiwade.github.io/2022/01/10/blog33-starId-4/</id>
     <published>2022-01-10T22:42:12.000Z</published>
     <updated>2022-01-10T22:42:12.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20220110114902059.png" alt="image-20220110114902059"></p><p>以星图1为例，全点计算得到的,赤经赤纬为 109.6000   34.5000</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20220110114639546.png" alt="image-20220110114639546"></p><hr><p>053.pdf中有此公式。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20220110224454915.png" alt="image-20220110224454915"></p>]]></content>
+    <content type="html"><![CDATA[<p>2022/2/10 初十，大概拖了一个月都没有进度，今天才找到正确的切入点。</p><p>即是这篇 CN100348460C - 一种基于星场的星敏感器校准方法 专利，这篇专利因最开始的一张非右手坐标系的图，被我打入冷宫，但经过自己的琢磨发现自己原先的想法应该是错的，于是顺着该专利仔细研究，尤其对下述式子尤其好奇，于是想在此介绍一下<code>共线方程</code>。</p><p><code>共线方程</code>参考 <a href="https://baike.baidu.com/item/%E5%85%B1%E7%BA%BF%E6%96%B9%E7%A8%8B/2055962">https://baike.baidu.com/item/%E5%85%B1%E7%BA%BF%E6%96%B9%E7%A8%8B/2055962</a> 和 <a href="https://zhuanlan.zhihu.com/p/101549821">https://zhuanlan.zhihu.com/p/101549821</a> 。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/img/image-20220210233834515.png" alt="image-20220210233834515"></p><p><img src="https://gitee.com/tsuiwade/images/raw/master/img/image-20220210233649809.png" alt="image-20220210233649809"></p><p>053.pdf中也有此公式。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/image-20220110224454915.png" alt="image-20220110224454915"></p>]]></content>
     
     
     <summary type="html">终于进入求解滚转角了。</summary>
