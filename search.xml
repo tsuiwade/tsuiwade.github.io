@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>qt曲线图</title>
+      <link href="2022/04/08/blog46-myQChart/"/>
+      <url>2022/04/08/blog46-myQChart/</url>
+      
+        <content type="html"><![CDATA[<p>为了做一个调节控制轴的上位机软件。</p><p>主要用到了QT chart， 并且大量学习内置的<code>example</code>，主要包括 QLineSeries、QSplineSeries，一个样条曲线和一个折线。</p><p>其中白色显示最为重要的RMS曲线，与黑色背景形成最鲜明对比。</p><p>还有一个QAreaSeries为了显示两个意义相同的位置信息（实际位置和设定位置），以亮蓝线表示实际位置，暗蓝色表示设定位置，中间的透明蓝表示两线围成的区域。</p><p>还有一个QStackedBarSeries，折叠柱状图，我的想法是设计红色为正误差，绿色为负误差，类似于股票的涨跌，其中柱状图包络线为实际值，并且整图来看，由于误差的累计在pid中是有所含义的，红绿色面积大小比较显眼。</p><p>还设置了多y轴，个人认为这是我设计最全的一个图了：各个颜色和图类分别表示不同的含义，我本想将左侧的红绿色y轴合二为一，但不太会且有bug，故放弃。</p><p>在图中还有点击图例的交互：实现图例闪烁和曲线现隐。</p><p>以及鼠标hover在scatter点上的显示反应。</p><p><img src="https://gitee.com/tsuiwade/images/raw/master/img/image-20220408194524894.png" alt="image-20220408194524894"></p><p>接下来还需要做协议的解析、动态调整y轴的范围、计算error值。计算rms值。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> qt </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> qt </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>研究一下星表</title>
       <link href="2022/03/18/blog45-starCatalog/"/>
       <url>2022/03/18/blog45-starCatalog/</url>
@@ -33,7 +58,7 @@
       <link href="2022/03/15/blog44-buildStellarium/"/>
       <url>2022/03/15/blog44-buildStellarium/</url>
       
-        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p>首先下载qt，我这里使用的是qt5.14.2，下载挺快的。</p><p><img src="https://github.com/tsuiwade/images/blob/main/img/image-20220316082552203.png" alt="image-20220316082852120"></p><p>We recommend to use Qt 5.12 or later. You must select Qt Script and msvc2017/msvc2019 among so many checkboxes.</p><p>Add <code>C:\Qt\Qt5.15.12</code> to your <code>PATH</code> variable - you should add string <code>C:\Qt\Qt5.15.12\msvc2019;C:\Qt\Qt5.15.12\msvc2019\bin</code> for 32-bit or <code>C:\Qt\Qt5.15.12\msvc2019_64;C:\Qt\Qt5.15.12\msvc2019_64\bin</code> for 64-bit to <code>PATH</code> variable. (Replace the version numbers of Qt and the version of Visual Studio (2017/2019) with the version that you have installed)</p><p><a href="https://github.com/Stellarium/stellarium/blob/master/BUILDING.md">https://github.com/Stellarium/stellarium/blob/master/BUILDING.md</a></p><p>接着下载github上stellarium的源码。</p><p><img src="https://github.com/tsuiwade/images/blob/main/img/image-20220316082946891.png" alt="image-20220316082946891"></p><p><img src="https://github.com/tsuiwade/images/blob/main/img/image-20220316084705332.png" alt="image-20220316084705332"></p><p>接着下载cmake </p><p><img src="https://github.com/tsuiwade/images/blob/main/img/image-20220316083021304.png" alt="image-20220316083021304"></p><p><img src="https://github.com/tsuiwade/images/blob/main/img/image-20220316085856109.png" alt="image-20220316085856109"></p><p>接着将stellarium文件中的CMakeLists.txt拖进qt creator中，将自动能展开，但出现一些问题</p><p><img src="https://github.com/tsuiwade/images/blob/main/img/image-20220315234126876.png" alt="image-20220315234126876"></p><p><img src="https://github.com/tsuiwade/images/blob/main/img/image-20220316085005174.png" alt="image-20220316085005174"></p><p>然后稍微改改字符，就可以运行了。</p><p>对代码的修改如下：</p><p><img src="https://github.com/tsuiwade/images/blob/main/img/image-20220316111236063.png" alt="image-20220316111236063"></p>]]></content>
+        <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p>首先下载qt，我这里使用的是qt5.14.2，下载挺快的。</p><p><img src="https://gitee.com/tsuiwade/images/blob/master/img/image-20220316082552203.png" alt="image-20220316082852120"></p><p>We recommend to use Qt 5.12 or later. You must select Qt Script and msvc2017/msvc2019 among so many checkboxes.</p><p>Add <code>C:\Qt\Qt5.15.12</code> to your <code>PATH</code> variable - you should add string <code>C:\Qt\Qt5.15.12\msvc2019;C:\Qt\Qt5.15.12\msvc2019\bin</code> for 32-bit or <code>C:\Qt\Qt5.15.12\msvc2019_64;C:\Qt\Qt5.15.12\msvc2019_64\bin</code> for 64-bit to <code>PATH</code> variable. (Replace the version numbers of Qt and the version of Visual Studio (2017/2019) with the version that you have installed)</p><p><a href="https://github.com/Stellarium/stellarium/blob/master/BUILDING.md">https://github.com/Stellarium/stellarium/blob/master/BUILDING.md</a></p><p>接着下载github上stellarium的源码。</p><p><img src="https://gitee.com/tsuiwade/images/blob/master/img/image-20220316082946891.png" alt="image-20220316082946891"></p><p><img src="https://gitee.com/tsuiwade/images/blob/master/img/image-20220316084705332.png" alt="image-20220316084705332"></p><p>接着下载cmake </p><p><img src="https://gitee.com/tsuiwade/images/blob/master/img/image-20220316083021304.png" alt="image-20220316083021304"></p><p><img src="https://gitee.com/tsuiwade/images/blob/master/img/image-20220316085856109.png" alt="image-20220316085856109"></p><p>接着将stellarium文件中的CMakeLists.txt拖进qt creator中，将自动能展开，但出现一些问题</p><p><img src="https://gitee.com/tsuiwade/images/blob/master/img/image-20220315234126876.png" alt="image-20220315234126876"></p><p><img src="https://gitee.com/tsuiwade/images/blob/master/img/image-20220316085005174.png" alt="image-20220316085005174"></p><p>然后稍微改改字符，就可以运行了。</p><p>对代码的修改如下：</p><p><img src="https://gitee.com/tsuiwade/images/blob/master/img/image-20220316111236063.png" alt="image-20220316111236063"></p>]]></content>
       
       
       <categories>
